@@ -54,6 +54,3 @@
 .company-assurance{grid-template-columns:1fr;gap:20px;padding:26px 22px}
 .company-assurance h4{font-size:26px}.company-heading p{line-height:1.95}
 }
-
-/* Company image cards precede the service overview within the introduction grid. */
-.company-intro>.company-cards{grid-column:1/-1;min-width:0}
