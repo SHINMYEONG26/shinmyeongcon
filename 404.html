@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>신명건설 · 페이지 안내</title>
 <script>
-const known = new Set(['admin','inquiry','product','gallery-color','gallery-composite-sheet','gallery-exterior','gallery-gutter-materials','gallery-interior-exterior','gallery-metal-siding','gallery-real','gallery-sandwich-panel','gallery-steel-accessories','gallery-temba-zinc','gallery-zinc-accessories']);
+const known = new Set(['admin','inquiry','product','gallery-color','gallery-composite-sheet','gallery-exterior','gallery-gutter-materials','gallery-interior-exterior','gallery-metal-siding','gallery-real','gallery-sandwich-panel','gallery-temba-zinc']);
 const path = location.pathname.replace(/\/+$/, '');
 const name = path.slice(path.lastIndexOf('/') + 1);
 if (known.has(name)) location.replace(path + '.html' + location.search + location.hash);
