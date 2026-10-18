@@ -1,4 +1,4 @@
-// Original AI visuals; product-specific explanations and manufacturer specifications.
+// Original visual product guides with optional extended descriptions.
 window.ProductDetailData = {
   "f8e0671a-b1a5-4a33-8c3f-ec7e57070175": {
     "headline": "징크의 세로선을 살린 칼라강판",
@@ -77,7 +77,10 @@ window.ProductDetailData = {
       "선택 길이와 지붕 경사, 겹침 길이, 용마루·측면 부자재를 함께 확인합니다.",
       "색상·표면은 실제 샘플로 확인하고, 단열재·PE폼 선택 여부는 등록 옵션과 상담을 기준으로 결정합니다."
     ],
-    "benefitsTitle": "징크형 칼라강판의 주요 장점"
+    "benefitsTitle": "징크형 칼라강판의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/zinc-profile-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/zinc-profile-guide.svg?v=20261019-v1",
+    "visualIntro": "징크형 칼라강판의 형태와 장점을 그림으로 확인하세요."
   },
   "a6a47cf5-d17d-4d44-ae34-ba1ab276ebbe": {
     "headline": "옥상과 베란다 가장자리의 외장 마감",
@@ -156,7 +159,10 @@ window.ProductDetailData = {
       "제조사 자료상 이 제품은 PE폼 추가 불가로 안내되므로 단열이 필요하면 별도 바탕 구성을 상담합니다.",
       "상부·하부와 모서리의 물 흐름, 고정 위치, 실제 제작 길이를 확인합니다."
     ],
-    "benefitsTitle": "파라펫의 주요 장점"
+    "benefitsTitle": "파라펫의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/parapet-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/parapet-guide.svg?v=20261019-v1",
+    "visualIntro": "파라펫의 형태와 장점을 그림으로 확인하세요."
   },
   "66445bd7-ffdc-483e-a6eb-b72e88f26c85": {
     "headline": "곡선형 골로 이어지는 지붕 마감",
@@ -239,7 +245,10 @@ window.ProductDetailData = {
       "겹침 방향과 길이, 바탕재 간격 및 고정 조건을 시공 전에 확인합니다.",
       "PE폼 선택 여부와 색상·길이별 공급 조건은 현재 판매 옵션과 상담으로 확인합니다."
     ],
-    "benefitsTitle": "S골 칼라강판의 주요 장점"
+    "benefitsTitle": "S골 칼라강판의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/s-corrugated-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/s-corrugated-guide.svg?v=20261019-v1",
+    "visualIntro": "S골 칼라강판의 형태와 장점을 그림으로 확인하세요."
   },
   "ca51a341-1150-4d8e-b7ce-1f323f753ef7": {
     "headline": "전통 기와의 곡선을 담은 지붕 마감",
@@ -318,7 +327,10 @@ window.ProductDetailData = {
       "유효폭 700mm와 가로 단차·겹침 조건을 함께 반영해 수량을 산정합니다.",
       "기존 지붕 위 덧시공 여부는 바탕 상태·고정 조건·구조 검토 후 결정합니다."
     ],
-    "benefitsTitle": "전통소골 칼라강판의 주요 장점"
+    "benefitsTitle": "전통소골 칼라강판의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/traditional-tile-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/traditional-tile-guide.svg?v=20261019-v1",
+    "visualIntro": "전통소골 칼라강판의 형태와 장점을 그림으로 확인하세요."
   },
   "addacf41-9197-42c2-8172-64e8312c4baa": {
     "headline": "차분한 기와형 패턴의 칼라강판",
@@ -397,7 +409,10 @@ window.ProductDetailData = {
       "패널 길이·겹침·물 흐름과 지붕 경사를 함께 검토합니다.",
       "전체폭과 유효폭을 구분하고, 모서리 절단 및 마감에 필요한 여유 수량을 반영합니다."
     ],
-    "benefitsTitle": "평기와 칼라강판의 주요 장점"
+    "benefitsTitle": "평기와 칼라강판의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/flat-tile-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/flat-tile-guide.svg?v=20261019-v1",
+    "visualIntro": "평기와 칼라강판의 형태와 장점을 그림으로 확인하세요."
   },
   "9483d7f7-28ae-44be-9a29-be4f417069ae": {
     "headline": "반복되는 선이 만드는 루버강판 외벽",
@@ -480,7 +495,10 @@ window.ProductDetailData = {
       "골 방향과 창호 위치를 기준으로 패널 연결 및 모서리 마감을 계획합니다.",
       "전체폭 335mm가 아닌 유효폭 296mm를 기준으로 장수와 절단 여유를 검토합니다."
     ],
-    "benefitsTitle": "40루버강판의 주요 장점"
+    "benefitsTitle": "40루버강판의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/louver-40-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/louver-40-guide.svg?v=20261019-v1",
+    "visualIntro": "40루버강판의 형태와 장점을 그림으로 확인하세요."
   },
   "2c3bc69a-757a-4bfa-923f-17715993f540": {
     "headline": "패널의 연결 방식까지 고려하는 외장재",
@@ -555,7 +573,10 @@ window.ProductDetailData = {
       "유효폭 370mm를 기준으로 배치와 장수, 모서리 절단 범위를 계획합니다.",
       "바탕 구조·공기층·고정 간격 등 실제 시공 조건은 현장별 검토가 필요합니다."
     ],
-    "benefitsTitle": "인터락징크의 주요 장점"
+    "benefitsTitle": "인터락징크의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/interlock-zinc-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/interlock-zinc-guide.svg?v=20261019-v1",
+    "visualIntro": "인터락징크의 형태와 장점을 그림으로 확인하세요."
   },
   "8ce96d67-8f6d-4d38-9319-5ffa3a00dcdd": {
     "headline": "선과 면을 살린 징크형 외장 마감",
@@ -630,7 +651,10 @@ window.ProductDetailData = {
       "25mm 골 높이와 창호·상부 마감 간섭을 함께 검토합니다.",
       "리얼징크라는 상품명과 실제 소재·도장·표면 사양은 공급 제품 기준으로 상담합니다."
     ],
-    "benefitsTitle": "리얼징크의 주요 장점"
+    "benefitsTitle": "리얼징크의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/real-zinc-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/real-zinc-guide.svg?v=20261019-v1",
+    "visualIntro": "리얼징크의 형태와 장점을 그림으로 확인하세요."
   },
   "e3593177-8603-4220-bcc7-119810a3da29": {
     "headline": "열반사층을 결합한 리얼징크 제품",
@@ -713,7 +737,10 @@ window.ProductDetailData = {
       "열반사층이 작동하는 공기층과 시공 방향, 바탕 구조 및 기존 단열재를 함께 확인합니다.",
       "실제 공급 유효폭 440~445mm와 고정·접합·마감 부자재를 발주 전에 확인합니다."
     ],
-    "benefitsTitle": "열반사 리얼징크의 주요 장점"
+    "benefitsTitle": "열반사 리얼징크의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/thermal-real-zinc-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/thermal-real-zinc-guide.svg?v=20261019-v1",
+    "visualIntro": "열반사 리얼징크의 형태와 장점을 그림으로 확인하세요."
   },
   "0f6340b3-6159-4d7b-8016-67c7e2860dc3": {
     "headline": "기존 지붕 보수에 검토하는 덧방 자재",
@@ -796,7 +823,10 @@ window.ProductDetailData = {
       "덧시공 가능 여부는 기존 지붕의 고정 상태·누수·하부 구조 확인 후 결정합니다.",
       "제조사 대량 생산 조건과 실제 공급·최소 주문 수량은 현장별 상담으로 확인합니다."
     ],
-    "benefitsTitle": "덧방용 칼라강판의 주요 장점"
+    "benefitsTitle": "덧방용 칼라강판의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/roof-overlay-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/roof-overlay-guide.svg?v=20261019-v1",
+    "visualIntro": "덧방용 칼라강판의 형태와 장점을 그림으로 확인하세요."
   },
   "f0ce932e-9a33-4ad9-8ead-27a087b7d502": {
     "headline": "인터락 외장 마감에 열반사층을 더한 메탈렉스",
@@ -896,7 +926,10 @@ window.ProductDetailData = {
       "일반 홑판 0.5T와 열반사 제품 3T는 제조사 두께 표기이며, 두께만으로 단열 성능이 결정되지 않습니다.",
       "결로·소음·보온은 실내 습도와 환기, 창호·접합부·열교 등 건물 전체 조건을 함께 검토합니다.",
       "유효폭 370mm와 실제 공급 모델, 현재 등록 색상·수량·납품 일정을 확인합니다."
-    ]
+    ],
+    "visualGuideMobile": "assets/product-guides/thermal-interlock-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/thermal-interlock-guide.svg?v=20261019-v1",
+    "visualIntro": "열반사 인터락징크의 형태와 장점을 그림으로 확인하세요."
   },
   "a60962ea-3bc7-47b8-a59d-f846dda293af": {
     "headline": "한 장의 정사각 판으로 맞물리는 평잇기 외장재",
@@ -975,7 +1008,10 @@ window.ProductDetailData = {
       "20mm는 끼움 폭이며, 테두리가 20mm 높이로 솟은 판재로 해석하지 않습니다.",
       "배열 방향에 따른 절단 손실과 창호·모서리의 마감 범위를 함께 산정합니다."
     ],
-    "benefitsTitle": "하비스 사각평잇기의 주요 장점"
+    "benefitsTitle": "하비스 사각평잇기의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/square-seam-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/square-seam-guide.svg?v=20261019-v1",
+    "visualIntro": "하비스 사각평잇기의 형태와 장점을 그림으로 확인하세요."
   },
   "06e2cb65-cc9a-4918-abcd-65396e94a9e3": {
     "headline": "골의 변화로 입체감을 더하는 루버강판",
@@ -1058,7 +1094,10 @@ window.ProductDetailData = {
       "전체폭 350mm와 유효폭 285mm를 구분해 수량을 계산합니다.",
       "자재를 뒤집는 위치나 모서리에서 패턴이 바뀌는 부분은 현장 배치로 검토합니다."
     ],
-    "benefitsTitle": "비트루버강판의 주요 장점"
+    "benefitsTitle": "비트루버강판의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/louver-beat-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/louver-beat-guide.svg?v=20261019-v1",
+    "visualIntro": "비트루버강판의 형태와 장점을 그림으로 확인하세요."
   },
   "ca7c4dc4-8003-4d87-b974-50420a00a831": {
     "headline": "긴 벽돌 패턴의 메탈사이딩",
@@ -1145,7 +1184,10 @@ window.ProductDetailData = {
       "1박스 8장, 1장 1.14㎡ 표기와 절단·마감 손실을 함께 고려합니다.",
       "3m 자재의 차량 진입·하차·보관 조건과 배송비는 현장별로 상담합니다."
     ],
-    "benefitsTitle": "롱브릭 메탈사이딩의 주요 장점"
+    "benefitsTitle": "롱브릭 메탈사이딩의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/long-brick-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/long-brick-guide.svg?v=20261019-v1",
+    "visualIntro": "롱브릭 메탈사이딩의 형태와 장점을 그림으로 확인하세요."
   },
   "1ba6996e-10bb-4296-bcad-0860a149d320": {
     "headline": "석재 느낌을 담은 메탈사이딩",
@@ -1232,7 +1274,10 @@ window.ProductDetailData = {
       "시공폭 380mm와 패널의 가로 연결, 창호 주변 절단 위치를 함께 검토합니다.",
       "1장·박스 수량과 3m 자재의 배송·하차 조건을 발주 전에 확인합니다."
     ],
-    "benefitsTitle": "내추럴스톤 메탈사이딩의 주요 장점"
+    "benefitsTitle": "내추럴스톤 메탈사이딩의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/natural-stone-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/natural-stone-guide.svg?v=20261019-v1",
+    "visualIntro": "내추럴스톤 메탈사이딩의 형태와 장점을 그림으로 확인하세요."
   },
   "f111f9cb-8e49-4937-90bd-890afb2bfa27": {
     "headline": "입면 디자인을 위한 아리에따 사이딩",
@@ -1319,7 +1364,10 @@ window.ProductDetailData = {
       "패널의 가로·세로 배치 가능 여부와 고정 방식은 제품·현장 조건에 맞춰 확인합니다.",
       "화이트·그레이의 색감과 질감, 부자재 색상은 실제 샘플로 함께 확인합니다."
     ],
-    "benefitsTitle": "아리에따 메탈사이딩의 주요 장점"
+    "benefitsTitle": "아리에따 메탈사이딩의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/arrieta-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/arrieta-guide.svg?v=20261019-v1",
+    "visualIntro": "아리에따 메탈사이딩의 형태와 장점을 그림으로 확인하세요."
   },
   "1c378ff0-702b-42bf-9c03-327589ced263": {
     "headline": "메탈사이딩의 시작과 연결을 완성하는 부자재",
@@ -1395,6 +1443,9 @@ window.ProductDetailData = {
       "제조사 길이 표기는 각 3m이며, 필요한 개수는 현장 치수와 절단 여유를 반영해 계산합니다.",
       "사용할 메탈사이딩 모델과 판 두께, 끼움 치수, 색상·재질의 적합 여부를 상담합니다."
     ],
-    "benefitsTitle": "메탈사이딩 부자재의 주요 장점"
+    "benefitsTitle": "메탈사이딩 부자재의 주요 장점",
+    "visualGuideMobile": "assets/product-guides/siding-trims-guide-mobile.svg?v=20261019-v1",
+    "visualGuide": "assets/product-guides/siding-trims-guide.svg?v=20261019-v1",
+    "visualIntro": "메탈사이딩 부자재의 형태와 장점을 그림으로 확인하세요."
   }
 };

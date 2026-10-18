@@ -50,3 +50,7 @@
 .detail-section-nav{grid-template-columns:repeat(6,minmax(0,1fr))}
 @media(max-width:760px){.detail-section-nav{grid-template-columns:repeat(3,minmax(0,1fr))}.detail-section-nav a{border-bottom:1px solid #dce4ea}.detail-section-nav a:nth-child(3n){border-right:0}.detail-section-nav a:nth-last-child(-n+3){border-bottom:0}}
 
+
+
+/* Picture-first product guides. */
+.detail-picture-guide{margin-top:20px}.detail-picture-guide .detail-reference-figure{margin:0 0 24px}.detail-picture-guide img{display:block;width:100%;height:auto;border:1px solid #e1e8ed;background:#fff}.detail-picture-guide .detail-source-note{margin:8px 0 18px}.detail-extended-copy,.detail-spec-fold{border:1px solid #dce4ea;background:#fff;margin:18px 0;padding:0 20px}.detail-extended-copy>summary,.detail-spec-fold>summary{cursor:pointer;padding:18px 0;font-size:14px;font-weight:700;color:#174d70}.detail-extended-copy[open]{padding-bottom:22px}.detail-extended-copy h2{margin-top:26px}.detail-extended-copy p{line-height:1.9}.detail-extended-copy .detail-feature-list{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-spec-fold .detail-size-figure{margin:14px 0}.detail-picture-guide+.detail-extended-copy{margin-top:22px}@media(max-width:760px){.detail-extended-copy,.detail-spec-fold{padding:0 12px}.detail-extended-copy .detail-feature-list{grid-template-columns:1fr}.detail-picture-guide .detail-reference-figure{margin-bottom:18px}}
