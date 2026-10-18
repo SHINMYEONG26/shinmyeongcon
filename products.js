@@ -45,7 +45,7 @@
   notice.textContent=products.length?`${selected==='all'?'전체':catalogLabels[selected]}${query?' · 검색 결과':''} · ${matches.length}개 중 ${shown.length}개 표시. 상품을 누르면 규격별 가격과 옵션을 볼 수 있습니다.`:'자재·상품 안내를 준비하고 있습니다.';
  }
  try{
-  const rank=category=>category==='louver-steel'?0:category==='zinc'?1:category==='color'?2:3;
+  const rank=category=>category==='zinc'?0:category==='louver-steel'?1:category==='color'?2:3;
   products=(await ProductService.list()).map(ProductService.catalogProduct).filter(Boolean);
   const categories=['all',...Object.keys(catalogLabels).filter(key=>products.some(p=>p.category===key)).sort((a,b)=>rank(a)-rank(b))];
   for(const category of categories){const button=document.createElement('button');button.type='button';button.dataset.category=category;button.textContent=category==='all'?'전체':catalogLabels[category];button.addEventListener('click',()=>{selected=category;limit=pageSize;render()});filters.append(button)}render();
