@@ -8,8 +8,9 @@
  search.append(label,input,clear);filters.before(search);
  const more=document.createElement('button');more.type='button';more.className='products-more';more.setAttribute('aria-controls','products-grid');more.hidden=true;grid.after(more);
  const empty=document.createElement('p');empty.className='products-empty';empty.hidden=true;empty.textContent='검색 결과가 없습니다. 다른 검색어를 입력하거나 분야를 전체로 바꿔보세요.';grid.before(empty);
+ const catalogLabels=ProductService.catalogLabels;
  const pageSize=12;let products=[],selected='all',query='',limit=pageSize;
- const searchable=p=>[p.title,p.description,ProductService.labels[p.category],...(p.variants||[]).flatMap(v=>[v.color,v.thickness,v.length])].join(' ').normalize('NFKC').toLocaleLowerCase('ko-KR');
+ const searchable=p=>[p.title,p.description,catalogLabels[p.category],...(p.variants||[]).flatMap(v=>[v.color,v.thickness,v.length])].join(' ').normalize('NFKC').toLocaleLowerCase('ko-KR');
  function updateSearch(){query=input.value.trim().normalize('NFKC').toLocaleLowerCase('ko-KR');limit=pageSize;render()}
  input.addEventListener('input',updateSearch);
  clear.addEventListener('click',()=>{input.value='';updateSearch();input.focus()});
@@ -24,7 +25,7 @@
    const imageWrap=document.createElement('a');imageWrap.className='product-image-wrap';imageWrap.href=href;imageWrap.setAttribute('aria-label',product.title+' 상세 보기');
    const image=new Image();image.className='product-image';image.src=product.url;image.alt=product.title+(product.is_ai?' · AI 생성 예시':' · 제품 사진');image.loading='lazy';
    const kind=document.createElement('span');kind.className='product-kind';kind.textContent=product.is_ai?'AI 생성 예시':'제품 사진';imageWrap.append(image,kind);
-   const body=document.createElement('div');body.className='product-body';const category=document.createElement('span');category.className='product-category';category.textContent=ProductService.labels[product.category];
+   const body=document.createElement('div');body.className='product-body';const category=document.createElement('span');category.className='product-category';category.textContent=catalogLabels[product.category];
    const title=document.createElement('h3'),titleLink=document.createElement('a');titleLink.href=href;titleLink.textContent=product.title;title.append(titleLink);
    const description=document.createElement('p');description.className='product-description';description.textContent=product.description;
    const price=document.createElement('p');price.className='product-price';let variants=[];try{variants=ProductOptions.normalize(product.variants||[])}catch{}
@@ -41,12 +42,12 @@
   }
   filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category===selected)));
   clear.hidden=!input.value;empty.hidden=!products.length||matches.length>0;more.hidden=shown.length>=matches.length;more.textContent=`상품 더 보기 (${shown.length} / ${matches.length})`;
-  notice.textContent=products.length?`${selected==='all'?'전체':ProductService.labels[selected]}${query?' · 검색 결과':''} · ${matches.length}개 중 ${shown.length}개 표시. 상품을 누르면 규격별 가격과 옵션을 볼 수 있습니다.`:'자재·상품 안내를 준비하고 있습니다.';
+  notice.textContent=products.length?`${selected==='all'?'전체':catalogLabels[selected]}${query?' · 검색 결과':''} · ${matches.length}개 중 ${shown.length}개 표시. 상품을 누르면 규격별 가격과 옵션을 볼 수 있습니다.`:'자재·상품 안내를 준비하고 있습니다.';
  }
  try{
-  const rank=category=>['temba-zinc','real'].includes(category)?0:category==='color'?1:2;
-  products=await ProductService.list();
-  const categories=['all',...Object.keys(ProductService.labels).filter(key=>products.some(p=>p.category===key)).sort((a,b)=>rank(a)-rank(b))];
-  for(const category of categories){const button=document.createElement('button');button.type='button';button.dataset.category=category;button.textContent=category==='all'?'전체':ProductService.labels[category];button.addEventListener('click',()=>{selected=category;limit=pageSize;render()});filters.append(button)}render();
+  const rank=category=>category==='louver-steel'?0:category==='zinc'?1:category==='color'?2:3;
+  products=(await ProductService.list()).map(ProductService.catalogProduct).filter(Boolean);
+  const categories=['all',...Object.keys(catalogLabels).filter(key=>products.some(p=>p.category===key)).sort((a,b)=>rank(a)-rank(b))];
+  for(const category of categories){const button=document.createElement('button');button.type='button';button.dataset.category=category;button.textContent=category==='all'?'전체':catalogLabels[category];button.addEventListener('click',()=>{selected=category;limit=pageSize;render()});filters.append(button)}render();
  }catch(error){filters.hidden=true;search.hidden=true;more.hidden=true;notice.textContent='자재·상품 안내를 준비하고 있습니다. 필요한 자재는 전화로 문의해 주세요.';console.warn(error.message)}
 })();

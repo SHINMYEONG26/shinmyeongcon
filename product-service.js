@@ -1,6 +1,17 @@
 (() => {
   const photos=window.PhotoService,client=photos?.client,bucket='product-photos';
   const labels={real:'리얼징크',...(photos?.labels||{})};
+  // Public catalog groups keep existing storage categories and photo management intact.
+  const excludedCatalogCategories=new Set(['zinc-accessories','steel-accessories','gutter-materials']);
+  const catalogLabels={...labels,'louver-steel':'루버강판',zinc:'징크'};
+  for(const key of ['temba-zinc','real',...excludedCatalogCategories])delete catalogLabels[key];
+  const catalogProduct=product=>{
+    if(excludedCatalogCategories.has(product.category))return null;
+    const combined=['temba-zinc','real'].includes(product.category);
+    const category=combined?(/템바|루버/.test(product.title)?'louver-steel':'zinc'):product.category;
+    const rename=text=>String(text||'').replace(/템바(?:징크)?/g,'루버강판');
+    return {...product,category,title:rename(product.title),description:rename(product.description)};
+  };
   const categoryRank=category=>['temba-zinc','real'].includes(category)?0:category==='color'?1:2;
   const validIds=ids=>Array.isArray(ids)&&ids.every(id=>typeof id==='string'&&/^[a-f0-9-]{36}$/i.test(id))&&new Set(ids).size===ids.length;
   const imageUrl=product=>{
@@ -22,7 +33,7 @@
     return path;
   }
   window.ProductService={
-    ready:Boolean(client),labels,
+    ready:Boolean(client),labels,catalogLabels,catalogProduct,
     async list(){
       if(!client)throw new Error('상품 저장공간이 아직 연결되지 않았습니다.');
       const fields='id,category,title,description,is_ai,image_source,storage_path,created_at,variants,price_unit,display_order';
