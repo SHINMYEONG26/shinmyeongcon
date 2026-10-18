@@ -1,4 +1,3 @@
-// Product-specific visual references from the corresponding HN METALLIC product pages.
 window.ProductDetailData = {
   "f8e0671a-b1a5-4a33-8c3f-ec7e57070175": {
     "headline": "징크의 세로선을 살린 칼라강판",
@@ -8,13 +7,7 @@ window.ProductDetailData = {
       "지붕·외벽 적용 부위 상담",
       "색상·길이별 옵션 선택"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=126&cate_no=54&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/1_color/zinc250_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/zinc250_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/zinc250_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/zinc250_03.jpg"
-    ]
+    "images": []
   },
   "a6a47cf5-d17d-4d44-ae34-ba1ab276ebbe": {
     "headline": "옥상과 베란다 가장자리의 외장 마감",
@@ -24,13 +17,7 @@ window.ProductDetailData = {
       "상부·모서리 접합 검토",
       "현장 치수와 길이 확인"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=92&cate_no=54&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/1_color/parapet_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/parapet_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/parapet_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/parapet_03.jpg"
-    ]
+    "images": []
   },
   "66445bd7-ffdc-483e-a6eb-b72e88f26c85": {
     "headline": "곡선형 골로 이어지는 지붕 마감",
@@ -40,13 +27,7 @@ window.ProductDetailData = {
       "제품 단면·유효폭 확인",
       "지붕 상태에 맞춘 자재 상담"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=12&cate_no=54&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/1_color/s_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/s_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/s_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/s_03.jpg"
-    ]
+    "images": []
   },
   "ca51a341-1150-4d8e-b7ce-1f323f753ef7": {
     "headline": "전통 기와의 곡선을 담은 지붕 마감",
@@ -56,13 +37,7 @@ window.ProductDetailData = {
       "지붕 형태와 경사에 맞춘 검토",
       "용마루·처마·측면 마감 상담"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=127&cate_no=54&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/1_color/traditional_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/traditional_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/traditional_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/traditional_03.jpg"
-    ]
+    "images": []
   },
   "addacf41-9197-42c2-8172-64e8312c4baa": {
     "headline": "차분한 기와형 패턴의 칼라강판",
@@ -72,13 +47,7 @@ window.ProductDetailData = {
       "색상·길이 선택",
       "지붕 면적과 마감 범위 상담"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=128&cate_no=54&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/1_color/normal_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/normal_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/normal_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/normal_03.jpg"
-    ]
+    "images": []
   },
   "9483d7f7-28ae-44be-9a29-be4f417069ae": {
     "headline": "반복되는 선이 만드는 루버강판 외벽",
@@ -88,14 +57,7 @@ window.ProductDetailData = {
       "골 방향과 외벽 배치 상담",
       "창호·모서리 마감 확인"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=133&cate_no=55&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/2_zinc/40_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/40_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/40_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/40_03.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/40_04.jpg"
-    ]
+    "images": []
   },
   "2c3bc69a-757a-4bfa-923f-17715993f540": {
     "headline": "패널의 연결 방식까지 고려하는 외장재",
@@ -105,14 +67,7 @@ window.ProductDetailData = {
       "패널 방향·연결부 검토",
       "색상과 길이 선택"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=18&cate_no=55&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/2_zinc/interlock_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/interlock_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/interlock_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/interlock_03.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/interlock_04.jpg"
-    ]
+    "images": []
   },
   "8ce96d67-8f6d-4d38-9319-5ffa3a00dcdd": {
     "headline": "선과 면을 살린 징크형 외장 마감",
@@ -122,14 +77,7 @@ window.ProductDetailData = {
       "색상·길이별 규격 선택",
       "접합·모서리 마감 검토"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=16&cate_no=55&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/2_zinc/realzinc_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/realzinc_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/realzinc_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/realzinc_03.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/realzinc_04.jpg"
-    ]
+    "images": []
   },
   "e3593177-8603-4220-bcc7-119810a3da29": {
     "headline": "열반사층을 결합한 리얼징크 제품",
@@ -139,11 +87,7 @@ window.ProductDetailData = {
       "선택 규격·색상 확인",
       "현장 구성에 따른 적용 검토"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=125&cate_no=55&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/2_zinc/AL_realzinc_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/AL_realzinc_02.jpg"
-    ]
+    "images": []
   },
   "0f6340b3-6159-4d7b-8016-67c7e2860dc3": {
     "headline": "기존 지붕 보수에 검토하는 덧방 자재",
@@ -153,13 +97,7 @@ window.ProductDetailData = {
       "기존 지붕 상태 우선 확인",
       "고정·접합 부위 상담"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=93&cate_no=54&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/1_color/over_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/over_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/over_03.jpg",
-      "https://hnmt77.imghost.cafe24.com/1_color/over_04.jpg"
-    ]
+    "images": []
   },
   "f0ce932e-9a33-4ad9-8ead-27a087b7d502": {
     "headline": "열반사층과 인터락 형상의 조합",
@@ -169,11 +107,7 @@ window.ProductDetailData = {
       "인터락 연결 형상",
       "두께·색상 옵션 확인"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=132&cate_no=55&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/2_zinc/AL_interlock_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/AL_interlock_02.jpg"
-    ]
+    "images": []
   },
   "a60962ea-3bc7-47b8-a59d-f846dda293af": {
     "headline": "사각 모듈의 반복으로 만드는 외장 패턴",
@@ -183,15 +117,7 @@ window.ProductDetailData = {
       "배열 방향과 면적 검토",
       "모서리·개구부 마감 상담"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=123&cate_no=55&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/2_zinc/diamond_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/diamond_02.gif",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/diamond_03.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/diamond_04.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/diamond_07.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/diamond_06.jpg"
-    ]
+    "images": []
   },
   "06e2cb65-cc9a-4918-abcd-65396e94a9e3": {
     "headline": "골의 변화로 입체감을 더하는 루버강판",
@@ -201,14 +127,7 @@ window.ProductDetailData = {
       "외벽 디자인과 색상 검토",
       "단면·유효폭 자료 확인"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=103&cate_no=55&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/2_zinc/Beat_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/Beat_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/Beat_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/Beat_03.jpg",
-      "https://hnmt77.imghost.cafe24.com/2_zinc/Beat_04.jpg"
-    ]
+    "images": []
   },
   "ca7c4dc4-8003-4d87-b974-50420a00a831": {
     "headline": "긴 벽돌 패턴의 메탈사이딩",
@@ -218,13 +137,7 @@ window.ProductDetailData = {
       "8장/1BOX 상품",
       "색상·모서리 부자재 확인"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=84&cate_no=99&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/3_metal/longbrick_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/longbrick_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/longbrick_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/longbrick_03.jpg"
-    ]
+    "images": []
   },
   "1ba6996e-10bb-4296-bcad-0860a149d320": {
     "headline": "석재 느낌을 담은 메탈사이딩",
@@ -234,13 +147,7 @@ window.ProductDetailData = {
       "8장/1BOX 상품",
       "패턴 연결과 수량 상담"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=85&cate_no=99&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/3_metal/natural_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/natural_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/natural_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/natural_03.jpg"
-    ]
+    "images": []
   },
   "f111f9cb-8e49-4937-90bd-890afb2bfa27": {
     "headline": "입면 디자인을 위한 아리에따 사이딩",
@@ -250,13 +157,7 @@ window.ProductDetailData = {
       "8장/1BOX 상품",
       "색상·마감 범위 상담"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=86&cate_no=99&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/3_metal/arrieta_main.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/arrieta_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/arrieta_02.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/arrieta_03.jpg"
-    ]
+    "images": []
   },
   "1c378ff0-702b-42bf-9c03-327589ced263": {
     "headline": "메탈사이딩의 시작과 연결을 완성하는 부자재",
@@ -266,10 +167,6 @@ window.ProductDetailData = {
       "J찬넬·아웃코너",
       "적용 위치별 종류 선택"
     ],
-    "source": "https://hnmt.co.kr/product/detail.html?product_no=88&cate_no=99&display_group=1",
-    "images": [
-      "https://hnmt77.imghost.cafe24.com/3_metal/materials_01.jpg",
-      "https://hnmt77.imghost.cafe24.com/3_metal/materials_02.jpg"
-    ]
+    "images": []
   }
 };
