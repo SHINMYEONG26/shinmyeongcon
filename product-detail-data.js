@@ -1,4 +1,4 @@
-// Original AI visualizations; manufacturer-published nominal dimensions.
+// Original AI product visualizations and manufacturer-published specifications.
 window.ProductDetailData = {
   "f8e0671a-b1a5-4a33-8c3f-ec7e57070175": {
     "headline": "징크의 세로선을 살린 칼라강판",
@@ -411,12 +411,12 @@ window.ProductDetailData = {
     "installedImage": "assets/product-gallery/roof-overlay-installed.webp?v=20261019-v1"
   },
   "f0ce932e-9a33-4ad9-8ead-27a087b7d502": {
-    "headline": "열반사층과 인터락 형상의 조합",
-    "description": "인터락 형태의 징크형 마감재에 열반사층을 결합한 제품입니다. 외장 패턴과 연결 방식, 선택 규격을 함께 검토할 수 있습니다. 실제 적용 전에는 바탕 상태와 접합·고정 방법을 확인하고, 열성능은 제품 자료와 시공 조건을 바탕으로 검토합니다.",
+    "headline": "인터락 외장 마감에 열반사층을 더한 메탈렉스",
+    "description": "메탈렉스 프리미엄 열반사 인터락징크는 금속판 뒷면에 알루미늄 열반사 시트를 열융착 방식으로 결합한 제품입니다. 인터락의 맞물림 형상과 정돈된 외장선을 유지하면서 단열 구성을 보완하도록 검토할 수 있습니다. 적용 시 바탕 구조, 공기층, 기존 단열재와 접합·고정 조건을 함께 확인해 납품과 시공을 상담합니다.",
     "features": [
-      "열반사층 결합 제품",
-      "인터락 연결 형상",
-      "두께·색상 옵션 확인"
+      "뒷면 알루미늄 열반사 시트 결합",
+      "열융착 방식의 일체형 구성",
+      "유효폭 370mm · 제품 두께 표기 3T"
     ],
     "images": [
       "assets/product-ai/thermal-interlock.jpg",
@@ -445,19 +445,51 @@ window.ProductDetailData = {
     "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
     "dimensionImage": "assets/product-dimensions/thermal-interlock.webp?v=20261019-v1",
     "colorImage": "assets/product-gallery/thermal-interlock-colors.webp?v=20261019-v1",
-    "installedImage": "assets/product-gallery/thermal-interlock-installed.webp?v=20261019-v1"
+    "installedImage": "assets/product-gallery/thermal-interlock-installed.webp?v=20261019-v1",
+    "benefitsTitle": "열반사 인터락징크, 어떤 장점이 있을까요?",
+    "benefits": [
+      {
+        "title": "여름철 외부 복사열 유입을 고려한 구성",
+        "text": "알루미늄 열반사층으로 복사열 이동을 줄이는 방향으로 외장 단열 계획을 보완합니다. 공기층과 바탕 구조를 함께 검토해 냉방 환경에 맞는 시공 구성을 상담합니다."
+      },
+      {
+        "title": "겨울철 실내 보온을 고려한 구성",
+        "text": "실내에서 외부로 향하는 복사열 이동을 줄이는 원리를 활용합니다. 기존 단열재와 창호, 접합부 등 열 손실에 영향을 주는 부위도 함께 확인합니다."
+      },
+      {
+        "title": "금속판 뒷면과 열반사 시트의 결합",
+        "text": "제조사 자료에 따르면 알루미늄 열반사 시트를 화학본드 대신 열융착 방식으로 부착합니다. 인터락의 기본 연결 형상을 유지하며 뒷면에 열반사층이 더해진 구성입니다."
+      },
+      {
+        "title": "인터락 마감과 단열 구성을 함께 계획",
+        "text": "색상과 패널 방향, 창호·모서리 마감을 검토하면서 공기층과 바탕재 등 필요한 단열 조건을 함께 계획할 수 있습니다. 실제 효과는 현장 구조와 시공 상태에 따라 달라집니다."
+      }
+    ],
+    "benefitImages": [
+      {
+        "src": "assets/product-benefits/thermal-interlock-seasons.svg",
+        "alt": "열반사 인터락징크의 여름·겨울 열 이동 원리",
+        "caption": "직접 제작한 원리 개념도 · 실제 온도 차이나 절감률을 나타내지 않습니다"
+      },
+      {
+        "src": "assets/product-benefits/thermal-interlock-structure.svg",
+        "alt": "일반 홑판 인터락징크와 열반사 인터락징크의 구성 비교",
+        "caption": "제조사 공개 규격 기준 · 구성과 비례를 단순화한 개념도"
+      }
+    ]
   },
   "a60962ea-3bc7-47b8-a59d-f846dda293af": {
-    "headline": "사각 모듈의 반복으로 만드는 외장 패턴",
-    "description": "사각 형태의 반복과 배열을 통해 외장면에 패턴을 표현하는 평잇기 제품입니다. 적용 면적과 패턴 방향, 모서리와 개구부의 배치를 함께 고려해 완성될 외관을 계획합니다. 색상과 필요한 수량, 마감 부자재를 확인해 납품과 시공을 상담합니다.",
+    "headline": "한 장의 정사각 판으로 맞물리는 평잇기 외장재",
+    "description": "하비스 사각평잇기는 넓고 평평한 정사각 판의 가장자리를 접어 만든 끼움부를 서로 맞물려 시공하는 외장재입니다. 전체폭 470mm, 유효폭 450mm이며 가장자리 끼움 폭은 20mm로 안내됩니다. 20mm는 가장자리의 끼움 폭을 뜻합니다. 적용 면의 크기와 배열 방향, 창호·모서리 위치를 함께 확인해 패턴과 필요한 수량을 상담합니다.",
     "features": [
-      "사각 평잇기 패턴",
-      "배열 방향과 면적 검토",
-      "모서리·개구부 마감 상담"
+      "정사각 판 · 전체폭 470mm",
+      "유효폭 450mm · 끼움 폭 20mm",
+      "평평한 판면과 얇게 접힌 가장자리",
+      "배열 방향·개구부·모서리 마감 검토"
     ],
     "images": [
-      "assets/product-ai/square-seam.jpg",
-      "assets/product-ai/square-seam-detail.jpg"
+      "assets/product-ai/havis-v2-main.webp",
+      "assets/product-ai/havis-v2-detail.webp"
     ],
     "specImage": "assets/product-specs/square-seam.svg?v=hn-spec-v4",
     "manufacturerSpecs": [
@@ -480,9 +512,9 @@ window.ProductDetailData = {
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=123&cate_no=55&display_group=1",
     "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
-    "dimensionImage": "assets/product-dimensions/square-seam.webp?v=20261019-v1",
-    "colorImage": "assets/product-gallery/square-seam-colors.webp?v=20261019-v1",
-    "installedImage": "assets/product-gallery/square-seam-installed.webp?v=20261019-v1"
+    "dimensionImage": "assets/product-ai/havis-v2-dimension.webp",
+    "colorImage": "assets/product-ai/havis-v2-colors.webp",
+    "installedImage": "assets/product-ai/havis-v2-installed.webp"
   },
   "06e2cb65-cc9a-4918-abcd-65396e94a9e3": {
     "headline": "골의 변화로 입체감을 더하는 루버강판",
