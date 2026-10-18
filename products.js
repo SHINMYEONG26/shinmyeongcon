@@ -45,7 +45,7 @@
  }
  try{
   const rank=category=>['temba-zinc','real'].includes(category)?0:category==='color'?1:2;
-  products=(await ProductService.list()).sort((a,b)=>rank(a.category)-rank(b.category));
+  products=await ProductService.list();
   const categories=['all',...Object.keys(ProductService.labels).filter(key=>products.some(p=>p.category===key)).sort((a,b)=>rank(a)-rank(b))];
   for(const category of categories){const button=document.createElement('button');button.type='button';button.dataset.category=category;button.textContent=category==='all'?'전체':ProductService.labels[category];button.addEventListener('click',()=>{selected=category;limit=pageSize;render()});filters.append(button)}render();
  }catch(error){filters.hidden=true;search.hidden=true;more.hidden=true;notice.textContent='자재·상품 안내를 준비하고 있습니다. 필요한 자재는 전화로 문의해 주세요.';console.warn(error.message)}

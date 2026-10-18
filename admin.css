@@ -6,3 +6,12 @@
 .product-pricing-editor{border:1px solid #d9e3e9;border-radius:8px;background:#f7f9fa;padding:20px;margin:20px 0}.product-pricing-editor h3{margin:0 0 10px;font-size:18px}.product-pricing-editor>p{font-size:13px;line-height:1.8;color:#66717b}.variant-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:10px;align-items:end;padding:15px 0;border-top:1px solid #d9e3e9}.variant-row label{min-width:0;margin:0}.variant-row input{width:100%;min-width:0}.variant-row button{margin:0 0 1px;white-space:nowrap}.variant-summary{font-size:12px;color:#66717b}.edit-product{margin-right:8px}#product-cancel-edit{margin-left:10px}@media(max-width:760px){.variant-row{grid-template-columns:repeat(2,minmax(0,1fr))}.variant-row button{grid-column:1/-1}}
 
 .library-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.library-filters button{padding:10px 14px;background:#eef3f6;color:#0c283f;border:1px solid #dbe3e8;font-size:13px}.library-filters button[aria-pressed="true"]{background:#0c283f;border-color:#0c283f;color:#fff}.library-filters button:hover{border-color:#1d5575}.panel>.library-count{margin:0;color:#66717b;font-size:13px}
+/* Product ordering controls. */
+.product-order-tools{border:1px solid #d8e3eb;background:#f5f8fa;padding:16px;margin:16px 0 24px;display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.product-order-tools>p{margin:0;line-height:1.8;font-size:13px;color:#254b64;flex:1 1 300px}
+.product-order-tools .product-order-status{flex-basis:100%;color:#174d70;font-weight:600}
+.product-order-controls{display:flex;align-items:end;flex-wrap:wrap;gap:6px;margin:12px 0}
+.product-order-controls label{font-size:12px;margin:0;color:#34556a}
+.product-order-controls input{display:block;width:75px;min-height:38px;margin:4px 0 0;padding:6px;border:1px solid #b9ccd9;border-radius:4px;font:inherit}
+.product-order-controls button{min-height:38px;padding:8px 12px}
+.product-order-controls button:disabled,.product-order-tools button:disabled{opacity:.5;cursor:default}

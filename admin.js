@@ -33,7 +33,7 @@
   async function enterAfterLogin() {
     if (managePhotos) return showAdmin();
     // Bypass cached home pages that still use persistent, pre-v37 auth.
-    location.replace('index.html?v=20261018-session-v38#home');
+    location.replace('index.html?v=20261018-v42#home');
   }
   async function loadLibrary() {
     try {
