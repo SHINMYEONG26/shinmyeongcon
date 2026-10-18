@@ -32,7 +32,8 @@
   };
   async function enterAfterLogin() {
     if (managePhotos) return showAdmin();
-    location.replace('index.html#home');
+    // Bypass cached home pages that still use persistent, pre-v37 auth.
+    location.replace('index.html?v=20261018-session-v38#home');
   }
   async function loadLibrary() {
     try {
