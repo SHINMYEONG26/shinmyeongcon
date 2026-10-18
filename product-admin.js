@@ -2,13 +2,15 @@
   const el=id=>document.getElementById(id),service=window.ProductService;
   const status=(message,error=false)=>{el('status').textContent=message;el('status').classList.toggle('error',error);};
   let loggedIn=false,mode='photos',file=null,previewUrl=null,busy=false,selectionId=0,editingId=null;
-  let orderedProducts=[],orderDirty=false;
+  let orderedProducts=[],loadedProducts=[],orderDirty=false;
   const orderTools=document.createElement('div');orderTools.className='product-order-tools';
   const orderHint=document.createElement('p');orderHint.textContent='위·아래 버튼이나 순번으로 위치를 바꾼 뒤 저장하세요. 1번이 홈페이지에 먼저 표시됩니다.';
   const orderSave=document.createElement('button');orderSave.type='button';orderSave.textContent='노출 순서 저장';orderSave.disabled=true;
+  const orderCancel=document.createElement('button');orderCancel.type='button';orderCancel.className='secondary';orderCancel.textContent='순서 변경 취소';orderCancel.disabled=true;
   const orderStatus=document.createElement('p');orderStatus.className='product-order-status';orderStatus.setAttribute('role','status');orderStatus.setAttribute('aria-live','polite');
-  orderTools.append(orderHint,orderSave,orderStatus);el('product-library').before(orderTools);
-  function markOrderDirty(value){orderDirty=value;orderSave.disabled=!value||busy;orderStatus.textContent=value?'순서가 변경되었습니다. 저장해야 홈페이지에 반영됩니다.':'';}
+  orderTools.append(orderHint,orderSave,orderCancel,orderStatus);el('product-library').before(orderTools);
+  function markOrderDirty(value){orderDirty=value;orderSave.disabled=orderCancel.disabled=!value||busy;orderStatus.textContent=value?'순서가 변경되었습니다. 저장해야 홈페이지에 반영됩니다.':'';}
+  orderCancel.addEventListener('click',()=>{if(window.adminOperationBusy)return;orderedProducts=[...loadedProducts];markOrderDirty(false);renderProducts();orderStatus.textContent='저장된 순서로 되돌렸습니다.';});
   function moveProduct(id,target){
     if(window.adminOperationBusy)return;
     const index=orderedProducts.findIndex(product=>product.id===id);
@@ -19,7 +21,7 @@
   orderSave.addEventListener('click',async()=>{
     if(window.adminOperationBusy||!orderDirty)return;
     setBusy(true);orderStatus.textContent='노출 순서를 저장하는 중입니다…';
-    try{await service.saveOrder(orderedProducts.map(product=>product.id));markOrderDirty(false);orderStatus.textContent='노출 순서를 저장했습니다. 홈페이지를 새로고침하면 반영됩니다.';}
+    try{await service.saveOrder(orderedProducts.map(product=>product.id));loadedProducts=[...orderedProducts];markOrderDirty(false);orderStatus.textContent='노출 순서를 저장했습니다. 홈페이지를 새로고침하면 반영됩니다.';}
     catch(error){orderStatus.textContent=error.message;status(error.message,true);}
     finally{setBusy(false);}
   });
@@ -69,7 +71,7 @@
   const syncDisabled=value=>{
     el('product-fields').disabled=value;el('product-refresh').disabled=value;el('product-logout').disabled=value;
     document.querySelectorAll('.delete-product,.edit-product,[data-manager-view],#product-cancel-edit').forEach(button=>button.disabled=value);
-    orderSave.disabled=value||!orderDirty;
+    orderSave.disabled=orderCancel.disabled=value||!orderDirty;
     el('product-library').querySelectorAll('[data-order-control]').forEach(control=>control.disabled=value||control.dataset.orderEdge==='true');
   };
   const setBusy=value=>{
@@ -80,7 +82,7 @@
   async function loadProducts(){
     if(orderDirty&&!window.confirm('저장하지 않은 상품 순서가 있습니다. 순서 변경을 취소하고 목록을 새로 불러올까요?'))return;
     try{
-      orderedProducts=await service.list();markOrderDirty(false);renderProducts();
+      orderedProducts=await service.list();loadedProducts=[...orderedProducts];markOrderDirty(false);renderProducts();
     }catch(error){status(error.message,true);}
   }
   function renderProducts(){

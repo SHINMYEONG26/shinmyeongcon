@@ -1,21 +1,8 @@
 (() => {
   const photos=window.PhotoService,client=photos?.client,bucket='product-photos';
   const labels={real:'리얼징크',...(photos?.labels||{})};
-  // Reserved metadata keys are ignored by the visible content editor.
-  const orderKey='materials:product-order',orderTable='site_content_overrides';
-  const chunkKey=index=>orderKey+'-'+String.fromCharCode(97+index);
   const categoryRank=category=>['temba-zinc','real'].includes(category)?0:category==='color'?1:2;
   const validIds=ids=>Array.isArray(ids)&&ids.every(id=>typeof id==='string'&&/^[a-f0-9-]{36}$/i.test(id))&&new Set(ids).size===ids.length;
-  async function savedOrder(){
-    try{const result=await client.from(orderTable).select('content_key,description').like('content_key',orderKey+'%');
-      if(result.error||!result.data)return [];
-      const rows=new Map(result.data.map(row=>[row.content_key,row.description]));
-      const manifest=JSON.parse(rows.get(orderKey)||'null');
-      if(!manifest||manifest.version!==1||!Number.isInteger(manifest.chunks)||manifest.chunks<1||manifest.chunks>26)return [];
-      const ids=Array.from({length:manifest.chunks},(_,index)=>JSON.parse(rows.get(chunkKey(index))||'null')).flat();
-      return validIds(ids)&&ids.length===manifest.count?ids:[];
-    }catch{return []}
-  }
   const imageUrl=product=>{
     if(product.image_source==='sample'&&['real-1.jpg','color-1.jpg'].includes(product.storage_path))return product.storage_path;
     if(product.image_source==='upload'&&/^products\/[a-z0-9-]+\.(jpg|png|webp)$/.test(product.storage_path||''))return client.storage.from(bucket).getPublicUrl(product.storage_path).data.publicUrl;
@@ -38,25 +25,21 @@
     ready:Boolean(client),labels,
     async list(){
       if(!client)throw new Error('상품 저장공간이 아직 연결되지 않았습니다.');
-      const fields='id,category,title,description,is_ai,image_source,storage_path,created_at,variants,price_unit';
+      const fields='id,category,title,description,is_ai,image_source,storage_path,created_at,variants,price_unit,display_order';
       let result=await client.from('products').select(fields).order('created_at',{ascending:false});
       if(result.error&&['42703','PGRST204'].includes(result.error.code))result=await client.from('products').select('id,category,title,description,is_ai,image_source,storage_path,created_at').order('created_at',{ascending:false});
       if(result.error)throw new Error('상품 목록을 불러오지 못했습니다. 연결 상태를 확인해 주세요.');
-      const ids=await savedOrder(),positions=new Map(ids.map((id,index)=>[id,index]));
       return (result.data||[]).map(product=>({...product,url:imageUrl(product)})).filter(product=>product.url&&labels[product.category]).sort((a,b)=>{
-        const aSaved=positions.has(a.id),bSaved=positions.has(b.id);
-        if(aSaved||bSaved)return aSaved&&bSaved?positions.get(a.id)-positions.get(b.id):aSaved?-1:1;
+        const aSaved=Number.isInteger(a.display_order)&&a.display_order>0,bSaved=Number.isInteger(b.display_order)&&b.display_order>0;
+        if(aSaved||bSaved)return aSaved&&bSaved?a.display_order-b.display_order:aSaved?-1:1;
         return categoryRank(a.category)-categoryRank(b.category);
       });
     },
     async saveOrder(ids){
-      if(!validIds(ids)||!ids.length||ids.length>780)throw new Error('저장할 상품 순서를 확인해 주세요. 상품은 최대 780개까지 정렬할 수 있습니다.');
-      const admin=await photos.requireAdmin();
-      const chunks=[];for(let i=0;i<ids.length;i+=30)chunks.push(ids.slice(i,i+30));
-      const row=(key,description)=>({content_key:key,title:'상품 노출 순서',description,eyebrow:'',image_path:null,is_ai:false,show_text:false,updated_by:admin.id});
-      const values=[row(orderKey,JSON.stringify({version:1,chunks:chunks.length,count:ids.length})),...chunks.map((chunk,index)=>row(chunkKey(index),JSON.stringify(chunk)))];
-      const result=await client.from(orderTable).upsert(values,{onConflict:'content_key'}).select('content_key');
-      if(result.error||result.data?.length!==values.length){console.warn('상품 순서 저장 오류',result.error?.code,result.error?.message);throw new Error('노출 순서를 저장하지 못했습니다. 연결 상태와 관리자 권한을 확인한 뒤 다시 저장해 주세요.');}
+      if(!validIds(ids)||!ids.length||ids.length>5000)throw new Error('저장할 상품 순서를 확인해 주세요. 상품은 최대 5,000개까지 정렬할 수 있습니다.');
+      await photos.requireAdmin();
+      const result=await client.rpc('set_product_display_order',{product_ids:ids});
+      if(result.error||result.data!==ids.length){console.warn('상품 순서 저장 오류',result.error?.code,result.error?.message);throw new Error(result.error?.code==='40001'?'상품 목록이 바뀌었습니다. 새로고침한 뒤 순서를 다시 저장해 주세요.':'노출 순서를 저장하지 못했습니다. 연결 상태와 관리자 권한을 확인한 뒤 다시 저장해 주세요.');}
     },
     async add(file,category,title,description,isAi,variants=[],unit='원/장'){
       const values=validate(category,title,description,variants,unit),admin=await photos.requireAdmin(),path=await upload(file);
