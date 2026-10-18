@@ -1,0 +1,3 @@
+[build]
+  publish = "."
+# This is a buildless static website. Supabase remains the existing data service.

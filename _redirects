@@ -1,0 +1,16 @@
+# Preserve the current extensionless admin and gallery URLs.
+/admin                       /admin.html                       200
+/admin/                      /admin.html                       200
+/gallery-color               /gallery-color.html               200
+/gallery-temba-zinc           /gallery-temba-zinc.html           200
+/gallery-zinc-accessories     /gallery-zinc-accessories.html     200
+/gallery-steel-accessories    /gallery-steel-accessories.html    200
+/gallery-gutter-materials     /gallery-gutter-materials.html     200
+/gallery-metal-siding         /gallery-metal-siding.html         200
+/gallery-composite-sheet      /gallery-composite-sheet.html      200
+/gallery-sandwich-panel       /gallery-sandwich-panel.html       200
+/gallery-interior-exterior    /gallery-interior-exterior.html    200
+/gallery-real                /gallery-real.html                200
+/gallery-exterior            /gallery-exterior.html            200
+
+/inquiry                     /inquiry.html                     200

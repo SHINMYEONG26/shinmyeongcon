@@ -1,0 +1,28 @@
+/* Keep the support and contact sections side by side, as on desktop. */
+@media(max-width:760px){
+.reference-support{padding:34px 0}
+.support-inner{width:calc(100% - 28px);grid-template-columns:minmax(0,1.25fr) repeat(2,minmax(0,1fr));gap:10px}
+.support-inner>div{min-width:0}
+.support-inner>.support-list+.support-list,.support-inner>.support-customer{border-top:0;border-left:1px solid #eee;padding:0 0 0 10px}
+.support-inner h2{font-size:15px;letter-spacing:-.5px;line-height:1.5}
+.support-inner p{font-size:9px;line-height:1.7;margin:9px 0 16px;overflow-wrap:anywhere}
+.construction-links{gap:0 6px}
+.construction-links>a{font-size:9px;gap:2px;line-height:1.7;padding:9px 0;min-height:42px}
+.support-list>a{font-size:10px;gap:3px;min-height:42px;line-height:1.7;padding:9px 0}
+.support-phone{font-size:clamp(10px,2.9vw,19px);letter-spacing:-.3px;margin-top:14px;white-space:nowrap}
+.support-customer>div{display:flex;gap:5px;flex-wrap:wrap}
+.support-customer>div>a{font-size:9px;line-height:1.6;padding:7px 5px}
+.contact.section{width:calc(100% - 28px);padding:30px 0 42px;border-top:1px solid #eee}
+.contact>.eyebrow{font-size:8px;letter-spacing:1.5px}
+.contact .heading-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;margin-top:18px;align-items:start}
+.contact .heading-row>div{min-width:0}
+.contact h2{font-size:clamp(15px,4.4vw,25px);line-height:1.6;letter-spacing:-.7px;word-break:keep-all;overflow-wrap:anywhere}
+.contact .contact-info{width:100%;padding-top:12px}
+.contact .contact-info h3{font-size:13px;margin-bottom:13px}
+.contact-list>div{grid-template-columns:35px minmax(0,1fr);gap:5px;padding:9px 0;font-size:9px;line-height:1.8}
+.contact-list dd{overflow-wrap:anywhere}
+.contact-actions{margin-top:18px;gap:6px;display:flex;flex-wrap:wrap}
+.contact-actions .button{font-size:10px;min-height:40px;padding:9px 8px;gap:8px}
+}
+
+@media(max-width:760px){.contact-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.contact-actions .button{font-size:9px;padding:9px 4px;gap:4px;min-width:0}}
