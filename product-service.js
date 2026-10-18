@@ -1,14 +1,19 @@
 (() => {
   const photos=window.PhotoService,client=photos?.client,bucket='product-photos';
   const labels={real:'리얼징크',...(photos?.labels||{})};
-  // Reserved content field; no visible page element uses e9999.
-  const orderPage='index',orderField='e9999:text:0',orderTable='page_content_overrides';
+  // Reserved metadata keys are ignored by the visible content editor.
+  const orderKey='materials:product-order',orderTable='site_content_overrides';
+  const chunkKey=index=>orderKey+'-'+String.fromCharCode(97+index);
   const categoryRank=category=>['temba-zinc','real'].includes(category)?0:category==='color'?1:2;
   const validIds=ids=>Array.isArray(ids)&&ids.every(id=>typeof id==='string'&&/^[a-f0-9-]{36}$/i.test(id))&&new Set(ids).size===ids.length;
   async function savedOrder(){
-    try{const result=await client.from(orderTable).select('value').eq('page',orderPage).eq('field_key',orderField).maybeSingle();
+    try{const result=await client.from(orderTable).select('content_key,description').like('content_key',orderKey+'%');
       if(result.error||!result.data)return [];
-      const ids=JSON.parse(result.data.value);return validIds(ids)?ids:[];
+      const rows=new Map(result.data.map(row=>[row.content_key,row.description]));
+      const manifest=JSON.parse(rows.get(orderKey)||'null');
+      if(!manifest||manifest.version!==1||!Number.isInteger(manifest.chunks)||manifest.chunks<1||manifest.chunks>26)return [];
+      const ids=Array.from({length:manifest.chunks},(_,index)=>JSON.parse(rows.get(chunkKey(index))||'null')).flat();
+      return validIds(ids)&&ids.length===manifest.count?ids:[];
     }catch{return []}
   }
   const imageUrl=product=>{
@@ -45,11 +50,13 @@
       });
     },
     async saveOrder(ids){
-      const value=JSON.stringify(ids);
-      if(!validIds(ids)||!ids.length||value.length>4000)throw new Error('저장할 상품 순서를 확인해 주세요. 상품 수가 저장 한도를 넘으면 관리자에게 문의해 주세요.');
+      if(!validIds(ids)||!ids.length||ids.length>780)throw new Error('저장할 상품 순서를 확인해 주세요. 상품은 최대 780개까지 정렬할 수 있습니다.');
       const admin=await photos.requireAdmin();
-      const result=await client.from(orderTable).upsert({page:orderPage,field_key:orderField,kind:'text',value,image_path:null,alt_text:'상품 노출 순서',updated_by:admin.id},{onConflict:'page,field_key'}).select('field_key').single();
-      if(result.error||!result.data)throw new Error('노출 순서를 저장하지 못했습니다. 연결 상태와 관리자 권한을 확인한 뒤 다시 저장해 주세요.');
+      const chunks=[];for(let i=0;i<ids.length;i+=30)chunks.push(ids.slice(i,i+30));
+      const row=(key,description)=>({content_key:key,title:'상품 노출 순서',description,eyebrow:'',image_path:null,is_ai:false,show_text:false,updated_by:admin.id});
+      const values=[row(orderKey,JSON.stringify({version:1,chunks:chunks.length,count:ids.length})),...chunks.map((chunk,index)=>row(chunkKey(index),JSON.stringify(chunk)))];
+      const result=await client.from(orderTable).upsert(values,{onConflict:'content_key'}).select('content_key');
+      if(result.error||result.data?.length!==values.length){console.warn('상품 순서 저장 오류',result.error?.code,result.error?.message);throw new Error('노출 순서를 저장하지 못했습니다. 연결 상태와 관리자 권한을 확인한 뒤 다시 저장해 주세요.');}
     },
     async add(file,category,title,description,isAi,variants=[],unit='원/장'){
       const values=validate(category,title,description,variants,unit),admin=await photos.requireAdmin(),path=await upload(file);
