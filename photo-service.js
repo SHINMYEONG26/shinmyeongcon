@@ -6,8 +6,7 @@
   const labels = {
     color: '칼라강판',
     'temba-zinc': '템바/징크',
-    'zinc-accessories': '징크부자재',
-    'steel-accessories': '강판부자재',
+
     'gutter-materials': '물받이자재',
     'metal-siding': '메탈사이딩',
     'composite-sheet': '복합판넬/쉬트판넬',
@@ -69,7 +68,7 @@
   };
 
   const publicUrl = path => {
-    if (!/^(color|temba-zinc|zinc-accessories|steel-accessories|gutter-materials|metal-siding|composite-sheet|sandwich-panel|interior-exterior)\/[a-z0-9-]+\.(jpg|png|webp)$/.test(path || '')) {
+    if (!/^(color|temba-zinc|gutter-materials|metal-siding|composite-sheet|sandwich-panel|interior-exterior)\/[a-z0-9-]+\.(jpg|png|webp)$/.test(path || '')) {
       return null;
     }
     return client.storage.from(bucket).getPublicUrl(path).data.publicUrl;
