@@ -1,4 +1,4 @@
-// Original AI concepts and registered-option diagrams. No externally sourced product photos.
+// Original AI illustrations and original diagrams using manufacturer-published nominal dimensions.
 window.ProductDetailData = {
   "f8e0671a-b1a5-4a33-8c3f-ec7e57070175": {
     "headline": "징크의 세로선을 살린 칼라강판",
@@ -12,7 +12,31 @@ window.ProductDetailData = {
       "assets/product-ai/zinc-profile.jpg",
       "assets/product-ai/zinc-profile-detail.jpg"
     ],
-    "specImage": "assets/product-specs/zinc-profile.svg"
+    "specImage": "assets/product-specs/zinc-profile.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "820 mm"
+      ],
+      [
+        "유효폭",
+        "750 mm"
+      ],
+      [
+        "골 간격",
+        "250 mm"
+      ],
+      [
+        "골 높이",
+        "22 mm"
+      ],
+      [
+        "강판 두께",
+        "0.45T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=126&cate_no=54&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "a6a47cf5-d17d-4d44-ae34-ba1ab276ebbe": {
     "headline": "옥상과 베란다 가장자리의 외장 마감",
@@ -26,7 +50,31 @@ window.ProductDetailData = {
       "assets/product-ai/parapet.jpg",
       "assets/product-ai/parapet-detail.jpg"
     ],
-    "specImage": "assets/product-specs/parapet.svg"
+    "specImage": "assets/product-specs/parapet.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "880 mm"
+      ],
+      [
+        "유효폭",
+        "820 mm"
+      ],
+      [
+        "골 간격",
+        "140 mm"
+      ],
+      [
+        "골 높이",
+        "7 mm"
+      ],
+      [
+        "강판 두께",
+        "0.45T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=92&cate_no=54&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "66445bd7-ffdc-483e-a6eb-b72e88f26c85": {
     "headline": "곡선형 골로 이어지는 지붕 마감",
@@ -40,7 +88,35 @@ window.ProductDetailData = {
       "assets/product-ai/s-corrugated.jpg",
       "assets/product-ai/s-corrugated-detail.jpg"
     ],
-    "specImage": "assets/product-specs/s-corrugated.svg"
+    "specImage": "assets/product-specs/s-corrugated.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "800 mm"
+      ],
+      [
+        "유효폭 · 1골 겹침",
+        "730 mm"
+      ],
+      [
+        "유효폭 · 2골 겹침",
+        "680 mm"
+      ],
+      [
+        "골 간격",
+        "52 mm"
+      ],
+      [
+        "골 높이",
+        "14 mm"
+      ],
+      [
+        "강판 두께",
+        "0.45T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=12&cate_no=54&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "ca51a341-1150-4d8e-b7ce-1f323f753ef7": {
     "headline": "전통 기와의 곡선을 담은 지붕 마감",
@@ -54,7 +130,31 @@ window.ProductDetailData = {
       "assets/product-ai/traditional-tile.jpg",
       "assets/product-ai/traditional-tile-detail.jpg"
     ],
-    "specImage": "assets/product-specs/traditional-tile.svg"
+    "specImage": "assets/product-specs/traditional-tile.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "820 mm"
+      ],
+      [
+        "유효폭",
+        "700 mm"
+      ],
+      [
+        "골 간격",
+        "235 mm"
+      ],
+      [
+        "골 높이",
+        "40 mm"
+      ],
+      [
+        "강판 두께",
+        "0.45T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=127&cate_no=54&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "addacf41-9197-42c2-8172-64e8312c4baa": {
     "headline": "차분한 기와형 패턴의 칼라강판",
@@ -68,7 +168,31 @@ window.ProductDetailData = {
       "assets/product-ai/flat-tile.jpg",
       "assets/product-ai/flat-tile-detail.jpg"
     ],
-    "specImage": "assets/product-specs/flat-tile.svg"
+    "specImage": "assets/product-specs/flat-tile.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "820 mm"
+      ],
+      [
+        "유효폭",
+        "700 mm"
+      ],
+      [
+        "골 간격",
+        "235 mm"
+      ],
+      [
+        "골 높이",
+        "33 mm"
+      ],
+      [
+        "강판 두께",
+        "0.45T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=128&cate_no=54&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "9483d7f7-28ae-44be-9a29-be4f417069ae": {
     "headline": "반복되는 선이 만드는 루버강판 외벽",
@@ -82,7 +206,35 @@ window.ProductDetailData = {
       "assets/product-ai/louver-40.jpg",
       "assets/product-ai/louver-40-detail.jpg"
     ],
-    "specImage": "assets/product-specs/louver-40.svg"
+    "specImage": "assets/product-specs/louver-40.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "335 mm"
+      ],
+      [
+        "유효폭",
+        "296 mm"
+      ],
+      [
+        "골 상부폭",
+        "40 / 40 / 40 / 40 mm"
+      ],
+      [
+        "골 사이 간격",
+        "34 mm"
+      ],
+      [
+        "골 높이",
+        "20 mm"
+      ],
+      [
+        "강판 두께",
+        "0.5T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=133&cate_no=55&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "2c3bc69a-757a-4bfa-923f-17715993f540": {
     "headline": "패널의 연결 방식까지 고려하는 외장재",
@@ -96,7 +248,27 @@ window.ProductDetailData = {
       "assets/product-ai/interlock-zinc.jpg",
       "assets/product-ai/interlock-zinc-detail.jpg"
     ],
-    "specImage": "assets/product-specs/interlock-zinc.svg"
+    "specImage": "assets/product-specs/interlock-zinc.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "410 mm"
+      ],
+      [
+        "유효폭",
+        "370 mm"
+      ],
+      [
+        "골 높이",
+        "25 mm"
+      ],
+      [
+        "강판 두께",
+        "0.5T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=18&cate_no=55&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "8ce96d67-8f6d-4d38-9319-5ffa3a00dcdd": {
     "headline": "선과 면을 살린 징크형 외장 마감",
@@ -110,7 +282,27 @@ window.ProductDetailData = {
       "assets/product-ai/real-zinc.jpg",
       "assets/product-ai/real-zinc-detail.jpg"
     ],
-    "specImage": "assets/product-specs/real-zinc.svg"
+    "specImage": "assets/product-specs/real-zinc.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "455 mm"
+      ],
+      [
+        "유효폭",
+        "440~445 mm"
+      ],
+      [
+        "골 높이",
+        "25 mm"
+      ],
+      [
+        "강판 두께",
+        "0.5T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=16&cate_no=55&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "e3593177-8603-4220-bcc7-119810a3da29": {
     "headline": "열반사층을 결합한 리얼징크 제품",
@@ -124,7 +316,27 @@ window.ProductDetailData = {
       "assets/product-ai/thermal-real-zinc.jpg",
       "assets/product-ai/thermal-real-zinc-detail.jpg"
     ],
-    "specImage": "assets/product-specs/thermal-real-zinc.svg"
+    "specImage": "assets/product-specs/thermal-real-zinc.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "455 mm"
+      ],
+      [
+        "유효폭",
+        "440~445 mm"
+      ],
+      [
+        "골 높이",
+        "25 mm"
+      ],
+      [
+        "열반사 제품 표기 두께",
+        "3T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=125&cate_no=55&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "0f6340b3-6159-4d7b-8016-67c7e2860dc3": {
     "headline": "기존 지붕 보수에 검토하는 덧방 자재",
@@ -138,7 +350,35 @@ window.ProductDetailData = {
       "assets/product-ai/roof-overlay.jpg",
       "assets/product-ai/roof-overlay-detail.jpg"
     ],
-    "specImage": "assets/product-specs/roof-overlay.svg"
+    "specImage": "assets/product-specs/roof-overlay.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "V115 · 전체폭 / 유효폭",
+        "950 / 920 mm"
+      ],
+      [
+        "V115 · 골 간격 / 높이",
+        "115 / 35 mm"
+      ],
+      [
+        "V250 · 전체폭 / 유효폭",
+        "1,060 / 990 mm"
+      ],
+      [
+        "V250 · 골 간격 / 높이",
+        "250 / 37 mm"
+      ],
+      [
+        "V330 · 전체폭 / 유효폭",
+        "1,100 / 1,000 mm"
+      ],
+      [
+        "V330 · 골 간격 / 높이",
+        "330 / 35 mm"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=93&cate_no=54&display_group=1",
+    "specTolerance": ""
   },
   "f0ce932e-9a33-4ad9-8ead-27a087b7d502": {
     "headline": "열반사층과 인터락 형상의 조합",
@@ -152,7 +392,27 @@ window.ProductDetailData = {
       "assets/product-ai/thermal-interlock.jpg",
       "assets/product-ai/thermal-interlock-detail.jpg"
     ],
-    "specImage": "assets/product-specs/thermal-interlock.svg"
+    "specImage": "assets/product-specs/thermal-interlock.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "410 mm"
+      ],
+      [
+        "유효폭",
+        "370 mm"
+      ],
+      [
+        "골 높이",
+        "25 mm"
+      ],
+      [
+        "열반사 제품 표기 두께",
+        "3T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=132&cate_no=55&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "a60962ea-3bc7-47b8-a59d-f846dda293af": {
     "headline": "사각 모듈의 반복으로 만드는 외장 패턴",
@@ -166,7 +426,27 @@ window.ProductDetailData = {
       "assets/product-ai/square-seam.jpg",
       "assets/product-ai/square-seam-detail.jpg"
     ],
-    "specImage": "assets/product-specs/square-seam.svg"
+    "specImage": "assets/product-specs/square-seam.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "형태",
+        "정사각형"
+      ],
+      [
+        "전체폭",
+        "470 mm"
+      ],
+      [
+        "유효폭",
+        "450 mm"
+      ],
+      [
+        "끼워지는 부분",
+        "20 mm"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=123&cate_no=55&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "06e2cb65-cc9a-4918-abcd-65396e94a9e3": {
     "headline": "골의 변화로 입체감을 더하는 루버강판",
@@ -180,7 +460,35 @@ window.ProductDetailData = {
       "assets/product-ai/louver-beat.jpg",
       "assets/product-ai/louver-beat-detail.jpg"
     ],
-    "specImage": "assets/product-specs/louver-beat.svg"
+    "specImage": "assets/product-specs/louver-beat.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "전체폭",
+        "350 mm"
+      ],
+      [
+        "유효폭",
+        "285 mm"
+      ],
+      [
+        "골 상부폭",
+        "70 / 30 / 30 / 50 mm"
+      ],
+      [
+        "골 사이 간격",
+        "25 mm"
+      ],
+      [
+        "골 높이",
+        "20 mm"
+      ],
+      [
+        "강판 두께",
+        "0.5T"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=103&cate_no=55&display_group=1",
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
   },
   "ca7c4dc4-8003-4d87-b974-50420a00a831": {
     "headline": "긴 벽돌 패턴의 메탈사이딩",
@@ -194,7 +502,39 @@ window.ProductDetailData = {
       "assets/product-ai/long-brick.jpg",
       "assets/product-ai/long-brick-detail.jpg"
     ],
-    "specImage": "assets/product-specs/long-brick.svg"
+    "specImage": "assets/product-specs/long-brick.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "길이",
+        "3,000 mm"
+      ],
+      [
+        "시공폭 (B)",
+        "380 mm"
+      ],
+      [
+        "전체폭 (C)",
+        "411 mm"
+      ],
+      [
+        "패널 두께",
+        "16 mm"
+      ],
+      [
+        "포장 수량",
+        "8장 / BOX"
+      ],
+      [
+        "시공 면적",
+        "1.14 ㎡ / 장"
+      ],
+      [
+        "제품 무게",
+        "약 4.1 kg / 장"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=84&cate_no=99&display_group=1",
+    "specTolerance": ""
   },
   "1ba6996e-10bb-4296-bcad-0860a149d320": {
     "headline": "석재 느낌을 담은 메탈사이딩",
@@ -208,7 +548,39 @@ window.ProductDetailData = {
       "assets/product-ai/natural-stone.jpg",
       "assets/product-ai/natural-stone-detail.jpg"
     ],
-    "specImage": "assets/product-specs/natural-stone.svg"
+    "specImage": "assets/product-specs/natural-stone.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "길이",
+        "3,000 mm"
+      ],
+      [
+        "시공폭 (B)",
+        "380 mm"
+      ],
+      [
+        "전체폭 (C)",
+        "411 mm"
+      ],
+      [
+        "패널 두께",
+        "16 mm"
+      ],
+      [
+        "포장 수량",
+        "8장 / BOX"
+      ],
+      [
+        "시공 면적",
+        "1.14 ㎡ / 장"
+      ],
+      [
+        "제품 무게",
+        "약 4.1 kg / 장"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=85&cate_no=99&display_group=1",
+    "specTolerance": ""
   },
   "f111f9cb-8e49-4937-90bd-890afb2bfa27": {
     "headline": "입면 디자인을 위한 아리에따 사이딩",
@@ -222,7 +594,39 @@ window.ProductDetailData = {
       "assets/product-ai/arrieta.jpg",
       "assets/product-ai/arrieta-detail.jpg"
     ],
-    "specImage": "assets/product-specs/arrieta.svg"
+    "specImage": "assets/product-specs/arrieta.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "길이",
+        "3,000 mm"
+      ],
+      [
+        "시공폭 (B)",
+        "380 mm"
+      ],
+      [
+        "전체폭 (C)",
+        "411 mm"
+      ],
+      [
+        "패널 두께",
+        "16 mm"
+      ],
+      [
+        "포장 수량",
+        "8장 / BOX"
+      ],
+      [
+        "시공 면적",
+        "1.14 ㎡ / 장"
+      ],
+      [
+        "제품 무게",
+        "약 4.1 kg / 장"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=86&cate_no=99&display_group=1",
+    "specTolerance": ""
   },
   "1c378ff0-702b-42bf-9c03-327589ced263": {
     "headline": "메탈사이딩의 시작과 연결을 완성하는 부자재",
@@ -236,6 +640,26 @@ window.ProductDetailData = {
       "assets/product-ai/siding-trims.jpg",
       "assets/product-ai/siding-trims-detail.jpg"
     ],
-    "specImage": "assets/product-specs/siding-trims.svg"
+    "specImage": "assets/product-specs/siding-trims.svg?v=hn-spec-v4",
+    "manufacturerSpecs": [
+      [
+        "스타터 길이",
+        "3,000 mm"
+      ],
+      [
+        "결합형 조이너 길이",
+        "3,000 mm"
+      ],
+      [
+        "J찬넬 길이",
+        "3,000 mm"
+      ],
+      [
+        "아웃코너 길이",
+        "3,000 mm"
+      ]
+    ],
+    "specSource": "https://hnmt.co.kr/product/detail.html?product_no=88&cate_no=99&display_group=1",
+    "specTolerance": ""
   }
 };

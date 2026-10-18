@@ -4,7 +4,7 @@
   const detail=window.ProductDetailData?.[product.id];
   const values=key=>[...new Set(variants.map(v=>v[key]).filter(Boolean))];
   const thickness=values('thickness');if(!thickness.length){const value=product.title.match(/\b\d+(?:\.\d+)?T\b/i)?.[0];if(value)thickness.push(value);}
-  return {detail,label,rows:[['상품명',product.title],['자재 분류',label],['두께',thickness.join(' · ')||'선택 옵션 및 상담으로 확인'],['길이',values('length').join(' · ')||'선택 옵션 및 상담으로 확인'],['색상·종류',values('color').join(' · ')||'선택 옵션 및 상담으로 확인'],['판매 단위',ProductOptions.units.includes(product.price_unit)?product.price_unit.split('/')[1]:'장']],colors:values('color')};
+  return {detail,label,rows:[['상품명',product.title],['자재 분류',label],...(detail?.manufacturerSpecs||[]),['두께',thickness.join(' · ')||'선택 옵션 및 상담으로 확인'],[values('length').some(v=>String(v).startsWith('종류:'))?'등록 종류':'판매 길이 옵션',values('length').join(' · ')||'선택 옵션 및 상담으로 확인'],['색상·종류',values('color').join(' · ')||'선택 옵션 및 상담으로 확인'],['판매 단위',ProductOptions.units.includes(product.price_unit)?product.price_unit.split('/')[1]:'장']],colors:values('color')};
  }
  function mount(container,product,variants,label){
   const model=buildModel(product,variants,label),detail=model.detail;container.replaceChildren();
@@ -16,10 +16,11 @@
   if(detail?.features){const list=el('ul','detail-feature-list');for(const text of detail.features)list.append(el('li','',text));overview.append(list);}
   const banner=el('div','detail-consult-banner');banner.append(el('strong','','자재 납품부터 직영 시공까지'),el('p','','신명건설이 필요한 자재와 현장 조건을 함께 살펴봅니다. 규격·수량·현장 위치를 알려주시면 납품과 시공을 상담해 드립니다.'));overview.append(banner);
   const specs=section('product-specifications','SPECIFICATION','선택 가능한 규격과 색상');
-  if(detail?.specImage){const figure=el('figure','detail-size-figure'),link=el('a');link.href=detail.specImage;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',product.title+' 규격 안내도 크게 보기');const image=el('img');image.src=detail.specImage;image.alt=product.title+' 등록 규격 안내도';image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','','등록 옵션 기준 안내도 · 실제 측정 도면이 아닙니다'));specs.append(figure);}
+  if(detail?.specImage){const figure=el('figure','detail-size-figure'),link=el('a');link.href=detail.specImage;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',product.title+' 규격 안내도 크게 보기');const image=el('img');image.src=detail.specImage;image.alt=product.title+' 제조사 공개 규격 기준 안내도';image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','','제조사 공개 규격 기준 · 직접 제작한 개념도 · 비례 아님'));specs.append(figure);}
   const table=el('table','detail-spec-table');const caption=el('caption','',product.title+' 등록 규격 안내');table.append(caption);const tbody=el('tbody');
   for(const [name,value] of model.rows){const row=el('tr'),th=el('th','',name);th.scope='row';row.append(th,el('td','',value));tbody.append(row);}table.append(tbody);specs.append(table);
-  specs.append(el('p','detail-caption','위 내용은 현재 등록된 판매 옵션을 기준으로 안내합니다. 색상·두께·길이 조합별 가격은 상단 옵션에서 확인해 주세요. 화면의 색상은 실제 자재와 차이가 있을 수 있어 발주 전 샘플 확인을 권합니다.'));
+  if(detail?.specSource){const note=el('p','detail-caption','치수는 제조사 공개 규격 기준입니다. '+(detail.specTolerance?detail.specTolerance+'. ':'')+'발주 전 실제 공급 모델과 제작 규격을 확인해 주세요. '),link=el('a','','규격 출처: HN METALLIC ↗');link.href=detail.specSource;link.target='_blank';link.rel='noopener noreferrer';note.append(link);specs.append(note);}
+  specs.append(el('p','detail-caption','판매 옵션은 현재 등록된 내용을 기준으로 안내합니다. 색상·두께·길이 조합별 가격은 상단 옵션에서 확인해 주세요. 화면의 색상은 실제 자재와 차이가 있을 수 있어 발주 전 샘플 확인을 권합니다.'));
   const visuals=section('product-visuals','PRODUCT IMAGES','제품 이미지와 적용 예시');
   visuals.append(el('p','detail-caption','아래 이미지는 신명건설용으로 제작한 AI 생성 예시입니다. 실제 제품 사진이나 시공사진이 아니며, 제품의 형상·색상·구성과 차이가 있을 수 있습니다. 실제 규격과 색상은 상단 판매 옵션 및 상담을 통해 확인해 주세요.'));
   const stack=el('div','detail-image-stack');visuals.append(stack);if(!detail?.images?.length)stack.append(el('p','detail-caption','신명건설 전용 제품 예시 이미지를 준비하고 있습니다.'));
@@ -40,3 +41,4 @@
  }
  window.ProductDetailContent={buildModel,mount};
 })();
+
