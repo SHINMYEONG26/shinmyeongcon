@@ -16,6 +16,7 @@
   if(detail?.features){const list=el('ul','detail-feature-list');for(const text of detail.features)list.append(el('li','',text));overview.append(list);}
   const banner=el('div','detail-consult-banner');banner.append(el('strong','','자재 납품부터 직영 시공까지'),el('p','','신명건설이 필요한 자재와 현장 조건을 함께 살펴봅니다. 규격·수량·현장 위치를 알려주시면 납품과 시공을 상담해 드립니다.'));overview.append(banner);
   const specs=section('product-specifications','SPECIFICATION','선택 가능한 규격과 색상');
+  if(detail?.specImage){const figure=el('figure','detail-size-figure'),link=el('a');link.href=detail.specImage;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',product.title+' 규격 안내도 크게 보기');const image=el('img');image.src=detail.specImage;image.alt=product.title+' 등록 규격 안내도';image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','','등록 옵션 기준 안내도 · 실제 측정 도면이 아닙니다'));specs.append(figure);}
   const table=el('table','detail-spec-table');const caption=el('caption','',product.title+' 등록 규격 안내');table.append(caption);const tbody=el('tbody');
   for(const [name,value] of model.rows){const row=el('tr'),th=el('th','',name);th.scope='row';row.append(th,el('td','',value));tbody.append(row);}table.append(tbody);specs.append(table);
   specs.append(el('p','detail-caption','위 내용은 현재 등록된 판매 옵션을 기준으로 안내합니다. 색상·두께·길이 조합별 가격은 상단 옵션에서 확인해 주세요. 화면의 색상은 실제 자재와 차이가 있을 수 있어 발주 전 샘플 확인을 권합니다.'));

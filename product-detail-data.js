@@ -1,4 +1,4 @@
-// Original AI-generated concept images for the Shinmyeong catalog.
+// Original AI concepts and registered-option diagrams. No externally sourced product photos.
 window.ProductDetailData = {
   "f8e0671a-b1a5-4a33-8c3f-ec7e57070175": {
     "headline": "징크의 세로선을 살린 칼라강판",
@@ -9,8 +9,10 @@ window.ProductDetailData = {
       "색상·길이별 옵션 선택"
     ],
     "images": [
-      "assets/product-ai/zinc-profile.jpg"
-    ]
+      "assets/product-ai/zinc-profile.jpg",
+      "assets/product-ai/zinc-profile-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/zinc-profile.svg"
   },
   "a6a47cf5-d17d-4d44-ae34-ba1ab276ebbe": {
     "headline": "옥상과 베란다 가장자리의 외장 마감",
@@ -21,8 +23,10 @@ window.ProductDetailData = {
       "현장 치수와 길이 확인"
     ],
     "images": [
-      "assets/product-ai/parapet.jpg"
-    ]
+      "assets/product-ai/parapet.jpg",
+      "assets/product-ai/parapet-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/parapet.svg"
   },
   "66445bd7-ffdc-483e-a6eb-b72e88f26c85": {
     "headline": "곡선형 골로 이어지는 지붕 마감",
@@ -33,8 +37,10 @@ window.ProductDetailData = {
       "지붕 상태에 맞춘 자재 상담"
     ],
     "images": [
-      "assets/product-ai/s-corrugated.jpg"
-    ]
+      "assets/product-ai/s-corrugated.jpg",
+      "assets/product-ai/s-corrugated-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/s-corrugated.svg"
   },
   "ca51a341-1150-4d8e-b7ce-1f323f753ef7": {
     "headline": "전통 기와의 곡선을 담은 지붕 마감",
@@ -45,8 +51,10 @@ window.ProductDetailData = {
       "용마루·처마·측면 마감 상담"
     ],
     "images": [
-      "assets/product-ai/traditional-tile.jpg"
-    ]
+      "assets/product-ai/traditional-tile.jpg",
+      "assets/product-ai/traditional-tile-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/traditional-tile.svg"
   },
   "addacf41-9197-42c2-8172-64e8312c4baa": {
     "headline": "차분한 기와형 패턴의 칼라강판",
@@ -57,8 +65,10 @@ window.ProductDetailData = {
       "지붕 면적과 마감 범위 상담"
     ],
     "images": [
-      "assets/product-ai/flat-tile.jpg"
-    ]
+      "assets/product-ai/flat-tile.jpg",
+      "assets/product-ai/flat-tile-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/flat-tile.svg"
   },
   "9483d7f7-28ae-44be-9a29-be4f417069ae": {
     "headline": "반복되는 선이 만드는 루버강판 외벽",
@@ -69,8 +79,10 @@ window.ProductDetailData = {
       "창호·모서리 마감 확인"
     ],
     "images": [
-      "assets/product-ai/louver-40.jpg"
-    ]
+      "assets/product-ai/louver-40.jpg",
+      "assets/product-ai/louver-40-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/louver-40.svg"
   },
   "2c3bc69a-757a-4bfa-923f-17715993f540": {
     "headline": "패널의 연결 방식까지 고려하는 외장재",
@@ -81,8 +93,10 @@ window.ProductDetailData = {
       "색상과 길이 선택"
     ],
     "images": [
-      "assets/product-ai/interlock-zinc.jpg"
-    ]
+      "assets/product-ai/interlock-zinc.jpg",
+      "assets/product-ai/interlock-zinc-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/interlock-zinc.svg"
   },
   "8ce96d67-8f6d-4d38-9319-5ffa3a00dcdd": {
     "headline": "선과 면을 살린 징크형 외장 마감",
@@ -93,8 +107,10 @@ window.ProductDetailData = {
       "접합·모서리 마감 검토"
     ],
     "images": [
-      "assets/product-ai/real-zinc.jpg"
-    ]
+      "assets/product-ai/real-zinc.jpg",
+      "assets/product-ai/real-zinc-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/real-zinc.svg"
   },
   "e3593177-8603-4220-bcc7-119810a3da29": {
     "headline": "열반사층을 결합한 리얼징크 제품",
@@ -105,8 +121,10 @@ window.ProductDetailData = {
       "현장 구성에 따른 적용 검토"
     ],
     "images": [
-      "assets/product-ai/thermal-real-zinc.jpg"
-    ]
+      "assets/product-ai/thermal-real-zinc.jpg",
+      "assets/product-ai/thermal-real-zinc-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/thermal-real-zinc.svg"
   },
   "0f6340b3-6159-4d7b-8016-67c7e2860dc3": {
     "headline": "기존 지붕 보수에 검토하는 덧방 자재",
@@ -117,8 +135,10 @@ window.ProductDetailData = {
       "고정·접합 부위 상담"
     ],
     "images": [
-      "assets/product-ai/roof-overlay.jpg"
-    ]
+      "assets/product-ai/roof-overlay.jpg",
+      "assets/product-ai/roof-overlay-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/roof-overlay.svg"
   },
   "f0ce932e-9a33-4ad9-8ead-27a087b7d502": {
     "headline": "열반사층과 인터락 형상의 조합",
@@ -129,8 +149,10 @@ window.ProductDetailData = {
       "두께·색상 옵션 확인"
     ],
     "images": [
-      "assets/product-ai/thermal-interlock.jpg"
-    ]
+      "assets/product-ai/thermal-interlock.jpg",
+      "assets/product-ai/thermal-interlock-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/thermal-interlock.svg"
   },
   "a60962ea-3bc7-47b8-a59d-f846dda293af": {
     "headline": "사각 모듈의 반복으로 만드는 외장 패턴",
@@ -141,8 +163,10 @@ window.ProductDetailData = {
       "모서리·개구부 마감 상담"
     ],
     "images": [
-      "assets/product-ai/square-seam.jpg"
-    ]
+      "assets/product-ai/square-seam.jpg",
+      "assets/product-ai/square-seam-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/square-seam.svg"
   },
   "06e2cb65-cc9a-4918-abcd-65396e94a9e3": {
     "headline": "골의 변화로 입체감을 더하는 루버강판",
@@ -153,8 +177,10 @@ window.ProductDetailData = {
       "단면·유효폭 자료 확인"
     ],
     "images": [
-      "assets/product-ai/louver-beat.jpg"
-    ]
+      "assets/product-ai/louver-beat.jpg",
+      "assets/product-ai/louver-beat-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/louver-beat.svg"
   },
   "ca7c4dc4-8003-4d87-b974-50420a00a831": {
     "headline": "긴 벽돌 패턴의 메탈사이딩",
@@ -165,8 +191,10 @@ window.ProductDetailData = {
       "색상·모서리 부자재 확인"
     ],
     "images": [
-      "assets/product-ai/long-brick.jpg"
-    ]
+      "assets/product-ai/long-brick.jpg",
+      "assets/product-ai/long-brick-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/long-brick.svg"
   },
   "1ba6996e-10bb-4296-bcad-0860a149d320": {
     "headline": "석재 느낌을 담은 메탈사이딩",
@@ -177,8 +205,10 @@ window.ProductDetailData = {
       "패턴 연결과 수량 상담"
     ],
     "images": [
-      "assets/product-ai/natural-stone.jpg"
-    ]
+      "assets/product-ai/natural-stone.jpg",
+      "assets/product-ai/natural-stone-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/natural-stone.svg"
   },
   "f111f9cb-8e49-4937-90bd-890afb2bfa27": {
     "headline": "입면 디자인을 위한 아리에따 사이딩",
@@ -189,8 +219,10 @@ window.ProductDetailData = {
       "색상·마감 범위 상담"
     ],
     "images": [
-      "assets/product-ai/arrieta.jpg"
-    ]
+      "assets/product-ai/arrieta.jpg",
+      "assets/product-ai/arrieta-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/arrieta.svg"
   },
   "1c378ff0-702b-42bf-9c03-327589ced263": {
     "headline": "메탈사이딩의 시작과 연결을 완성하는 부자재",
@@ -201,7 +233,9 @@ window.ProductDetailData = {
       "적용 위치별 종류 선택"
     ],
     "images": [
-      "assets/product-ai/siding-trims.jpg"
-    ]
+      "assets/product-ai/siding-trims.jpg",
+      "assets/product-ai/siding-trims-detail.jpg"
+    ],
+    "specImage": "assets/product-specs/siding-trims.svg"
   }
 };

@@ -41,3 +41,7 @@
 .detail-order-steps{grid-template-columns:1fr;gap:20px}.detail-order-steps h3{font-size:17px}
 .detail-guide-actions{flex-direction:column}.detail-guide-actions a{width:100%}
 }
+
+/* Product-specific registered size and option diagrams. */
+.detail-size-figure{max-width:1100px;margin:24px auto 32px}.detail-size-figure>a{display:block}.detail-size-figure img{display:block;width:100%;height:auto;border:1px solid #e1e8ed;background:#fff}.detail-size-figure figcaption{font-size:11px;line-height:1.8;color:#7a8790;text-align:center;margin-top:10px}
+.detail-reference-figure+.detail-reference-figure{margin-top:28px}
