@@ -15,8 +15,35 @@
     'interior-exterior': '내·외부인테리어'
   };
 
+  // Keep the login only in this tab, including navigation and refreshes.
+  // Never recover the old persistent login after the tab has been closed.
+  const authOptions = () => {
+    const project = new URL(config.url).hostname.split('.')[0];
+    const legacyKey = `sb-${project}-auth-token`;
+    try {
+      [legacyKey, `${legacyKey}-code-verifier`, `${legacyKey}-user`]
+        .forEach(key => window.localStorage.removeItem(key));
+    } catch (_) { /* Storage can be disabled by the browser. */ }
+
+    const memory = new Map();
+    let storage = {
+      getItem: key => memory.get(key) ?? null,
+      setItem: (key, value) => memory.set(key, value),
+      removeItem: key => memory.delete(key)
+    };
+    let tabId = window.crypto.randomUUID();
+    try {
+      const tabKey = `shinmyeong-${project}-admin-tab`;
+      const session = window.sessionStorage;
+      tabId = session.getItem(tabKey) || tabId;
+      session.setItem(tabKey, tabId);
+      storage = session;
+    } catch (_) { /* Use memory only; do not fall back to persistent storage. */ }
+    return { storage, storageKey: `${legacyKey}-tab-${tabId}`, persistSession: true };
+  };
+
   const client = configured && window.supabase
-    ? window.supabase.createClient(config.url, config.publishableKey)
+    ? window.supabase.createClient(config.url, config.publishableKey, { auth: authOptions() })
     : null;
 
   const bucket = 'construction-photos';
