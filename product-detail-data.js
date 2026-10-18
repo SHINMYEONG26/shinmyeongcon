@@ -1,4 +1,4 @@
-// Original AI illustrations and original diagrams using manufacturer-published nominal dimensions.
+// Original AI visualizations; manufacturer-published nominal dimensions.
 window.ProductDetailData = {
   "f8e0671a-b1a5-4a33-8c3f-ec7e57070175": {
     "headline": "징크의 세로선을 살린 칼라강판",
@@ -36,7 +36,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=126&cate_no=54&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/zinc-profile.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/zinc-profile-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/zinc-profile-installed.webp?v=20261019-v1"
   },
   "a6a47cf5-d17d-4d44-ae34-ba1ab276ebbe": {
     "headline": "옥상과 베란다 가장자리의 외장 마감",
@@ -74,7 +77,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=92&cate_no=54&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/parapet.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/parapet-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/parapet-installed.webp?v=20261019-v1"
   },
   "66445bd7-ffdc-483e-a6eb-b72e88f26c85": {
     "headline": "곡선형 골로 이어지는 지붕 마감",
@@ -116,7 +122,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=12&cate_no=54&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/s-corrugated.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/s-corrugated-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/s-corrugated-installed.webp?v=20261019-v1"
   },
   "ca51a341-1150-4d8e-b7ce-1f323f753ef7": {
     "headline": "전통 기와의 곡선을 담은 지붕 마감",
@@ -154,7 +163,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=127&cate_no=54&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/traditional-tile.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/traditional-tile-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/traditional-tile-installed.webp?v=20261019-v1"
   },
   "addacf41-9197-42c2-8172-64e8312c4baa": {
     "headline": "차분한 기와형 패턴의 칼라강판",
@@ -192,7 +204,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=128&cate_no=54&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/flat-tile.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/flat-tile-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/flat-tile-installed.webp?v=20261019-v1"
   },
   "9483d7f7-28ae-44be-9a29-be4f417069ae": {
     "headline": "반복되는 선이 만드는 루버강판 외벽",
@@ -234,7 +249,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=133&cate_no=55&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/louver-40.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/louver-40-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/louver-40-installed.webp?v=20261019-v1"
   },
   "2c3bc69a-757a-4bfa-923f-17715993f540": {
     "headline": "패널의 연결 방식까지 고려하는 외장재",
@@ -268,7 +286,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=18&cate_no=55&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/interlock-zinc.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/interlock-zinc-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/interlock-zinc-installed.webp?v=20261019-v1"
   },
   "8ce96d67-8f6d-4d38-9319-5ffa3a00dcdd": {
     "headline": "선과 면을 살린 징크형 외장 마감",
@@ -302,7 +323,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=16&cate_no=55&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/real-zinc.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/real-zinc-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/real-zinc-installed.webp?v=20261019-v1"
   },
   "e3593177-8603-4220-bcc7-119810a3da29": {
     "headline": "열반사층을 결합한 리얼징크 제품",
@@ -336,7 +360,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=125&cate_no=55&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/thermal-real-zinc.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/thermal-real-zinc-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/thermal-real-zinc-installed.webp?v=20261019-v1"
   },
   "0f6340b3-6159-4d7b-8016-67c7e2860dc3": {
     "headline": "기존 지붕 보수에 검토하는 덧방 자재",
@@ -378,7 +405,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=93&cate_no=54&display_group=1",
-    "specTolerance": ""
+    "specTolerance": "",
+    "dimensionImage": "assets/product-dimensions/roof-overlay.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/roof-overlay-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/roof-overlay-installed.webp?v=20261019-v1"
   },
   "f0ce932e-9a33-4ad9-8ead-27a087b7d502": {
     "headline": "열반사층과 인터락 형상의 조합",
@@ -412,7 +442,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=132&cate_no=55&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/thermal-interlock.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/thermal-interlock-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/thermal-interlock-installed.webp?v=20261019-v1"
   },
   "a60962ea-3bc7-47b8-a59d-f846dda293af": {
     "headline": "사각 모듈의 반복으로 만드는 외장 패턴",
@@ -446,7 +479,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=123&cate_no=55&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/square-seam.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/square-seam-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/square-seam-installed.webp?v=20261019-v1"
   },
   "06e2cb65-cc9a-4918-abcd-65396e94a9e3": {
     "headline": "골의 변화로 입체감을 더하는 루버강판",
@@ -488,7 +524,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=103&cate_no=55&display_group=1",
-    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm"
+    "specTolerance": "제조사 자료 표기 오차 범위 ±10 mm",
+    "dimensionImage": "assets/product-dimensions/louver-beat.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/louver-beat-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/louver-beat-installed.webp?v=20261019-v1"
   },
   "ca7c4dc4-8003-4d87-b974-50420a00a831": {
     "headline": "긴 벽돌 패턴의 메탈사이딩",
@@ -534,7 +573,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=84&cate_no=99&display_group=1",
-    "specTolerance": ""
+    "specTolerance": "",
+    "dimensionImage": "assets/product-dimensions/long-brick.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/long-brick-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/long-brick-installed.webp?v=20261019-v1"
   },
   "1ba6996e-10bb-4296-bcad-0860a149d320": {
     "headline": "석재 느낌을 담은 메탈사이딩",
@@ -580,7 +622,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=85&cate_no=99&display_group=1",
-    "specTolerance": ""
+    "specTolerance": "",
+    "dimensionImage": "assets/product-dimensions/natural-stone.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/natural-stone-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/natural-stone-installed.webp?v=20261019-v1"
   },
   "f111f9cb-8e49-4937-90bd-890afb2bfa27": {
     "headline": "입면 디자인을 위한 아리에따 사이딩",
@@ -626,7 +671,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=86&cate_no=99&display_group=1",
-    "specTolerance": ""
+    "specTolerance": "",
+    "dimensionImage": "assets/product-dimensions/arrieta.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/arrieta-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/arrieta-installed.webp?v=20261019-v1"
   },
   "1c378ff0-702b-42bf-9c03-327589ced263": {
     "headline": "메탈사이딩의 시작과 연결을 완성하는 부자재",
@@ -660,6 +708,10 @@ window.ProductDetailData = {
       ]
     ],
     "specSource": "https://hnmt.co.kr/product/detail.html?product_no=88&cate_no=99&display_group=1",
-    "specTolerance": ""
+    "specTolerance": "",
+    "dimensionImage": "assets/product-dimensions/siding-trims.webp?v=20261019-v1",
+    "colorImage": "assets/product-gallery/siding-trims-colors.webp?v=20261019-v1",
+    "installedImage": "assets/product-gallery/siding-trims-installed.webp?v=20261019-v1",
+    "colorTitle": "부자재의 종류와 마감을 비교해 보세요"
   }
 };

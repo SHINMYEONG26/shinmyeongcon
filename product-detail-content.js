@@ -9,18 +9,21 @@
  function mount(container,product,variants,label){
   const model=buildModel(product,variants,label),detail=model.detail;container.replaceChildren();
   const nav=el('nav','detail-section-nav');nav.setAttribute('aria-label','상품 상세 안내');
-  for(const [id,title] of [['product-overview','상품 설명'],['product-specifications','규격·색상'],['product-visuals','상세 사진'],['product-delivery','납품·시공 안내']]){const link=el('a','',title);link.href='#'+id;nav.append(link);}
+  for(const [id,title] of [['product-overview','상품 설명'],['product-specifications','규격·치수'],['product-colors','색상 비교'],['product-visuals','상세 이미지'],['product-installations','시공 예시'],['product-delivery','납품·시공 안내']]){const link=el('a','',title);link.href='#'+id;nav.append(link);}
   container.append(nav);
   function section(id,kicker,title){const node=el('section','detail-content-block');node.id=id;node.append(el('p','detail-eyebrow',kicker),el('h2','',title));container.append(node);return node;}
   const overview=section('product-overview','PRODUCT DETAIL',detail?.headline||product.title);overview.append(el('p','detail-intro-copy',detail?.description||product.description));
   if(detail?.features){const list=el('ul','detail-feature-list');for(const text of detail.features)list.append(el('li','',text));overview.append(list);}
   const banner=el('div','detail-consult-banner');banner.append(el('strong','','자재 납품부터 직영 시공까지'),el('p','','신명건설이 필요한 자재와 현장 조건을 함께 살펴봅니다. 규격·수량·현장 위치를 알려주시면 납품과 시공을 상담해 드립니다.'));overview.append(banner);
   const specs=section('product-specifications','SPECIFICATION','선택 가능한 규격과 색상');
+  if(detail?.dimensionImage){const figure=el('figure','detail-size-figure'),link=el('a');link.href=detail.dimensionImage;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',product.title+' 입체 치수 이미지 크게 보기');const image=el('img');image.src=detail.dimensionImage;image.alt=product.title+' 전체폭·유효폭 입체 규격 이미지';image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','','AI 제작 입체 예시 · 표기 치수는 제조사 공개 규격 기준 · 형상 및 비례는 실제 제품과 다를 수 있습니다'));specs.append(figure);}
   if(detail?.specImage){const figure=el('figure','detail-size-figure'),link=el('a');link.href=detail.specImage;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',product.title+' 규격 안내도 크게 보기');const image=el('img');image.src=detail.specImage;image.alt=product.title+' 제조사 공개 규격 기준 안내도';image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','','제조사 공개 규격 기준 · 직접 제작한 개념도 · 비례 아님'));specs.append(figure);}
   const table=el('table','detail-spec-table');const caption=el('caption','',product.title+' 등록 규격 안내');table.append(caption);const tbody=el('tbody');
   for(const [name,value] of model.rows){const row=el('tr'),th=el('th','',name);th.scope='row';row.append(th,el('td','',value));tbody.append(row);}table.append(tbody);specs.append(table);
   if(detail?.specSource){const note=el('p','detail-caption','치수는 제조사 공개 규격 기준입니다. '+(detail.specTolerance?detail.specTolerance+'. ':'')+'발주 전 실제 공급 모델과 제작 규격을 확인해 주세요. '),link=el('a','','규격 출처: HN METALLIC ↗');link.href=detail.specSource;link.target='_blank';link.rel='noopener noreferrer';note.append(link);specs.append(note);}
   specs.append(el('p','detail-caption','판매 옵션은 현재 등록된 내용을 기준으로 안내합니다. 색상·두께·길이 조합별 가격은 상단 옵션에서 확인해 주세요. 화면의 색상은 실제 자재와 차이가 있을 수 있어 발주 전 샘플 확인을 권합니다.'));
+  function photoBlock(node,url,alt,caption){const figure=el('figure','detail-reference-figure'),link=el('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label',alt+' 크게 보기');const image=el('img');image.src=url;image.alt=alt;image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','detail-source-note',caption));node.append(figure);}
+  if(detail?.colorImage){const colors=section('product-colors','COLOR COLLECTION',detail.colorTitle||'색상과 표면을 비교해 보세요');colors.append(el('p','detail-caption','현재 등록된 옵션을 바탕으로 제작한 AI 색상 예시입니다. 실제 색상과 광택, 무늬는 샘플로 확인해 주세요.'));photoBlock(colors,detail.colorImage,product.title+' 색상·종류 비교 이미지','AI 제작 비교 예시 · 화면의 색상은 실제 자재와 다를 수 있습니다');}
   const visuals=section('product-visuals','PRODUCT IMAGES','제품 이미지와 적용 예시');
   visuals.append(el('p','detail-caption','아래 이미지는 신명건설용으로 제작한 AI 생성 예시입니다. 실제 제품 사진이나 시공사진이 아니며, 제품의 형상·색상·구성과 차이가 있을 수 있습니다. 실제 규격과 색상은 상단 판매 옵션 및 상담을 통해 확인해 주세요.'));
   const stack=el('div','detail-image-stack');visuals.append(stack);if(!detail?.images?.length)stack.append(el('p','detail-caption','신명건설 전용 제품 예시 이미지를 준비하고 있습니다.'));
@@ -32,6 +35,7 @@
    stack.append(figure);
   });
 
+  if(detail?.installedImage){const installed=section('product-installations','APPLICATION VIEW','시공 후 모습을 미리 살펴보세요');installed.append(el('p','detail-caption','이 상품의 적용 위치와 마감 분위기를 보여주는 AI 제작 이미지입니다. 신명건설의 실제 시공 실적 사진이 아니며, 현장 조건과 선택 색상에 따라 완성 모습은 달라집니다.'));photoBlock(installed,detail.installedImage,product.title+' 시공 후 AI 적용 예시','AI 제작 시공 후 예시 · 실제 시공사진이 아닙니다');}
   const delivery=section('product-delivery','ORDER & DELIVERY','납품과 시공, 이렇게 상담하세요');
   const list=el('ol','detail-order-steps');
   for(const [title,text] of [['적용 부위 확인','지붕·외벽 등 사용할 위치와 현장 사진, 필요한 자재를 알려주세요.'],['규격·수량 협의','색상·두께·길이와 필요한 수량, 마감 부자재를 함께 확인합니다.'],['납품·시공 일정 상담','현장 위치와 진입·하차 조건을 바탕으로 배송비와 납기, 직영 시공 범위를 협의합니다.']]){const li=el('li');li.append(el('h3','',title),el('p','',text));list.append(li);}delivery.append(list);
