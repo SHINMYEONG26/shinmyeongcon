@@ -15,7 +15,14 @@
   const overview=section('product-overview','PRODUCT DETAIL',detail?.headline||product.title);overview.append(el('p','detail-intro-copy',detail?.visualIntro||detail?.description||product.description));
   if(!detail?.visualGuide&&detail?.features){const list=el('ul','detail-feature-list');for(const text of detail.features)list.append(el('li','',text));overview.append(list);}
   function pictureBlock(node,desktop,mobile,alt,caption,height=1170,mobileHeight=1530){const figure=el('figure','detail-reference-figure'),link=el('a');link.href=desktop;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',alt+' 크게 보기');const picture=el('picture');if(mobile){const source=el('source');source.media='(max-width:760px)';source.srcset=mobile;source.setAttribute('width','600');source.setAttribute('height',String(mobileHeight));picture.append(source);}const image=el('img');image.src=desktop;image.alt=alt;image.width=1200;image.height=height;image.loading='lazy';image.decoding='async';picture.append(image);link.append(picture);figure.append(link);if(caption)figure.append(el('figcaption','detail-source-note',caption));node.append(figure);}
-  const guide=el('div','detail-picture-guide');guide.id='product-benefits';if(detail?.visualGuide){pictureBlock(guide,detail.visualGuide,detail.visualGuideMobile,product.title+' 그림으로 보는 특징·장점','그림 설명 · 정확한 치수와 색상은 규격·샘플로 확인');for(const item of detail.benefitImages||[])photoBlock(guide,item.src,item.alt,'열반사 원리·구성 개념도');overview.append(guide);}
+  const guide=el('div','detail-picture-guide');guide.id='product-benefits';
+  if(detail?.storyBoard){
+   const figure=el('figure','detail-story-figure'),link=el('a');link.href=detail.storyBoard;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',product.title+' 구조·연결·장점·적용 설명 그림 크게 보기');
+   const image=el('img');image.src=detail.storyBoard;image.alt=product.title+' 자재 형태 확대, 연결 구조, 제품별 장점과 건물 적용을 보여주는 네 장면 설명';image.width=detail.storyWidth;image.height=detail.storyHeight;image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','detail-source-note','직접 제작한 AI 설명 그림 · 연결 방식은 이해를 돕는 개념이며 실제 시공도면과 시공사진이 아닙니다'));guide.append(figure);
+   const more=el('details','detail-spec-fold');more.append(el('summary','','핵심 구조 그림 더보기'));pictureBlock(more,detail.visualGuide,detail.visualGuideMobile,product.title+' 핵심 특징 정리','정확한 치수와 색상은 규격·샘플로 확인');guide.append(more);
+  }else if(detail?.visualGuide){pictureBlock(guide,detail.visualGuide,detail.visualGuideMobile,product.title+' 그림으로 보는 특징·장점','정확한 치수와 색상은 규격·샘플로 확인');}
+  for(const item of detail?.benefitImages||[])photoBlock(guide,item.src,item.alt,'열반사 원리·구성 개념도');
+  if(detail?.storyBoard||detail?.visualGuide)overview.append(guide);
   const extended=el('details','detail-extended-copy'),summary=el('summary','','자세한 설명 펼쳐보기');extended.append(summary);overview.append(extended);
   const banner=el('div','detail-consult-banner');banner.append(el('strong','','자재 납품부터 직영 시공까지'),el('p','','신명건설이 필요한 자재와 현장 조건을 함께 살펴봅니다. 규격·수량·현장 위치를 알려주시면 납품과 시공을 상담해 드립니다.'));
   if(detail?.benefits?.length){const benefit=el('div','detail-benefits');benefit.append(el('h2','',detail.benefitsTitle||'이 상품의 장점'));const cards=el('ul','detail-feature-list');for(const item of detail.benefits){const li=el('li');li.append(el('strong','',item.title),el('p','',item.text));cards.append(li);}benefit.append(cards);extended.append(benefit);}
@@ -50,5 +57,6 @@
  }
  window.ProductDetailContent={buildModel,mount};
 })();
+
 
 
