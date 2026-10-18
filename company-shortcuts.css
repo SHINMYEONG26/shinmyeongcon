@@ -58,3 +58,6 @@
 /* Company overview follows the three image navigation cards. */
 .intro>.company-cards+.company-heading{margin:44px 0 0}
 @media(max-width:760px){.intro>.company-cards+.company-heading{margin-top:30px}}
+
+/* Open the company overview just below the fixed navigation. */
+#company-overview{scroll-margin-top:12px}
