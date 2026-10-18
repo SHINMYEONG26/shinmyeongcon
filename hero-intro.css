@@ -7,7 +7,7 @@
 .hero-intro>.reference-hero::after,.hero-intro>.reference-utility::before,.hero-intro>.reference-utility::after{display:none}
 .hero-intro>.reference-utility{background:transparent;isolation:auto;padding-top:38px;padding-bottom:58px}
 .hero-intro .utility-heading{margin-bottom:28px}
-.hero-intro .utility-cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.hero-intro .utility-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .hero-intro .utility-card{grid-template-columns:40px minmax(0,1fr);gap:0 14px;padding:24px 18px 62px;min-height:224px;background:#0d293d70;border-color:#ffffff50;backdrop-filter:blur(3px)}
 .hero-intro .utility-symbol{width:40px;height:40px}
 .hero-intro .utility-symbol svg{width:23px;height:23px}
