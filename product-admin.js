@@ -2,26 +2,42 @@
   const el=id=>document.getElementById(id),service=window.ProductService;
   const status=(message,error=false)=>{el('status').textContent=message;el('status').classList.toggle('error',error);};
   let loggedIn=false,mode='photos',file=null,previewUrl=null,busy=false,selectionId=0,editingId=null;
-  let orderedProducts=[],loadedProducts=[],orderDirty=false;
+  let orderedProducts=[],loadedProducts=[],orderDirty=false,selectedCategory='all';
+  const categoryOf=product=>service.catalogProduct?.(product)?.category||product.category;
+  const categoryLabel=key=>service.catalogLabels?.[key]||service.labels[key]||key;
+  const visibleProducts=()=>selectedCategory==='all'?orderedProducts:orderedProducts.filter(product=>categoryOf(product)===selectedCategory);
+  const categoryFilters=document.createElement('div');categoryFilters.className='library-filters product-category-filters';categoryFilters.setAttribute('role','group');categoryFilters.setAttribute('aria-label','상품 순서를 정할 카테고리');
+  const categoryCount=document.createElement('p');categoryCount.className='product-category-count';categoryCount.setAttribute('role','status');categoryCount.setAttribute('aria-live','polite');
   const orderTools=document.createElement('div');orderTools.className='product-order-tools';
   const orderHint=document.createElement('p');orderHint.textContent='위·아래 버튼이나 순번으로 위치를 바꾼 뒤 저장하세요. 1번이 홈페이지에 먼저 표시됩니다.';
   const orderSave=document.createElement('button');orderSave.type='button';orderSave.textContent='노출 순서 저장';orderSave.disabled=true;
   const orderCancel=document.createElement('button');orderCancel.type='button';orderCancel.className='secondary';orderCancel.textContent='순서 변경 취소';orderCancel.disabled=true;
   const orderStatus=document.createElement('p');orderStatus.className='product-order-status';orderStatus.setAttribute('role','status');orderStatus.setAttribute('aria-live','polite');
-  orderTools.append(orderHint,orderSave,orderCancel,orderStatus);el('product-library').before(orderTools);
-  function markOrderDirty(value){orderDirty=value;orderSave.disabled=orderCancel.disabled=!value||busy;orderStatus.textContent=value?'순서가 변경되었습니다. 저장해야 홈페이지에 반영됩니다.':'';}
+  orderTools.append(orderHint,orderSave,orderCancel,orderStatus);el('product-library').before(categoryFilters,categoryCount,orderTools);
+  function markOrderDirty(value){orderDirty=value;orderSave.disabled=orderCancel.disabled=!value||busy;orderStatus.textContent=value?'순서가 변경되었습니다. 다른 카테고리로 이동해도 변경 내용은 유지되며, 저장 버튼으로 함께 반영됩니다.':'';}
   orderCancel.addEventListener('click',()=>{if(window.adminOperationBusy)return;orderedProducts=[...loadedProducts];markOrderDirty(false);renderProducts();orderStatus.textContent='저장된 순서로 되돌렸습니다.';});
+  function renderCategoryFilters(){
+    const keys=[...new Set(orderedProducts.map(categoryOf))],preferred=['zinc','louver-steel','color','metal-siding'];
+    keys.sort((a,b)=>{const ai=preferred.indexOf(a),bi=preferred.indexOf(b);return (ai<0?99:ai)-(bi<0?99:bi);});
+    if(selectedCategory!=='all'&&!keys.includes(selectedCategory))selectedCategory='all';
+    categoryFilters.replaceChildren();
+    for(const key of ['all',...keys]){const button=document.createElement('button');button.type='button';button.dataset.productCategory=key;button.textContent=(key==='all'?'전체':categoryLabel(key))+' ('+(key==='all'?orderedProducts.length:orderedProducts.filter(p=>categoryOf(p)===key).length)+')';button.setAttribute('aria-pressed',String(key===selectedCategory));button.disabled=Boolean(window.adminOperationBusy);button.addEventListener('click',()=>{if(window.adminOperationBusy)return;selectedCategory=key;renderProducts();categoryFilters.querySelector('[data-product-category="'+key+'"]')?.focus();});categoryFilters.append(button);}
+    categoryFilters.hidden=!orderedProducts.length;
+  }
   function moveProduct(id,target){
     if(window.adminOperationBusy)return;
-    const index=orderedProducts.findIndex(product=>product.id===id);
-    if(index<0||!Number.isInteger(target)||target<0||target>=orderedProducts.length||target===index)return;
-    const [product]=orderedProducts.splice(index,1);orderedProducts.splice(target,0,product);markOrderDirty(true);renderProducts();
-    el('product-library').querySelector(`[data-order-id="${id}"]`)?.focus();
+    const visible=visibleProducts(),index=visible.findIndex(product=>product.id===id);
+    if(index<0||!Number.isInteger(target)||target<0||target>=visible.length||target===index)return;
+    const [product]=visible.splice(index,1);visible.splice(target,0,product);
+    if(selectedCategory==='all')orderedProducts=visible;
+    else{let cursor=0;orderedProducts=orderedProducts.map(item=>categoryOf(item)===selectedCategory?visible[cursor++]:item);}
+    markOrderDirty(true);renderProducts();
+    el('product-library').querySelector('[data-order-id="'+id+'"]')?.focus();
   }
   orderSave.addEventListener('click',async()=>{
     if(window.adminOperationBusy||!orderDirty)return;
     setBusy(true);orderStatus.textContent='노출 순서를 저장하는 중입니다…';
-    try{await service.saveOrder(orderedProducts.map(product=>product.id));loadedProducts=[...orderedProducts];markOrderDirty(false);orderStatus.textContent='노출 순서를 저장했습니다. 홈페이지를 새로고침하면 반영됩니다.';}
+    try{await service.saveOrder(orderedProducts.map(product=>product.id));loadedProducts=[...orderedProducts];markOrderDirty(false);orderStatus.textContent='변경한 순서를 저장했습니다. 홈페이지의 해당 카테고리에서도 같은 순서로 표시됩니다.';}
     catch(error){orderStatus.textContent=error.message;status(error.message,true);}
     finally{setBusy(false);}
   });
@@ -72,6 +88,7 @@
     el('product-fields').disabled=value;el('product-refresh').disabled=value;el('product-logout').disabled=value;
     document.querySelectorAll('.delete-product,.edit-product,[data-manager-view],#product-cancel-edit').forEach(button=>button.disabled=value);
     orderSave.disabled=orderCancel.disabled=value||!orderDirty;
+    categoryFilters.querySelectorAll('button').forEach(button=>button.disabled=value);
     el('product-library').querySelectorAll('[data-order-control]').forEach(control=>control.disabled=value||control.dataset.orderEdge==='true');
   };
   const setBusy=value=>{
@@ -86,11 +103,13 @@
     }catch(error){status(error.message,true);}
   }
   function renderProducts(){
-      el('product-library').replaceChildren();orderTools.hidden=!orderedProducts.length;
+      el('product-library').replaceChildren();renderCategoryFilters();const visible=visibleProducts();orderTools.hidden=!orderedProducts.length;
+      categoryCount.textContent=orderedProducts.length?(selectedCategory==='all'?'전체 상품 '+visible.length+'개':categoryLabel(selectedCategory)+' '+visible.length+'개 · 이 카테고리 안에서의 순서입니다.'):'';
+      orderHint.textContent=selectedCategory==='all'?'카테고리를 선택하면 해당 상품끼리 순서를 정할 수 있습니다. 전체에서는 모든 상품의 순서를 조정합니다.':'위·아래 버튼이나 순번으로 '+categoryLabel(selectedCategory)+' 상품의 순서를 바꾼 뒤 저장하세요. 1번이 해당 카테고리에 먼저 표시되며, 다른 카테고리의 순서는 바뀌지 않습니다.';
       if(!orderedProducts.length){el('product-library').textContent='등록된 상품이 없습니다. 위에서 첫 상품을 추가해 주세요.';return;}
-      for(const [index,product] of orderedProducts.entries()){
+      for(const [index,product] of visible.entries()){
         const figure=document.createElement('figure'),image=new Image(),caption=document.createElement('figcaption'),remove=document.createElement('button');
-        image.src=product.url;image.alt=product.title;image.loading='lazy';caption.textContent=`${service.labels[product.category]} · ${product.title}\n${product.is_ai?'AI 생성 예시':'제품 사진'}`;
+        image.src=product.url;image.alt=product.title;image.loading='lazy';caption.textContent=`${categoryLabel(categoryOf(product))} · ${product.title}\n${product.is_ai?'AI 생성 예시':'제품 사진'}`;
         remove.type='button';remove.className='delete-product';remove.textContent='삭제';remove.setAttribute('aria-label',product.title+' 상품 삭제');
         remove.addEventListener('click',async()=>{
           if(window.adminOperationBusy||!confirm(`「${product.title}」 상품을 삭제할까요?\n홈페이지에서 사라지며 되돌릴 수 없습니다.`))return;
@@ -102,15 +121,15 @@
         const info=document.createElement('p');info.className='variant-summary';info.textContent=(product.variants?.length||0)+'개 옵션 조합';
         const order=document.createElement('div');order.className='product-order-controls';
         const positionLabel=document.createElement('label');positionLabel.textContent='노출 순번';
-        const position=document.createElement('input');position.type='number';position.min='1';position.max=String(orderedProducts.length);position.step='1';position.value=String(index+1);position.dataset.orderControl='';position.dataset.orderId=product.id;position.setAttribute('aria-label',product.title+' 노출 순번');position.disabled=Boolean(window.adminOperationBusy);
-        position.addEventListener('change',()=>{const value=Number(position.value);if(!Number.isInteger(value)||value<1||value>orderedProducts.length){position.value=String(index+1);orderStatus.textContent=`순번은 1~${orderedProducts.length} 사이로 입력해 주세요.`;return;}moveProduct(product.id,value-1)});positionLabel.append(position);order.append(positionLabel);
-        for(const [text,offset] of [['위로',-1],['아래로',1]]){const button=document.createElement('button');button.type='button';button.className='secondary';button.textContent=text;button.dataset.orderControl='';const edge=index+offset<0||index+offset>=orderedProducts.length;button.dataset.orderEdge=String(edge);button.disabled=edge||Boolean(window.adminOperationBusy);button.setAttribute('aria-label',product.title+' '+text);button.addEventListener('click',()=>moveProduct(product.id,index+offset));order.append(button)}
+        const position=document.createElement('input');position.type='number';position.min='1';position.max=String(visible.length);position.step='1';position.value=String(index+1);position.dataset.orderControl='';position.dataset.orderId=product.id;position.setAttribute('aria-label',product.title+' 노출 순번');position.disabled=Boolean(window.adminOperationBusy);
+        position.addEventListener('change',()=>{const value=Number(position.value);if(!Number.isInteger(value)||value<1||value>visible.length){position.value=String(index+1);orderStatus.textContent=`순번은 1~${visible.length} 사이로 입력해 주세요.`;return;}moveProduct(product.id,value-1)});positionLabel.append(position);order.append(positionLabel);
+        for(const [text,offset] of [['위로',-1],['아래로',1]]){const button=document.createElement('button');button.type='button';button.className='secondary';button.textContent=text;button.dataset.orderControl='';const edge=index+offset<0||index+offset>=visible.length;button.dataset.orderEdge=String(edge);button.disabled=edge||Boolean(window.adminOperationBusy);button.setAttribute('aria-label',product.title+' '+text);button.addEventListener('click',()=>moveProduct(product.id,index+offset));order.append(button)}
         figure.append(image,caption,info,order,edit,remove);el('product-library').append(figure);
       }
   }
   document.addEventListener('admin-state',event=>{
     loggedIn=event.detail.loggedIn;
-    if(!loggedIn){mode='photos';selectionId++;resetProductForm();orderedProducts=[];markOrderDirty(false);el('product-library').replaceChildren();}
+    if(!loggedIn){mode='photos';selectionId++;resetProductForm();orderedProducts=[];loadedProducts=[];selectedCategory='all';markOrderDirty(false);renderProducts();}
     if(loggedIn&&new URLSearchParams(location.search).get('view')==='inquiries')mode='inquiries';
     updateView();if(loggedIn&&mode==='inquiries')document.dispatchEvent(new CustomEvent('inquiry-open'));
   });
@@ -143,3 +162,4 @@
   window.addEventListener('beforeunload',event=>{if(busy||orderDirty){event.preventDefault();event.returnValue='';}});
   loggedIn=!el('upload-panel').hidden;if(loggedIn&&new URLSearchParams(location.search).get('view')==='inquiries')mode='inquiries';updateView();if(loggedIn&&mode==='inquiries')document.dispatchEvent(new CustomEvent('inquiry-open'));
 })();
+
