@@ -2,10 +2,12 @@
  let records=new Map(),albumOrder=[],dirty=new Set(),originals=new Map();
  const key=a=>a.photos.slice().sort((x,y)=>(x.created_at||'').localeCompare(y.created_at||'')||x.id.localeCompare(y.id))[0]?.id;
  const rank=(ids,id)=>{const n=ids.indexOf(id);return n<0?Number.MAX_SAFE_INTEGER:n};
- const record=a=>{const k=key(a);if(!records.has(k))records.set(k,{key:k,photos:a.photos.map(p=>p.id),cover:a.photos.find(p=>p.isCover)?.id||a.photos[0]?.id});return records.get(k)};
+ const stage=p=>window.SitePhotoFraming?.get(p.id).stage;
+ const phase=p=>({'시공 전':0,'시공 중':1,'시공 후':2}[stage(p)]??3);
+ const record=a=>{const k=key(a);if(!records.has(k))records.set(k,{key:k,photos:a.photos.map(p=>p.id),cover:a.photos.find(p=>p.isCover)?.id||(a.photos.some(p=>stage(p)==='시공 전')?a.photos.find(p=>stage(p)==='시공 후')?.id:null)||a.photos[0]?.id});return records.get(k)};
  window.SiteAlbumOrder={key,
  async load(photos=[]){records=new Map();dirty=new Set();originals=new Map(photos.map(p=>[p.id,p]));const groups=SiteAlbums.group(photos);
- for(const a of groups){const r=record(a);r.photos=a.photos.slice().sort((x,y)=>(x.photoOrder||Number.MAX_SAFE_INTEGER)-(y.photoOrder||Number.MAX_SAFE_INTEGER)).map(p=>p.id);}
+ for(const a of groups){const r=record(a);r.photos=a.photos.slice().sort((x,y)=>(x.photoOrder||Number.MAX_SAFE_INTEGER)-(y.photoOrder||Number.MAX_SAFE_INTEGER)||phase(x)-phase(y)).map(p=>p.id);}
  albumOrder=groups.map((a,i)=>({a,i,rank:Math.min(...a.photos.map(p=>p.albumOrder||Number.MAX_SAFE_INTEGER))})).sort((x,y)=>x.rank-y.rank||x.i-y.i).map(x=>key(x.a));},
  apply(groups){for(const a of groups){a.orderKey=key(a);const r=records.get(a.orderKey);if(r){a.photos.sort((x,y)=>rank(r.photos,x.id)-rank(r.photos,y.id));a.cover=a.photos.find(p=>p.id===r.cover)||a.photos[0]}else a.cover=a.photos.find(p=>p.isCover)||a.photos[0];}
  return groups.map((a,i)=>({a,i})).sort((x,y)=>rank(albumOrder,x.a.orderKey)-rank(albumOrder,y.a.orderKey)||x.i-y.i).map(x=>x.a);},
