@@ -753,7 +753,7 @@ window.ProductDetailData = {
       "기존 단열재·공기층·바탕 구조를 알려주시면 적용 방향을 상담합니다.",
       "두께 표기만으로 단열 성능을 판단하지 않고 실제 시공 구성을 함께 검토합니다."
     ],
-    "benefitsTitle": "메탈렉스 프리미엄 열반사 리얼징크의 특징과 장점",
+    "benefitsTitle": "신명건설 프리미엄 열반사 리얼징크의 특징과 장점",
     "visualGuideMobile": "assets/product-guides/thermal-real-zinc-guide-mobile.svg?v=20261019-v1",
     "visualGuide": "assets/product-guides/thermal-real-zinc-guide.svg?v=20261019-v1",
     "visualIntro": "열반사 리얼징크의 형태와 장점을 그림으로 확인하세요.",
@@ -886,7 +886,7 @@ window.ProductDetailData = {
     "dimensionImage": "assets/product-dimensions/thermal-interlock.webp?v=20261019-v1",
     "colorImage": "assets/product-gallery/thermal-interlock-colors.webp?v=20261019-v1",
     "installedImage": "assets/product-gallery/thermal-interlock-installed.webp?v=20261019-v1",
-    "benefitsTitle": "메탈렉스 프리미엄 열반사 인터락징크의 특징과 장점",
+    "benefitsTitle": "신명건설 프리미엄 열반사 인터락징크의 특징과 장점",
     "benefits": [
       {
         "title": "인터락의 깔끔한 연결선",
@@ -1475,3 +1475,5 @@ window.ProductDetailData = {
     "storyHeight": 2172
   }
 };
+
+
