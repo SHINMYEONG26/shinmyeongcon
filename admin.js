@@ -8,7 +8,7 @@
   }
   const el = id => document.getElementById(id);
   const status = (message, error = false) => { el('status').textContent = message; el('status').classList.toggle('error', error); };
-  let previews = [], selected = [], busy = false;
+  let previews = [], selected = [], busy = false, coverFile = null;
   let libraryPhotos = [], libraryCategory = 'all';
   const filterButtons = [];
   for (const [category, label] of [['all', '전체'], ...Object.entries(service.labels)]) {
@@ -38,6 +38,7 @@
   async function loadLibrary() {
     try {
       libraryPhotos = await service.list();
+      el('site-names').replaceChildren(...[...new Set(libraryPhotos.map(p=>SiteAlbums.parse(p).site))].map(name=>{const option=document.createElement('option');option.value=name;return option;}));
       renderLibrary();
     } catch (error) { status(error.message,true); }
   }
@@ -48,7 +49,7 @@
       if (!photos.length) { el('library').textContent = libraryCategory === 'all' ? '아직 추가한 사진이 없습니다.' : '이 분야에 추가한 사진이 없습니다.'; return; }
       for (const photo of photos) {
         const figure = document.createElement('figure'), img = document.createElement('img'), caption = document.createElement('figcaption');
-        img.src = photo.url; img.alt = photo.title; img.loading = 'lazy';
+        img.src = photo.url; img.alt = SiteAlbums.parse(photo).site; img.loading = 'lazy';
         caption.textContent = `${service.labels[photo.category]} · ${photo.title}\n${photo.is_ai ? 'AI 생성 예시' : '실제 시공사진'}`;
         const remove = document.createElement('button');
         remove.type = 'button'; remove.className = 'delete-photo'; remove.textContent = '삭제';
@@ -101,15 +102,16 @@
         const img=new Image(); img.src=url; await img.decode();
         if(selected!==selectionToken)return;
         const figure=document.createElement('figure'), caption=document.createElement('figcaption');
-        img.alt=file.name; caption.textContent=file.name; figure.append(img,caption); el('previews').append(figure);
+        img.alt=file.name; caption.textContent=file.name;
+ const label=document.createElement('label'),radio=document.createElement('input');radio.type='radio';radio.name='album-cover';radio.checked=file===files[0];if(file===files[0])coverFile=file;radio.addEventListener('change',()=>{coverFile=file;});label.append(radio,document.createTextNode(' 대표사진'));figure.append(img,caption,label); el('previews').append(figure);
       }
       status(files.length ? `${files.length}장을 선택했습니다. 분야와 사진 종류를 확인한 뒤 추가해 주세요.` : '사진을 선택해 주세요.');
     } catch { selected=[]; el('photos').value=''; clearPreviews();status('열 수 없는 사진이 있습니다. 다른 사진을 선택해 주세요.',true); }
   });
   el('upload-form').addEventListener('submit',async event=>{
     event.preventDefault(); if(busy||window.adminOperationBusy||!selected.length)return;
-    const category=el('category').value, isAi=el('photo-kind').value==='ai', title=el('title').value;
-    const batch=[...selected], remaining=[], failures=[]; let uploaded=0;
+    const category=el('category').value, isAi=el('photo-kind').value==='ai', title=SiteAlbums.title(el('site-name').value,el('title').value);
+    const batch=[...selected].sort((a,b)=>Number(b===coverFile)-Number(a===coverFile)), remaining=[], failures=[]; let uploaded=0;
     setBusy(true);
     try {
       for(let i=0;i<batch.length;i++) {

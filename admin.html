@@ -6,7 +6,7 @@
 <meta content="noindex,nofollow" name="robots"/><title>사진·상품·문의 관리 | 신명건설</title>
 <link href="logo-symbol.svg" rel="icon"/><link href="admin.css?v=20261019-category-order-v43" rel="stylesheet"/>
 <script defer="" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-<script defer="" src="photo-config.js"></script><script defer="" src="photo-service.js?v=20261018-session-v37"></script><script defer src="product-options.js?v=20261017-v30"></script><script defer src="product-service.js?v=20261019-category-order-v50"></script><script defer="" src="admin.js?v=20261018-v44"></script><script defer="" src="product-admin.js?v=20261019-category-order-v45"></script>
+<script defer="" src="photo-config.js"></script><script defer="" src="photo-service.js?v=20261018-session-v37"></script><script defer src="product-options.js?v=20261017-v30"></script><script defer src="product-service.js?v=20261019-category-order-v50"></script><script defer src="site-albums.js?v=20261021-albums"></script><script defer src="admin.js?v=20261021-albums"></script><script defer="" src="product-admin.js?v=20261019-category-order-v45"></script>
 <link rel="stylesheet" href="inquiry-admin.css?v=20261017-v35"><script defer src="inquiry-service.js?v=20261017-v35"></script><script defer src="inquiry-manager.js?v=20261017-v35"></script>
 </head>
 <body>
@@ -23,8 +23,8 @@
 <div class="panel-heading"><h2>사진 추가</h2><button class="secondary" id="logout-button" type="button">로그아웃</button></div>
 <form id="upload-form">
 <fieldset id="upload-fields">
-<div class="form-row"><label>분야<select id="category" required=""><option value="color">칼라강판</option><option value="temba-zinc">템바/징크</option><option value="metal-siding">메탈사이딩</option><option value="composite-sheet">복합판넬/쉬트판넬</option><option value="sandwich-panel">샌드위치 판넬</option><option value="interior-exterior">내·외부인테리어</option></select></label><label>사진 종류<select id="photo-kind" required=""><option value="">선택해 주세요</option><option value="actual">실제 시공사진</option><option value="ai">AI 생성 예시</option></select></label></div>
-<label>사진 설명 <span>(선택)</span><input id="title" maxlength="80" placeholder="예: 공장 외벽 칼라강판 마감" type="text"/></label>
+<div class="form-row"><label>분야<select id="category" required=""><option value="composite-sheet">외벽공사</option><option value="color">지붕공사</option><option value="interior-exterior">내부인테리어</option></select></label><label>사진 종류<select id="photo-kind" required=""><option value="">선택해 주세요</option><option value="actual">실제 시공사진</option><option value="ai">AI 생성 예시</option></select></label></div>
+<label>현장명<input id="site-name" required maxlength="40" placeholder="예: 평택 공장 외벽공사" list="site-names"><datalist id="site-names"></datalist></label><p>같은 분야·현장명·사진 종류로 추가하면 하나의 앨범에 모입니다. 처음 등록하는 사진 중 대표사진을 선택하세요. 기존 현장에 추가하면 기존 대표사진을 유지합니다.</p><label>사진 설명 <span>(선택)</span><input id="title" maxlength="30" placeholder="예: 공장 외벽 칼라강판 마감" type="text"/></label>
 <label class="file-box">사진 선택<input accept="image/jpeg,image/png,image/webp" id="photos" multiple="" required="" type="file"/><span>JPG · PNG · WEBP / 사진당 최대 8MB / 한 번에 10장</span></label>
 <div class="previews" id="previews"></div>
 <button id="upload-button" type="submit">홈페이지에 사진 추가</button>
