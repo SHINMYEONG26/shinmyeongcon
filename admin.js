@@ -49,6 +49,7 @@
       if (!photos.length) { el('library').textContent = libraryCategory === 'all' ? '아직 추가한 사진이 없습니다.' : '이 분야에 추가한 사진이 없습니다.'; return; }
       for (const photo of photos) {
         const figure = document.createElement('figure'), img = document.createElement('img'), caption = document.createElement('figcaption');
+        figure.dataset.photoId=photo.id;
         img.src = photo.url; img.alt = SiteAlbums.parse(photo).site; img.loading = 'lazy';
         caption.textContent = `${service.labels[photo.category]} · ${photo.title}\n${photo.is_ai ? 'AI 생성 예시' : '실제 시공사진'}`;
         const remove = document.createElement('button');
@@ -66,13 +67,24 @@
         });
         const rename=document.createElement('button');rename.type='button';rename.textContent='현장명 수정';
  rename.addEventListener('click',async()=>{if(busy)return;let nameInput=figure.querySelector('[data-site-edit]');if(!nameInput){nameInput=document.createElement('input');nameInput.dataset.siteEdit='true';nameInput.setAttribute('aria-label','수정할 현장명');nameInput.value=SiteAlbums.parse(photo).site;figure.insertBefore(nameInput,rename);rename.textContent='현장명 저장';nameInput.focus();return;}const name=nameInput.value;if(!name?.trim())return;setBusy(true);try{await PhotoEditorService.updatePhoto(photo.id,{title:SiteAlbums.title(name,SiteAlbums.parse(photo).caption),isAi:photo.is_ai});await loadLibrary();status('현장명을 수정했습니다.');}catch(e){status(e.message,true);}finally{setBusy(false);}});
- figure.append(img,caption,rename,remove); el('library').append(figure);
+ const replace=document.createElement('button');replace.type='button';replace.textContent='사진 교체';
+ const replacement=document.createElement('div');replacement.hidden=true;
+ const fileInput=document.createElement('input');fileInput.type='file';fileInput.accept='image/jpeg,image/png,image/webp';fileInput.setAttribute('aria-label','교체할 사진');replacement.append(fileInput);
+ replace.addEventListener('click',async()=>{
+ if(busy||window.adminOperationBusy)return;
+ if(replacement.hidden){replacement.hidden=false;replace.textContent='선택한 사진으로 교체';fileInput.focus();return;}
+ const file=fileInput.files[0];if(!file){status('교체할 사진을 선택해 주세요.',true);return;}
+ try{PhotoEditorService.validateFile(file);}catch(e){status(e.message,true);return;}
+ setBusy(true);status('보정 사진으로 교체하는 중입니다…');
+ try{const result=await PhotoEditorService.updatePhoto(photo.id,{title:photo.title,isAi:photo.is_ai,file});await loadLibrary();status(result.warning||'보정 사진으로 교체했습니다.',Boolean(result.warning));}catch(e){status(e.message,true);}finally{setBusy(false);}
+ });
+ figure.append(img,caption,rename,replace,replacement,remove); el('library').append(figure);
       }
   }
   function setBusy(value) {
     busy=value; el('upload-fields').disabled=value; el('logout-button').disabled=value;
     el('refresh-button').disabled=value;
-    document.querySelectorAll('.delete-photo').forEach(button => button.disabled=value);
+    document.querySelectorAll('#library button,#library input').forEach(button => button.disabled=value);
     window.adminOperationBusy=value;
     document.dispatchEvent(new CustomEvent('admin-busy',{detail:{busy:value}}));
   }
