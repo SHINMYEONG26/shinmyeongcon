@@ -5,7 +5,7 @@
   const excludedCatalogCategories=new Set(['zinc-accessories','steel-accessories','gutter-materials']);
   const catalogLabels={...labels,'louver-steel':'루버강판',zinc:'징크'};
   for(const key of ['temba-zinc','real',...excludedCatalogCategories])delete catalogLabels[key];
-  const catalogImages={"f8e0671a-b1a5-4a33-8c3f-ec7e57070175":"assets/product-ai/zinc-profile.jpg","ca51a341-1150-4d8e-b7ce-1f323f753ef7":"assets/product-ai/traditional-tile.jpg","addacf41-9197-42c2-8172-64e8312c4baa":"assets/product-review/flat-tile-main-v3.webp","66445bd7-ffdc-483e-a6eb-b72e88f26c85":"assets/product-ai/s-corrugated.jpg","a6a47cf5-d17d-4d44-ae34-ba1ab276ebbe":"assets/product-review/parapet-main-v3.webp","0f6340b3-6159-4d7b-8016-67c7e2860dc3":"assets/product-ai/roof-overlay.jpg","9483d7f7-28ae-44be-9a29-be4f417069ae":"assets/product-review/louver-40-main-v3.webp","06e2cb65-cc9a-4918-abcd-65396e94a9e3":"assets/product-review/louver-beat-main-v3.webp","ca7c4dc4-8003-4d87-b974-50420a00a831":"assets/product-ai/long-brick.jpg","1ba6996e-10bb-4296-bcad-0860a149d320":"assets/product-ai/natural-stone.jpg","f111f9cb-8e49-4937-90bd-890afb2bfa27":"assets/product-ai/arrieta.jpg","1c378ff0-702b-42bf-9c03-327589ced263":"assets/product-review/siding-trims-main-v3.webp"};
+  const catalogImages={};
   const catalogProduct=product=>{
     if(excludedCatalogCategories.has(product.category))return null;
     const combined=['temba-zinc','real'].includes(product.category);
