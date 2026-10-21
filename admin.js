@@ -11,7 +11,7 @@
   let previews = [], selected = [], busy = false, coverFile = null;
   let libraryPhotos = [], libraryCategory = 'all';
   const filterButtons = [];
-  for (const [category, label] of [['all', '전체'], ...Object.entries(service.labels)]) {
+  for (const [category, label] of [['all', '전체'], ...Object.entries({'composite-sheet':'외벽공사',color:'지붕공사','interior-exterior':'내부인테리어'})]) {
     const button = document.createElement('button');
     button.type = 'button'; button.textContent = label;
     button.setAttribute('aria-pressed', String(category === libraryCategory));
@@ -43,9 +43,9 @@
     } catch (error) { status(error.message,true); }
   }
   function renderLibrary() {
-      const photos = libraryCategory === 'all' ? libraryPhotos : libraryPhotos.filter(photo => photo.category === libraryCategory);
+      const photos = libraryCategory === 'all' ? libraryPhotos : libraryPhotos.filter(photo => libraryCategory === 'composite-sheet' ? ['composite-sheet','temba-zinc','metal-siding','sandwich-panel'].includes(photo.category) : photo.category === libraryCategory);
       el('library').replaceChildren();
-      el('library-count').textContent = `${libraryCategory === 'all' ? '전체' : service.labels[libraryCategory]} ${photos.length}장`;
+      el('library-count').textContent = `${libraryCategory === 'all' ? '전체' : ({'composite-sheet':'외벽공사',color:'지붕공사','interior-exterior':'내부인테리어'})[libraryCategory]} ${photos.length}장`;
       if (!photos.length) { el('library').textContent = libraryCategory === 'all' ? '아직 추가한 사진이 없습니다.' : '이 분야에 추가한 사진이 없습니다.'; return; }
       for (const photo of photos) {
         const figure = document.createElement('figure'), img = document.createElement('img'), caption = document.createElement('figcaption');
