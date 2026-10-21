@@ -10,7 +10,14 @@
   const status = (message, error = false) => { el('status').textContent = message; el('status').classList.toggle('error', error); };
   let previews = [], selected = [], busy = false, coverFile = null;
   let libraryPhotos = [], libraryCategory = 'all';
-  const filterButtons = [];
+  let orderGroups=[];const openAlbums=new Set();
+ const orderTools=document.createElement('div');orderTools.className='album-order-tools';
+ const orderHint=document.createElement('p');orderHint.textContent='앨범과 사진 순서를 바꾼 뒤 저장하세요. 대표사진도 앨범 안에서 선택할 수 있습니다.';
+ const saveOrder=document.createElement('button');saveOrder.type='button';saveOrder.textContent='노출 순서 저장';
+ const orderStatus=document.createElement('p');orderStatus.setAttribute('role','status');orderStatus.className='album-order-status';
+ orderTools.append(orderHint,saveOrder,orderStatus);el('library-filters').before(orderTools);
+ saveOrder.addEventListener('click',async()=>{if(busy||!SiteAlbumOrder.dirty)return;setBusy(true);saveOrder.disabled=true;orderStatus.textContent='순서를 저장하는 중입니다…';try{await SiteAlbumOrder.save(orderGroups);await loadLibrary();orderStatus.textContent='노출 순서를 저장했습니다. 홈페이지에 반영됩니다.';}catch(e){orderStatus.textContent=e.message;status(e.message,true);}finally{setBusy(false);saveOrder.disabled=!SiteAlbumOrder.dirty;}});
+ const filterButtons = [];
   for (const [category, label] of [['all', '전체'], ...Object.entries({'composite-sheet':'외벽공사',color:'지붕공사','interior-exterior':'내부인테리어'})]) {
     const button = document.createElement('button');
     button.type = 'button'; button.textContent = label;
@@ -38,20 +45,36 @@
   async function loadLibrary() {
     try {
       libraryPhotos = await service.list();
+      if(!SiteAlbumOrder.dirty){try{await SiteAlbumOrder.load();}catch(e){status(e.message,true);}}
       el('site-names').replaceChildren(...[...new Set(libraryPhotos.map(p=>SiteAlbums.parse(p).site))].map(name=>{const option=document.createElement('option');option.value=name;return option;}));
       renderLibrary();
     } catch (error) { status(error.message,true); }
   }
   function renderLibrary() {
-      const photos = libraryCategory === 'all' ? libraryPhotos : libraryPhotos.filter(photo => libraryCategory === 'composite-sheet' ? ['composite-sheet','temba-zinc','metal-siding','sandwich-panel'].includes(photo.category) : photo.category === libraryCategory);
-      el('library').replaceChildren();
-      el('library-count').textContent = `${libraryCategory === 'all' ? '전체' : ({'composite-sheet':'외벽공사',color:'지붕공사','interior-exterior':'내부인테리어'})[libraryCategory]} ${photos.length}장`;
-      if (!photos.length) { el('library').textContent = libraryCategory === 'all' ? '아직 추가한 사진이 없습니다.' : '이 분야에 추가한 사진이 없습니다.'; return; }
-      for (const photo of photos) {
+ orderGroups=SiteAlbumOrder.apply(SiteAlbums.group(libraryPhotos));
+ const groups=libraryCategory==='all'?orderGroups:orderGroups.filter(a=>libraryCategory==='composite-sheet'?['composite-sheet','temba-zinc','metal-siding','sandwich-panel'].includes(a.photos[0].category):a.photos[0].category===libraryCategory);
+ el('library').classList.add('album-library');el('library').replaceChildren();
+ el('library-count').textContent=groups.length+'개 앨범 · '+groups.reduce((n,a)=>n+a.photos.length,0)+'장';
+ saveOrder.disabled=busy||!SiteAlbumOrder.dirty;
+ if(SiteAlbumOrder.dirty)orderStatus.textContent='변경한 순서가 아직 저장되지 않았습니다.';
+ if(!groups.length){el('library').textContent='아직 등록된 앨범이 없습니다.';return;}
+ for(const album of groups){
+ const card=document.createElement('section');card.className='admin-album';card.dataset.albumKey=album.orderKey;
+ const header=document.createElement('div');header.className='admin-album-header';
+ const coverImg=document.createElement('img');coverImg.src=album.cover.url;coverImg.alt=album.name+' 대표사진';coverImg.loading='lazy';
+ const info=document.createElement('div'),title=document.createElement('h3'),count=document.createElement('p'),toggle=document.createElement('button');title.textContent=album.name;count.textContent=album.photos.length+'장 · '+(album.isAi?'AI 생성 예시':'실제 시공사진');
+ toggle.type='button';toggle.className='secondary';toggle.textContent=openAlbums.has(album.orderKey)?'사진 접기':'사진 보기';toggle.setAttribute('aria-expanded',String(openAlbums.has(album.orderKey)));toggle.addEventListener('click',()=>{openAlbums.has(album.orderKey)?openAlbums.delete(album.orderKey):openAlbums.add(album.orderKey);renderLibrary();});
+ info.append(title,count,toggle);header.append(window.SitePhotoFraming?SitePhotoFraming.frame(coverImg,album.cover.id):coverImg,info);
+ const controls=document.createElement('div');controls.className='album-order-controls';const pos=orderGroups.indexOf(album);
+ const orderLabel=document.createElement('label');orderLabel.textContent='전체 앨범 노출 순서';const orderInput=document.createElement('input');orderInput.type='number';orderInput.min='1';orderInput.max=orderGroups.length;orderInput.value=pos+1;orderInput.setAttribute('aria-label',album.name+' 앨범 노출 순서');orderLabel.append(orderInput);
+ const moveAlbum=(label,getPosition,disabled=false)=>{const b=document.createElement('button');b.type='button';b.className='secondary';b.textContent=label;b.disabled=disabled||busy;b.addEventListener('click',()=>{SiteAlbumOrder.moveAlbum(orderGroups,album.orderKey,getPosition());renderLibrary();});return b;};
+ controls.append(orderLabel,moveAlbum('앨범 앞으로',()=>pos,pos===0),moveAlbum('앨범 순서 적용',()=>Math.max(1,Math.min(orderGroups.length,Number(orderInput.value)||1))),moveAlbum('앨범 뒤로',()=>pos+2,pos===orderGroups.length-1));
+ const grid=document.createElement('div');grid.className='library album-photo-grid';grid.hidden=!openAlbums.has(album.orderKey);grid.setAttribute('aria-label',album.name+' 사진 목록');
+ for(const photo of album.photos){
         const figure = document.createElement('figure'), img = document.createElement('img'), caption = document.createElement('figcaption');
         figure.dataset.photoId=photo.id;
         img.src = photo.url; img.alt = SiteAlbums.parse(photo).site; img.loading = 'lazy';
-        caption.textContent = `${service.labels[photo.category]} · ${photo.title}\n${photo.is_ai ? 'AI 생성 예시' : '실제 시공사진'}`;
+        caption.textContent = `${SiteAlbums.parse(photo).caption || album.name} · ${photo.is_ai ? 'AI 생성 예시' : '실제 시공사진'}`;
         const remove = document.createElement('button');
         remove.type = 'button'; remove.className = 'delete-photo'; remove.textContent = '삭제';
         remove.disabled = busy || Boolean(window.adminOperationBusy);
@@ -78,9 +101,19 @@
  setBusy(true);status('보정 사진으로 교체하는 중입니다…');
  try{const result=await PhotoEditorService.updatePhoto(photo.id,{title:photo.title,isAi:photo.is_ai,file});await loadLibrary();status(result.warning||'보정 사진으로 교체했습니다.',Boolean(result.warning));}catch(e){status(e.message,true);}finally{setBusy(false);}
  });
- figure.append(img,caption,rename,replace,replacement,remove); el('library').append(figure);
-      }
-  }
+ const photoTools=document.createElement('div');photoTools.className='album-photo-tools';
+ const index=album.photos.findIndex(p=>p.id===photo.id);
+ const number=document.createElement('input');number.type='number';number.min='1';number.max=album.photos.length;number.value=index+1;number.setAttribute('aria-label','사진 노출 순서');
+ const move=(label,position,disabled=false)=>{const b=document.createElement('button');b.type='button';b.className='secondary';b.textContent=label;b.disabled=disabled||busy;b.addEventListener('click',()=>{SiteAlbumOrder.movePhoto(album,photo.id,position());renderLibrary();});return b};
+ const cover=document.createElement('button');cover.type='button';cover.className='secondary';cover.textContent=album.cover.id===photo.id?'현재 대표사진':'대표사진으로 지정';cover.disabled=album.cover.id===photo.id||busy;cover.addEventListener('click',()=>{SiteAlbumOrder.cover(album,photo.id);renderLibrary();});
+ photoTools.append(move('사진 앞으로',()=>index,index===0),number,move('사진 순서 적용',()=>Math.max(1,Math.min(album.photos.length,Number(number.value)||1))),move('사진 뒤로',()=>index+2,index===album.photos.length-1),cover);
+ const stage=window.SitePhotoFraming?.get(photo.id).stage;if(stage){const badge=document.createElement('strong');badge.textContent=stage;caption.prepend(badge,document.createTextNode(' · '));}
+ figure.append(window.SitePhotoFraming?SitePhotoFraming.frame(img,photo.id):img,caption,photoTools,rename,replace,replacement,remove);grid.append(figure);
+
+ }
+ card.append(header,controls,grid);el('library').append(card);
+ }
+ }
   function setBusy(value) {
     busy=value; el('upload-fields').disabled=value; el('logout-button').disabled=value;
     el('refresh-button').disabled=value;

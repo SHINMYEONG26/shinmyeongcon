@@ -9,7 +9,8 @@
  const framing=window.SitePhotoFraming;
  const kind=a=>a.isAi?'AI 생성 예시 · 실제 현장 아님':'실제 시공사진';
  try{
- const groups=albums.group((await service.list()).filter(p=>categories.includes(p.category))),id=new URLSearchParams(location.search).get('site'),album=groups.find(a=>a.id===id);
+ const photos=await service.list();try{await SiteAlbumOrder.load();}catch{}
+ const groups=SiteAlbumOrder.apply(albums.group(photos.filter(p=>categories.includes(p.category)))),id=new URLSearchParams(location.search).get('site'),album=groups.find(a=>a.id===id);
  grid.replaceChildren();back.hidden=!id;
  if(id&&!album){heading.textContent='현장을 찾을 수 없습니다';message.textContent='현장 목록으로 돌아가 다시 선택해 주세요.';return;}
  heading.textContent=album?album.name:original;
@@ -17,7 +18,7 @@
  notice.textContent=album?kind(album):'실제 시공현장과 AI 생성 예시는 구분하여 안내합니다.';
  message.textContent=album?album.photos.length+'장':groups.length?groups.length+'개 현장':'아직 등록된 현장이 없습니다.';
  for(const item of album?album.photos:groups){
- const photo=album?item:item.photos[0],figure=make('figure'),link=make('a'),img=make('img'),caption=make('figcaption');
+ const photo=album?item:(item.cover||item.photos[0]),figure=make('figure'),link=make('a'),img=make('img'),caption=make('figcaption');
  img.src=photo.url;img.alt=album?(photo.caption||album.name):item.name;img.loading='lazy';
  if(album){link.href=photo.url;link.target='_blank';link.rel='noopener';caption.textContent=photo.caption||album.name;}
  else{const u=new URL(location.href);u.searchParams.set('site',item.id);link.href=u.pathname+u.search;caption.textContent=item.name;}
