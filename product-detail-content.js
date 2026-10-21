@@ -1,7 +1,8 @@
 (() => {
  const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node;};
  function buildModel(product,variants,label){
-  const detail=window.ProductDetailData?.[product.id];
+  const originalDetail=window.ProductDetailData?.[product.id];
+  const detail=product.category==='zinc'?{...originalDetail,registeredImagesOnly:true,images:[product.url],visualIntro:originalDetail?.description||product.description,visualGuide:null,visualGuideMobile:null,storyBoard:null,dimensionImage:null,colorImage:null,installedImage:null,benefitImages:[]}:originalDetail;
   const values=key=>[...new Set(variants.map(v=>v[key]).filter(Boolean))];
   const thickness=values('thickness');if(!thickness.length){const value=product.title.match(/\b\d+(?:\.\d+)?T\b/i)?.[0];if(value)thickness.push(value);}
   return {detail,label,rows:[['상품명',product.title],['자재 분류',label],...(detail?.manufacturerSpecs||[]),['두께',thickness.join(' · ')||'선택 옵션 및 상담으로 확인'],[values('length').some(v=>String(v).startsWith('종류:'))?'등록 종류':'판매 길이 옵션',values('length').join(' · ')||'선택 옵션 및 상담으로 확인'],['색상·종류',values('color').join(' · ')||'선택 옵션 및 상담으로 확인'],['판매 단위',ProductOptions.units.includes(product.price_unit)?product.price_unit.split('/')[1]:'장']],colors:values('color')};
@@ -9,7 +10,7 @@
  function mount(container,product,variants,label){
   const model=buildModel(product,variants,label),detail=model.detail;container.replaceChildren();
   const nav=el('nav','detail-section-nav');nav.setAttribute('aria-label','상품 상세 안내');
-  for(const [id,title] of [['product-overview','상품 설명·장점'],['product-specifications','규격·치수'],['product-colors','색상 비교'],['product-visuals','상세 이미지'],['product-installations','시공 예시'],['product-delivery','납품·시공 안내']]){const link=el('a','',title);link.href='#'+id;nav.append(link);}
+  for(const [id,title] of [['product-overview','상품 설명·장점'],['product-specifications','규격·치수'],['product-colors','색상 비교'],['product-visuals','상세 이미지'],['product-installations','시공 예시'],['product-delivery','납품·시공 안내']]){if((id==='product-colors'&&!detail?.colorImage)||(id==='product-installations'&&!detail?.installedImage))continue;const link=el('a','',title);link.href='#'+id;nav.append(link);}
   container.append(nav);
   function section(id,kicker,title){const node=el('section','detail-content-block');node.id=id;node.append(el('p','detail-eyebrow',kicker),el('h2','',title));container.append(node);return node;}
   const overview=section('product-overview','PRODUCT DETAIL',detail?.headline||product.title);overview.append(el('p','detail-intro-copy',detail?.visualIntro||detail?.description||product.description));
@@ -39,11 +40,11 @@
   function photoBlock(node,url,alt,caption){const figure=el('figure','detail-reference-figure'),link=el('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label',alt+' 크게 보기');const image=el('img');image.src=url;image.alt=alt;image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','detail-source-note',caption));node.append(figure);}
   if(detail?.colorImage){const colors=section('product-colors','COLOR COLLECTION',detail.colorTitle||'색상과 표면을 비교해 보세요');colors.append(el('p','detail-caption','현재 등록된 색상을 그림으로 비교하세요. 실제 색상은 샘플로 확인해 주세요.'));photoBlock(colors,detail.colorImage,product.title+' 색상·종류 비교 이미지','AI 제작 비교 예시 · 화면의 색상은 실제 자재와 다를 수 있습니다');}
   const visuals=section('product-visuals','PRODUCT IMAGES','제품 이미지와 적용 예시');
-  visuals.append(el('p','detail-caption','AI로 제작한 제품 예시입니다. 실제 형상·색상과 다를 수 있습니다.'));
+  visuals.append(el('p','detail-caption',detail?.registeredImagesOnly?'등록된 상품 사진입니다.':'AI로 제작한 제품 예시입니다. 실제 형상·색상과 다를 수 있습니다.'));
   const stack=el('div','detail-image-stack');visuals.append(stack);if(!detail?.images?.length)stack.append(el('p','detail-caption','신명건설 전용 제품 예시 이미지를 준비하고 있습니다.'));
   const imageUrls=detail?.images||[];
-  imageUrls.forEach((url,i)=>{const figure=el('figure','detail-reference-figure'),link=el('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label',product.title+' AI 생성 예시 크게 보기');
-   const image=el('img');image.src=url;image.alt=product.title+' AI 생성 예시 이미지 '+(i+1);image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','detail-source-note','AI 생성 예시 · 실제 제품 및 시공사진이 아닙니다'));
+  imageUrls.forEach((url,i)=>{const figure=el('figure','detail-reference-figure'),link=el('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label',product.title+(detail?.registeredImagesOnly?' 제품 사진 크게 보기':' AI 생성 예시 크게 보기'));
+   const image=el('img');image.src=url;image.alt=product.title+(detail?.registeredImagesOnly?' 제품 사진 ':' AI 생성 예시 이미지 ')+(i+1);image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','detail-source-note',detail?.registeredImagesOnly?'등록된 제품 사진':'AI 생성 예시 · 실제 제품 및 시공사진이 아닙니다'));
    const fallback=el('p','detail-image-fallback','이미지를 불러오지 못했습니다. 이미지를 새 창에서 열어 확인해 주세요.');fallback.hidden=true;figure.append(fallback);
    image.addEventListener('error',()=>{image.hidden=true;fallback.hidden=false;const direct=el('a','','이미지 크게 보기 ↗');direct.href=url;direct.target='_blank';direct.rel='noopener noreferrer';fallback.append(' ',direct);});
    stack.append(figure);
