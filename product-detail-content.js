@@ -24,7 +24,7 @@
   }else if(detail?.visualGuide){pictureBlock(guide,detail.visualGuide,detail.visualGuideMobile,product.title+' 그림으로 보는 특징·장점','정확한 치수와 색상은 규격·샘플로 확인');}
   for(const item of detail?.benefitImages||[])photoBlock(guide,item.src,item.alt,'열반사 원리·구성 개념도');
   if(detail?.storyBoard||detail?.visualGuide)overview.append(guide);
-  const extended=el('details','detail-extended-copy'),summary=el('summary','','자세한 설명 펼쳐보기');extended.append(summary);overview.append(extended);
+  const extended=el('details','detail-extended-copy'),summary=el('summary','',detail?.registeredImagesOnly?'상품 특징·활용 안내':'자세한 설명 펼쳐보기');if(detail?.registeredImagesOnly)extended.open=true;extended.append(summary);overview.append(extended);
   const banner=el('div','detail-consult-banner');banner.append(el('strong','','자재 납품부터 직영 시공까지'),el('p','','신명건설이 필요한 자재와 현장 조건을 함께 살펴봅니다. 규격·수량·현장 위치를 알려주시면 납품과 시공을 상담해 드립니다.'));
   if(detail?.benefits?.length){const benefit=el('div','detail-benefits');benefit.append(el('h2','',detail.benefitsTitle||'이 상품의 장점'));const cards=el('ul','detail-feature-list');for(const item of detail.benefits){const li=el('li');li.append(el('strong','',item.title),el('p','',item.text));cards.append(li);}benefit.append(cards);extended.append(benefit);}
   if(detail?.useCases?.length){const uses=el('div','detail-use-cases');uses.append(el('h2','','추천 용도와 활용 방향'));const cards=el('ul','detail-feature-list');for(const item of detail.useCases){const li=el('li');li.append(el('strong','',item.title),el('p','',item.text));cards.append(li);}uses.append(cards);extended.append(uses);}
