@@ -23,7 +23,12 @@
  if(album){link.href=photo.url;link.target='_blank';link.rel='noopener';caption.textContent=photo.caption||album.name;}
  else{const u=new URL(location.href);u.searchParams.set('site',item.id);link.href=u.pathname+u.search;caption.textContent=item.name;}
  const stage=framing?.get(photo.id).stage;if(album&&stage){const badge=make('span',stage);badge.className='photo-stage';caption.prepend(badge);}
- caption.append(make('small',album?kind(album):item.photos.length+'장 · '+kind(item)));link.append(framing?framing.frame(img,photo.id):img);figure.append(link,caption);grid.append(figure);
+ caption.append(make('small',album?kind(album):item.photos.length+'장 · '+kind(item)));
+ const preview=make('span');preview.className='album-uniform-preview';
+ const framed=framing?framing.frame(img,photo.id):img;preview.append(framed);link.append(preview);
+ const fitPreview=()=>{if(!framing)return;const crop=framing.get(photo.id).crop||[0,0,1,1],ratio=img.naturalWidth*crop[2]/(img.naturalHeight*crop[3]);if(!Number.isFinite(ratio)||ratio<=0)return;framed.style.width=ratio>=4/3?'100%':(ratio/(4/3)*100)+'%';framed.style.height=ratio>=4/3?((4/3)/ratio*100)+'%':'100%';};
+ img.addEventListener('load',fitPreview,{once:true});if(img.complete)fitPreview();
+ figure.append(link,caption);grid.append(figure);
  }
  }catch(e){grid.replaceChildren();message.textContent=e.message;const retry=make('button','다시 불러오기');retry.addEventListener('click',()=>location.reload());grid.append(retry);}
  try{await service.requireAdmin();manage.hidden=false;}catch{}
