@@ -6,12 +6,14 @@
   const catalogLabels={...labels,'louver-steel':'루버강판',zinc:'징크'};
   for(const key of ['temba-zinc','real',...excludedCatalogCategories])delete catalogLabels[key];
   const catalogImages={};
+  const cleanVariantText=text=>String(text||'').replace(/^(?:메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex)[_\s-]*/i,'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설');
+  const cleanVariants=rows=>Array.isArray(rows)?rows.map(row=>({...row,...Object.fromEntries(['color','thickness','length'].map(key=>[key,cleanVariantText(row[key])]))})):rows;
   const catalogProduct=product=>{
     if(excludedCatalogCategories.has(product.category))return null;
     const combined=['temba-zinc','real'].includes(product.category);
     const category=combined?(/템바|루버/.test(product.title)?'louver-steel':'zinc'):product.category;
     const rename=text=>String(text||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설').replace(/템바(?:징크)?/g,'루버강판');
-    return {...product,category,title:rename(product.title),description:rename(product.description),...(catalogImages[product.id]?{url:catalogImages[product.id],is_ai:true}:{})};
+    return {...product,category,title:rename(product.title),description:rename(product.description),variants:cleanVariants(product.variants),...(catalogImages[product.id]?{url:catalogImages[product.id],is_ai:true}:{})};
   };
   const categoryRank=category=>['temba-zinc','real'].includes(category)?0:category==='color'?1:2;
   const validIds=ids=>Array.isArray(ids)&&ids.every(id=>typeof id==='string'&&/^[a-f0-9-]{36}$/i.test(id))&&new Set(ids).size===ids.length;
@@ -41,7 +43,7 @@
       let result=await client.from('products').select(fields).order('created_at',{ascending:false});
       if(result.error&&['42703','PGRST204'].includes(result.error.code))result=await client.from('products').select('id,category,title,description,is_ai,image_source,storage_path,created_at').order('created_at',{ascending:false});
       if(result.error)throw new Error('상품 목록을 불러오지 못했습니다. 연결 상태를 확인해 주세요.');
-      return (result.data||[]).map(product=>({...product,title:String(product.title||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),description:String(product.description||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),url:imageUrl(product)})).filter(product=>product.url&&labels[product.category]).sort((a,b)=>{
+      return (result.data||[]).map(product=>({...product,variants:cleanVariants(product.variants),title:String(product.title||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),description:String(product.description||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),url:imageUrl(product)})).filter(product=>product.url&&labels[product.category]).sort((a,b)=>{
         const aSaved=Number.isInteger(a.display_order)&&a.display_order>0,bSaved=Number.isInteger(b.display_order)&&b.display_order>0;
         if(aSaved||bSaved)return aSaved&&bSaved?a.display_order-b.display_order:aSaved?-1:1;
         return categoryRank(a.category)-categoryRank(b.category);
