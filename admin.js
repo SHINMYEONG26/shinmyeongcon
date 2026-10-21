@@ -80,6 +80,7 @@
         remove.disabled = busy || Boolean(window.adminOperationBusy);
         remove.setAttribute('aria-label', `${photo.title} 사진 삭제`);
         remove.addEventListener('click', async () => {
+          if(SiteAlbumOrder.dirty){status('먼저 노출 순서를 저장해 주세요.',true);return;}
           if (busy || window.adminOperationBusy || !window.confirm(`「${photo.title}」 사진을 삭제할까요?\n홈페이지에서 사라지며 되돌릴 수 없습니다.`)) return;
           setBusy(true); status('사진을 삭제하는 중입니다…');
           try {
@@ -89,12 +90,13 @@
           finally { setBusy(false); }
         });
         const rename=document.createElement('button');rename.type='button';rename.textContent='현장명 수정';
- rename.addEventListener('click',async()=>{if(busy)return;let nameInput=figure.querySelector('[data-site-edit]');if(!nameInput){nameInput=document.createElement('input');nameInput.dataset.siteEdit='true';nameInput.setAttribute('aria-label','수정할 현장명');nameInput.value=SiteAlbums.parse(photo).site;figure.insertBefore(nameInput,rename);rename.textContent='현장명 저장';nameInput.focus();return;}const name=nameInput.value;if(!name?.trim())return;setBusy(true);try{await PhotoEditorService.updatePhoto(photo.id,{title:SiteAlbums.title(name,SiteAlbums.parse(photo).caption),isAi:photo.is_ai});await loadLibrary();status('현장명을 수정했습니다.');}catch(e){status(e.message,true);}finally{setBusy(false);}});
+ rename.addEventListener('click',async()=>{if(busy)return;if(SiteAlbumOrder.dirty){status('먼저 노출 순서를 저장해 주세요.',true);return;}let nameInput=figure.querySelector('[data-site-edit]');if(!nameInput){nameInput=document.createElement('input');nameInput.dataset.siteEdit='true';nameInput.setAttribute('aria-label','수정할 현장명');nameInput.value=SiteAlbums.parse(photo).site;figure.insertBefore(nameInput,rename);rename.textContent='현장명 저장';nameInput.focus();return;}const name=nameInput.value;if(!name?.trim())return;setBusy(true);try{await PhotoEditorService.updatePhoto(photo.id,{title:SiteAlbums.title(name,SiteAlbums.parse(photo).caption),isAi:photo.is_ai});await loadLibrary();status('현장명을 수정했습니다.');}catch(e){status(e.message,true);}finally{setBusy(false);}});
  const replace=document.createElement('button');replace.type='button';replace.textContent='사진 교체';
  const replacement=document.createElement('div');replacement.hidden=true;
  const fileInput=document.createElement('input');fileInput.type='file';fileInput.accept='image/jpeg,image/png,image/webp';fileInput.setAttribute('aria-label','교체할 사진');replacement.append(fileInput);
  replace.addEventListener('click',async()=>{
  if(busy||window.adminOperationBusy)return;
+ if(SiteAlbumOrder.dirty){status('먼저 노출 순서를 저장해 주세요.',true);return;}
  if(replacement.hidden){replacement.hidden=false;replace.textContent='선택한 사진으로 교체';fileInput.focus();return;}
  const file=fileInput.files[0];if(!file){status('교체할 사진을 선택해 주세요.',true);return;}
  try{PhotoEditorService.validateFile(file);}catch(e){status(e.message,true);return;}
@@ -132,7 +134,7 @@
     try { await service.logout(); showLogin(); selected=[]; clearPreviews(); el('upload-form').reset(); status('로그아웃했습니다.'); }
     catch(error) { status(error.message,true); }
   });
-  el('refresh-button').addEventListener('click',loadLibrary);
+  el('refresh-button').addEventListener('click',async()=>{if(busy)return;try{await SiteAlbumOrder.load(await service.list());orderStatus.textContent='';await loadLibrary();status('앨범 목록을 새로 불러왔습니다.');}catch(e){status(e.message,true);}});
   el('photos').addEventListener('change',async () => {
     clearPreviews(); selected=[]; const files=Array.from(el('photos').files);
     if(files.length>10) { el('photos').value=''; status('한 번에 최대 10장까지 선택해 주세요.',true); return; }
@@ -157,6 +159,7 @@
   });
   el('upload-form').addEventListener('submit',async event=>{
     event.preventDefault(); if(busy||window.adminOperationBusy||!selected.length)return;
+    if(SiteAlbumOrder.dirty){status('먼저 노출 순서를 저장해 주세요.',true);return;}
     const category=el('category').value, isAi=el('photo-kind').value==='ai', title=SiteAlbums.title(el('site-name').value,el('title').value);
     const batch=[...selected].sort((a,b)=>Number(b===coverFile)-Number(a===coverFile)), remaining=[], failures=[]; let uploaded=0;
     setBusy(true);
