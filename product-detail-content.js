@@ -10,7 +10,7 @@
  function mount(container,product,variants,label){
   const model=buildModel(product,variants,label),detail=model.detail;container.replaceChildren();
   const nav=el('nav','detail-section-nav');nav.setAttribute('aria-label','상품 상세 안내');
-  for(const [id,title] of [['product-overview','상품 설명·장점'],['product-specifications','규격·치수'],['product-colors','색상 비교'],['product-visuals','상세 이미지'],['product-installations','시공 예시'],['product-delivery','납품·시공 안내']]){if((id==='product-colors'&&!detail?.colorImage)||(id==='product-installations'&&!detail?.installedImage))continue;const link=el('a','',title);link.href='#'+id;nav.append(link);}
+  for(const [id,title] of [['product-overview','상품 설명·장점'],['product-specifications','규격·치수'],['product-installation-guide','시공 방법'],['product-colors','색상 비교'],['product-visuals','상세 이미지'],['product-installations','시공 예시'],['product-delivery','납품·시공 안내']]){if((id==='product-colors'&&!detail?.colorImage)||(id==='product-installations'&&!detail?.installedImage))continue;const link=el('a','',title);link.href='#'+id;nav.append(link);}
   container.append(nav);
   function section(id,kicker,title){const node=el('section','detail-content-block');node.id=id;node.append(el('p','detail-eyebrow',kicker),el('h2','',title));container.append(node);return node;}
   const overview=section('product-overview','PRODUCT DETAIL',detail?.headline||product.title);overview.append(el('p','detail-intro-copy',detail?.visualIntro||detail?.description||product.description));
@@ -24,12 +24,22 @@
   }else if(detail?.visualGuide){pictureBlock(guide,detail.visualGuide,detail.visualGuideMobile,product.title+' 그림으로 보는 특징·장점','정확한 치수와 색상은 규격·샘플로 확인');}
   for(const item of detail?.benefitImages||[])photoBlock(guide,item.src,item.alt,'열반사 원리·구성 개념도');
   if(detail?.storyBoard||detail?.visualGuide)overview.append(guide);
-  const extended=el('details','detail-extended-copy'),summary=el('summary','',detail?.registeredImagesOnly?'상품 특징·활용 안내':'자세한 설명 펼쳐보기');if(detail?.registeredImagesOnly)extended.open=true;extended.append(summary);overview.append(extended);
+  const extended=el('div','detail-extended-copy'),summary=el('h3','','상품 특징·장점·활용 안내');if(detail?.registeredImagesOnly)extended.open=true;extended.append(summary);overview.append(extended);
   const banner=el('div','detail-consult-banner');banner.append(el('strong','','자재 납품부터 직영 시공까지'),el('p','','신명건설이 필요한 자재와 현장 조건을 함께 살펴봅니다. 규격·수량·현장 위치를 알려주시면 납품과 시공을 상담해 드립니다.'));
   if(detail?.benefits?.length){const benefit=el('div','detail-benefits');benefit.append(el('h2','',detail.benefitsTitle||'이 상품의 장점'));const cards=el('ul','detail-feature-list');for(const item of detail.benefits){const li=el('li');li.append(el('strong','',item.title),el('p','',item.text));cards.append(li);}benefit.append(cards);extended.append(benefit);}
   if(detail?.useCases?.length){const uses=el('div','detail-use-cases');uses.append(el('h2','','추천 용도와 활용 방향'));const cards=el('ul','detail-feature-list');for(const item of detail.useCases){const li=el('li');li.append(el('strong','',item.title),el('p','',item.text));cards.append(li);}uses.append(cards);extended.append(uses);}
   if(detail?.selectionTips?.length){const notes=el('div','detail-selection-guide');notes.append(el('h2','','발주·시공 전에 확인해 주세요'));const list=el('ul','detail-order-notes');for(const tip of detail.selectionTips)list.append(el('li','',tip));notes.append(list);extended.append(notes);}
   if(!detail?.visualGuide)overview.append(banner);
+
+  const installation=section('product-installation-guide','INSTALLATION','시공 방법과 확인 사항');
+  installation.append(el('p','detail-caption','아래는 시공 흐름을 이해하기 위한 안내입니다. 고정 간격·체결 방식·하부 구성은 제조사 지침과 현장 조건에 맞춰 확인합니다.'));
+  let steps;
+  if(/사이딩/.test(product.title))steps=[['바탕과 하부틀 확인','벽체의 상태·수평·수직을 확인하고 방수 및 하부틀 구성을 계획합니다.'],['시작부와 모서리 준비','스타터와 창호·모서리 마감재의 위치를 정하고 기준선을 잡습니다.'],['패널 연결과 고정','제품의 결합 방향에 맞춰 패널을 연결하며 하부틀에 고정합니다. 절단부와 개구부는 전용 마감재 구성을 확인합니다.'],['끝단 마감과 점검','외부 모서리·상부·창호 주변의 마감 및 물이 빠지는 경로를 점검합니다.']];
+  else if(/덧방/.test(product.title))steps=[['기존 지붕 점검','누수·부식·처짐과 기존 지붕 하부 구조를 확인해 덧방 시공 가능 여부를 판단합니다.'],['형상과 지지 위치 확인','V115·V250·V330 중 현장 형상과 맞는 제품을 검토하고 고정 가능한 지지 위치를 확인합니다.'],['판재 배치와 체결','물 흐름과 지붕 경사를 고려해 판재를 배치하고 지정된 겹침·체결 방법을 적용합니다.'],['접합부 마감','처마·용마루·벽체 접합부와 관통부의 방수 마감을 점검합니다.']];
+  else if(/평잇기/.test(product.title))steps=[['바탕면 준비','하부 구조의 평활도와 방수 구성을 확인합니다.'],['모듈 기준선 설정','정사각 판재의 배열과 줄눈 위치를 정해 개구부·모서리와 균형을 맞춥니다.'],['판재 연결','제조사가 안내하는 평잇기 결합·고정 방식에 맞춰 순서대로 설치합니다.'],['가장자리 마감','끝단·모서리·창호 주변의 마감재와 배수 경로를 확인합니다.']];
+  else steps=[['현장과 바탕 확인','지붕 경사 또는 벽체 상태를 확인하고 하부틀·방수·단열 구성을 계획합니다.'],['배치와 수량 산정','제품의 유효폭과 시공 방향을 기준으로 패널 장수·길이 및 창호·모서리 마감 위치를 정합니다.'],['패널 설치와 고정',/인터락/.test(product.title)?'패널 양쪽의 결합 방향을 확인해 맞물림을 유지하며 제조사 지정 방식으로 하부틀에 고정합니다.':/리얼징크/.test(product.title)?'세로 이음선과 판재 배치를 맞추고 해당 제품의 이음·체결 방식에 따라 설치합니다.':'골 방향과 제품별 겹침·연결 방향을 확인한 뒤 지정된 체결재와 방식으로 하부틀에 고정합니다.'],['마감과 최종 점검','처마·용마루·창호·모서리 등 접합부를 마감하고 고정 상태와 배수·방수 구성을 점검합니다.']];
+  const installList=el('ol','detail-order-notes');for(const [title,text] of steps){const item=el('li');item.append(el('strong','',title),el('p','',text));installList.append(item);}installation.append(installList);
+
   const specs=section('product-specifications','SPECIFICATION','선택 가능한 규격과 색상');
   if(detail?.dimensionImage){const figure=el('figure','detail-size-figure'),link=el('a');link.href=detail.dimensionImage;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',product.title+' 입체 치수 이미지 크게 보기');const image=el('img');image.src=detail.dimensionImage;image.alt=product.title+' 전체폭·유효폭 입체 규격 이미지';image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','','AI 제작 입체 예시 · 표기 치수는 제조사 공개 규격 기준 · 형상 및 비례는 실제 제품과 다를 수 있습니다'));specs.append(figure);}
   if(detail?.specImage){const fold=el('details','detail-spec-fold');fold.append(el('summary','','단면 규격도 보기'));const figure=el('figure','detail-size-figure'),link=el('a');link.href=detail.specImage;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label',product.title+' 규격 안내도 크게 보기');const image=el('img');image.src=detail.specImage;image.alt=product.title+' 제조사 공개 규격 기준 안내도';image.loading='lazy';image.decoding='async';link.append(image);figure.append(link,el('figcaption','','제조사 공개 규격 기준 · 직접 제작한 개념도 · 비례 아님'));fold.append(figure);specs.append(fold);}
