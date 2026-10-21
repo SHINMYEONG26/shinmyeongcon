@@ -65,7 +65,7 @@
           finally { setBusy(false); }
         });
         const rename=document.createElement('button');rename.type='button';rename.textContent='현장명 수정';
- rename.addEventListener('click',async()=>{if(busy)return;const name=window.prompt('현장명',SiteAlbums.parse(photo).site);if(!name?.trim())return;setBusy(true);try{await PhotoEditorService.updatePhoto(photo.id,{title:SiteAlbums.title(name,SiteAlbums.parse(photo).caption),isAi:photo.is_ai});await loadLibrary();status('현장명을 수정했습니다.');}catch(e){status(e.message,true);}finally{setBusy(false);}});
+ rename.addEventListener('click',async()=>{if(busy)return;let nameInput=figure.querySelector('[data-site-edit]');if(!nameInput){nameInput=document.createElement('input');nameInput.dataset.siteEdit='true';nameInput.setAttribute('aria-label','수정할 현장명');nameInput.value=SiteAlbums.parse(photo).site;figure.insertBefore(nameInput,rename);rename.textContent='현장명 저장';nameInput.focus();return;}const name=nameInput.value;if(!name?.trim())return;setBusy(true);try{await PhotoEditorService.updatePhoto(photo.id,{title:SiteAlbums.title(name,SiteAlbums.parse(photo).caption),isAi:photo.is_ai});await loadLibrary();status('현장명을 수정했습니다.');}catch(e){status(e.message,true);}finally{setBusy(false);}});
  figure.append(img,caption,rename,remove); el('library').append(figure);
       }
   }
