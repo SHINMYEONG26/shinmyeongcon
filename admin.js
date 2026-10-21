@@ -16,7 +16,7 @@
  const saveOrder=document.createElement('button');saveOrder.type='button';saveOrder.textContent='노출 순서 저장';
  const orderStatus=document.createElement('p');orderStatus.setAttribute('role','status');orderStatus.className='album-order-status';
  orderTools.append(orderHint,saveOrder,orderStatus);el('library-filters').before(orderTools);
- saveOrder.addEventListener('click',async()=>{if(busy||!SiteAlbumOrder.dirty)return;setBusy(true);saveOrder.disabled=true;orderStatus.textContent='순서를 저장하는 중입니다…';try{await SiteAlbumOrder.save(orderGroups);await loadLibrary();orderStatus.textContent='노출 순서를 저장했습니다. 홈페이지에 반영됩니다.';}catch(e){orderStatus.textContent=e.message;status(e.message,true);}finally{setBusy(false);saveOrder.disabled=!SiteAlbumOrder.dirty;}});
+ saveOrder.addEventListener('click',async()=>{if(busy||!SiteAlbumOrder.dirty)return;setBusy(true);saveOrder.disabled=true;orderStatus.textContent='순서를 저장하는 중입니다…';try{await SiteAlbumOrder.save(orderGroups,(n,total)=>{orderStatus.textContent=n+'/'+total+'장 순서 저장 중…';});await loadLibrary();orderStatus.textContent='노출 순서를 저장했습니다. 홈페이지에 반영됩니다.';}catch(e){orderStatus.textContent=e.message;status(e.message,true);}finally{setBusy(false);saveOrder.disabled=!SiteAlbumOrder.dirty;}});
  const filterButtons = [];
   for (const [category, label] of [['all', '전체'], ...Object.entries({'composite-sheet':'외벽공사',color:'지붕공사','interior-exterior':'내부인테리어'})]) {
     const button = document.createElement('button');
@@ -45,7 +45,7 @@
   async function loadLibrary() {
     try {
       libraryPhotos = await service.list();
-      if(!SiteAlbumOrder.dirty){try{await SiteAlbumOrder.load();}catch(e){status(e.message,true);}}
+      if(!SiteAlbumOrder.dirty){try{await SiteAlbumOrder.load(libraryPhotos);}catch(e){status(e.message,true);}}
       el('site-names').replaceChildren(...[...new Set(libraryPhotos.map(p=>SiteAlbums.parse(p).site))].map(name=>{const option=document.createElement('option');option.value=name;return option;}));
       renderLibrary();
     } catch (error) { status(error.message,true); }

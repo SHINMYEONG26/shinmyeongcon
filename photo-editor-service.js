@@ -38,10 +38,12 @@
     async updatePhoto(id, {title,isAi,file}) {
       title = titleValue(title);
       await photos.requireAdmin();
-      const current = await client.from('gallery_photos').select('category,is_ai,storage_path').eq('id',id).single();
+      const current = await client.from('gallery_photos').select('category,is_ai,storage_path,title').eq('id',id).single();
       if (current.error || !current.data) throw new Error('수정할 사진을 찾지 못했습니다. 새로고침해 주세요.');
       if (current.data.is_ai && !isAi && !file)
         throw new Error('AI 예시를 실제 시공사진으로 바꾸려면 실제 사진을 함께 선택해 주세요.');
+      const suffix=window.SiteAlbums?.metadata(current.data.title).suffix||'';
+      if(suffix&&!window.SiteAlbums.metadata(title).suffix)title=titleValue(title+suffix);
       const path = file ? await uploadFile(file,current.data.category) : null;
       try {
         const result = await client.from('gallery_photos').update({title,is_ai:Boolean(isAi),...(path?{storage_path:path}:{})}).eq('id',id).select('id').single();

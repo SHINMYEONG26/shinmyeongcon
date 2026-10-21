@@ -107,7 +107,7 @@
       if (error) throw new Error('사진 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
 
       return (data || [])
-        .map(photo => ({ ...photo, url: publicUrl(photo.storage_path) }))
+        .map(photo => ({ ...photo, raw_title:photo.title, title:String(photo.title||'').replace(/ ⟦([0-9a-z]+)\.([0-9a-z]+)\.([01])⟧$/,''), url: publicUrl(photo.storage_path) }))
         .filter(photo => photo.url && labels[photo.category]);
     },
 

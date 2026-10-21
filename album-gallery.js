@@ -9,7 +9,7 @@
  const framing=window.SitePhotoFraming;
  const kind=a=>a.isAi?'AI 생성 예시 · 실제 현장 아님':'실제 시공사진';
  try{
- const photos=await service.list();try{await SiteAlbumOrder.load();}catch{}
+ const photos=await service.list();try{await SiteAlbumOrder.load(photos);}catch{}
  const groups=SiteAlbumOrder.apply(albums.group(photos.filter(p=>categories.includes(p.category)))),id=new URLSearchParams(location.search).get('site'),album=groups.find(a=>a.id===id);
  grid.replaceChildren();back.hidden=!id;
  if(id&&!album){heading.textContent='현장을 찾을 수 없습니다';message.textContent='현장 목록으로 돌아가 다시 선택해 주세요.';return;}
