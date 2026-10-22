@@ -59,13 +59,13 @@
   }
   function readVariants(){return ProductOptions.normalize([...el('product-variant-rows').children].map(row=>Object.fromEntries([...row.querySelectorAll('input')].map(input=>[input.dataset.variantField,input.value]))));}
   function resetProductForm(){
-    editingId=null;selectionId++;clearPreview();el('product-form').reset();el('product-photo').required=true;
+    window.ProductDetailEditor?.load(null);editingId=null;selectionId++;clearPreview();el('product-form').reset();el('product-photo').required=true;
     el('product-form-heading').textContent='자재·상품 추가';el('product-submit').textContent='홈페이지에 상품 등록';el('product-cancel-edit').hidden=true;
     el('product-variant-rows').replaceChildren();addVariant();
   }
   function editProduct(product){
-    if(window.adminOperationBusy)return;
-    selectionId++;clearPreview();editingId=product.id;el('product-form').reset();
+    if(window.adminOperationBusy||window.ProductDetailEditor?.canLeave()===false)return;
+    window.ProductDetailEditor?.load(product);selectionId++;clearPreview();editingId=product.id;el('product-form').reset();
     el('product-category').value=product.category;el('product-title').value=product.title;el('product-description').value=product.description;
     el('product-kind').value=product.is_ai?'ai':'actual';el('product-price-unit').value=ProductOptions.units.includes(product.price_unit)?product.price_unit:'원/장';
     el('product-photo').required=false;el('product-form-heading').textContent='자재·상품 수정';el('product-submit').textContent='변경 내용 저장';el('product-cancel-edit').hidden=false;
@@ -75,7 +75,7 @@
     status('사진을 바꾸려면 새 사진을 선택하세요. 옵션과 가격을 수정한 뒤 저장해 주세요.');el('product-panel').scrollIntoView({behavior:'smooth',block:'start'});
   }
   el('product-add-variant').addEventListener('click',()=>{if(!window.adminOperationBusy)addVariant();});
-  el('product-cancel-edit').addEventListener('click',()=>{if(!window.adminOperationBusy){resetProductForm();status('상품 수정을 취소했습니다.');}});
+  el('product-cancel-edit').addEventListener('click',()=>{if(!window.adminOperationBusy&&window.ProductDetailEditor?.canLeave()!==false){resetProductForm();status('상품 수정을 취소했습니다.');}});
   addVariant();
   const updateView=()=>{
     el('manager-tabs').hidden=!loggedIn;
@@ -150,7 +150,7 @@
     catch{if(ticket!==selectionId)return;clearPreview();el('product-photo').value='';status('열 수 없는 사진입니다. 다른 사진을 선택해 주세요.',true);}
   });
   el('product-form').addEventListener('submit',async event=>{
-    event.preventDefault();if(window.adminOperationBusy)return;
+    event.preventDefault();if(window.adminOperationBusy||window.ProductDetailEditor?.canLeave()===false)return;
     if(!file&&!editingId){status('상품 사진을 선택하고 미리보기가 표시될 때까지 기다려 주세요.',true);return;}
     setBusy(true);status('상품을 등록하는 중입니다…');
     try{
