@@ -37,6 +37,21 @@
   }
   window.ProductService={
     ready:Boolean(client),labels,catalogLabels,catalogProduct,
+    async readDetailImages(id){
+      const r=await client.from('products').select('variants').eq('id',id).single();
+      if(r.error)throw new Error('상품 상세 이미지를 불러오지 못했습니다.');
+      const rows=r.data.variants?.[0]?.__detailImages||[];
+      if(!Array.isArray(rows)||rows.length>20)throw new Error('상품 상세 이미지 목록을 확인해 주세요.');
+      return rows.filter(x=>/^products\/[a-z0-9-]+\.(jpg|png|webp)$/.test(x.image_path||''));
+    },
+    async uploadDetailImage(file){await photos.requireAdmin();return upload(file);},
+    detailImageUrl:path=>/^products\/[a-z0-9-]+\.(jpg|png|webp)$/.test(path||'')?client.storage.from(bucket).getPublicUrl(path).data.publicUrl:null,
+    async saveDetailImages(id,items){
+      await photos.requireAdmin();if(!Array.isArray(items)||items.length>20||items.some(x=>!/^products\/[a-z0-9-]+\.(jpg|png|webp)$/.test(x.image_path||'')||String(x.alt_text||'').length>250))throw new Error('상세 이미지 정보를 확인해 주세요.');
+      const r=await client.from('products').select('variants').eq('id',id).single();if(r.error)throw new Error('상품을 찾을 수 없습니다.');
+      const variants=r.data.variants?.length?r.data.variants:[{}];variants[0]={...variants[0],__detailImages:items.map(x=>({image_path:x.image_path,alt_text:x.alt_text||''}))};
+      const saved=await client.from('products').update({variants}).eq('id',id).select('id').single();if(saved.error)throw new Error('상세 이미지 저장에 실패했습니다.');
+    },
     async list(){
       if(!client)throw new Error('상품 저장공간이 아직 연결되지 않았습니다.');
       const fields='id,category,title,description,is_ai,image_source,storage_path,created_at,variants,price_unit,display_order';
@@ -63,9 +78,10 @@
     },
     async update(id,file,category,title,description,isAi,variants=[],unit='원/장'){
       const values=validate(category,title,description,variants,unit);await photos.requireAdmin();
-      const current=await client.from('products').select('image_source,storage_path').eq('id',id).single();
+      const current=await client.from('products').select('image_source,storage_path,variants').eq('id',id).single();
       if(current.error||!current.data)throw new Error('수정할 상품을 찾지 못했습니다. 새로고침해 주세요.');
       if(!file&&current.data.image_source==='sample'&&!isAi)throw new Error('AI 예시를 실제 제품 사진으로 바꾸려면 실제 사진도 함께 선택해 주세요.');
+      const detailImages=current.data.variants?.[0]?.__detailImages;if(detailImages?.length){if(!values.variants.length)values.variants=[{}];values.variants[0]={...values.variants[0],__detailImages:detailImages};}
       const path=file?await upload(file):null;
       const result=await client.from('products').update({...values,is_ai:Boolean(isAi),...(path?{image_source:'upload',storage_path:path}:{})}).eq('id',id).select('id').single();
       if(result.error){if(path)await client.storage.from(bucket).remove([path]);throw new Error('상품을 수정하지 못했습니다. 관리자 수정 권한과 가격·옵션 저장 설정을 확인해 주세요.');}

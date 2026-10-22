@@ -1,16 +1,6 @@
 (() => {
-  const service = window.PageContentService;
-  const pageFor = id => 'gallery-product-' + id;
-  const orderField = {key:'e0000:text:0',kind:'text'};
-  async function read(id) {
-    const result = await service.list(pageFor(id));
-    if (!result.available) throw new Error('상세 이미지 저장공간에 연결하지 못했습니다. 다시 시도해 주세요.');
-    const manifest = result.items.find(x => x.field_key === orderField.key);
-    let order = [];
-    if (manifest) { try { order = JSON.parse(manifest.value); } catch { throw new Error('저장된 상세 이미지 순서를 읽지 못했습니다.'); } }
-    if (!Array.isArray(order) || order.length > 20) throw new Error('상세 이미지 목록을 확인해 주세요.');
-    return {items:order.map(key=>result.items.find(x=>x.field_key===key)).filter(x=>x&&service.imageUrl(x.image_path)),all:result.items};
-  }
+  const service = {validateFile:window.PageContentService.validateFile,imageUrl:path=>ProductService.detailImageUrl(path)};
+  async function read(id) { return {items:await ProductService.readDetailImages(id),all:[]}; }
   window.ProductDetailImages = {read};
   if (!document.getElementById('product-form')) return;
   const box=document.createElement('section');box.className='product-detail-editor';
@@ -39,9 +29,9 @@
   window.ProductDetailEditor={load,canLeave:()=>!dirty||confirm('저장하지 않은 상세 이미지 변경을 버릴까요?')};
   input.onchange=async()=>{const files=[...input.files];input.value='';if(rows.length+files.length>20){message.textContent='상세 이미지는 최대 20장입니다.';return;}try{const next=[];for(const f of files){service.validateFile(f);const u=URL.createObjectURL(f);urls.add(u);const im=new Image();im.src=u;await im.decode();next.push({file:f,url:u,alt_text:''});}rows.push(...next);dirty=true;render();}catch(e){message.textContent=e.message;}};
   save.onclick=async()=>{if(busy||!product||!loaded)return;busy=true;window.adminOperationBusy=true;controls();message.textContent='상세 이미지를 저장하는 중입니다.';
-    try{await PhotoService.requireAdmin();let serial=Math.max(0,...all.map(x=>Number(x.field_key.match(/^e(\d{4}):/)?.[1]||0)));const keys=[];
-      for(const row of rows){if(row.file){if(++serial>9999)throw new Error('이미지 저장 한도에 도달했습니다.');row.field_key='e'+String(serial).padStart(4,'0')+':image';await service.save(pageFor(product.id),{key:row.field_key,kind:'image'},{file:row.file,alt:row.alt_text});delete row.file;}else{await service.save(pageFor(product.id),{key:row.field_key,kind:'image'},{alt:row.alt_text});}keys.push(row.field_key);}
-      await service.save(pageFor(product.id),orderField,{value:JSON.stringify(keys)});const fresh=await read(product.id);all=fresh.all;rows=fresh.items.map(x=>({...x}));release();dirty=false;message.textContent='상세 이미지 '+rows.length+'장을 저장했습니다. 상품 상세 페이지에서 확인하세요.';
+    try{await PhotoService.requireAdmin();
+      for(const row of rows){if(row.file){row.image_path=await ProductService.uploadDetailImage(row.file);delete row.file;}}
+      await ProductService.saveDetailImages(product.id,rows);const fresh=await read(product.id);rows=fresh.items.map(x=>({...x}));release();dirty=false;message.textContent='상세 이미지 '+rows.length+'장을 저장했습니다. 상품 상세 페이지에서 확인하세요.';
     }catch(e){message.textContent='저장 실패: '+e.message;}finally{busy=false;window.adminOperationBusy=false;render();}
   };
   window.addEventListener('beforeunload',e=>{if(dirty||busy){e.preventDefault();e.returnValue='';}});load(null);
