@@ -30,24 +30,8 @@
   const validIds=ids=>Array.isArray(ids)&&ids.every(id=>typeof id==='string'&&/^[a-f0-9-]{36}$/i.test(id))&&new Set(ids).size===ids.length;
   const imageUrl=product=>{
     if(product.image_source==='sample'&&['real-1.jpg','color-1.jpg'].includes(product.storage_path))return product.storage_path;
-    if(product.image_source==='upload'&&/^products\/[a-z0-9-]+\.(jpg|png|webp)$/.test(product.storage_path||'')){
-      const base=String(window.PHOTO_CONFIG?.url||'').replace(/\/$/,'');
-      return base ? `${base}/storage/v1/object/public/${bucket}/${product.storage_path}` : null;
-    }
+    if(product.image_source==='upload'&&/^products\/[a-z0-9-]+\.(jpg|png|webp)$/.test(product.storage_path||'')&&client)return client.storage.from(bucket).getPublicUrl(product.storage_path).data.publicUrl;
     return null;
-  };
-  const publicRows=async()=>{
-    const config=window.PHOTO_CONFIG||{},base=String(config.url||'').replace(/\/$/,'');
-    if(!base||!config.publishableKey)throw new Error('상품 데이터 연결 설정을 확인해 주세요.');
-    const fields='id,category,title,description,is_ai,image_source,storage_path,created_at,variants,price_unit,display_order';
-    const url=`${base}/rest/v1/products?select=${encodeURIComponent(fields)}&order=created_at.desc`;
-    const response=await fetch(url,{headers:{apikey:config.publishableKey,Authorization:`Bearer ${config.publishableKey}`,Accept:'application/json'},cache:'no-store'});
-    if(!response.ok){
-      let detail='';try{detail=(await response.json())?.message||'';}catch{}
-      throw new Error(`상품 목록을 불러오지 못했습니다. (${response.status})${detail?' '+detail:''}`);
-    }
-    const rows=await response.json();
-    return Array.isArray(rows)?rows:[];
   };
   const validate=(category,title,description,variants,unit)=>{
     if(!labels[category]||!title.trim()||title.trim().length>80||description.trim().length>1200)throw new Error('분야, 상품명과 설명을 확인해 주세요.');
@@ -80,8 +64,15 @@
       const saved=await client.from('products').update({variants}).eq('id',id).select('id').single();if(saved.error)throw new Error('상세 이미지 저장에 실패했습니다.');
     },
     async list(){
-      const data=await publicRows();
-      return data.map(product=>({...product,variants:cleanVariants(product.variants),title:String(product.title||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),description:String(product.description||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),url:imageUrl(product)})).filter(product=>product.url&&labels[product.category]).sort((a,b)=>{
+      if(!client)throw new Error('상품 저장공간이 아직 연결되지 않았습니다.');
+      const fields='id,category,title,description,is_ai,image_source,storage_path,created_at,variants,price_unit,display_order';
+      let result=await client.from('products').select(fields).order('created_at',{ascending:false});
+      if(result.error&&['42703','PGRST204'].includes(result.error.code))result=await client.from('products').select('id,category,title,description,is_ai,image_source,storage_path,created_at').order('created_at',{ascending:false});
+      if(result.error){
+        console.error('products read error', result.error);
+        throw new Error('상품 목록을 불러오지 못했습니다. 연결 상태를 확인해 주세요.');
+      }
+      return (result.data||[]).map(product=>({...product,variants:cleanVariants(product.variants),title:String(product.title||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),description:String(product.description||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),url:imageUrl(product)})).filter(product=>product.url&&labels[product.category]).sort((a,b)=>{
         const aSaved=Number.isInteger(a.display_order)&&a.display_order>0,bSaved=Number.isInteger(b.display_order)&&b.display_order>0;
         if(aSaved||bSaved)return aSaved&&bSaved?a.display_order-b.display_order:aSaved?-1:1;
         return categoryRank(a.category)-categoryRank(b.category);
