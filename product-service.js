@@ -30,8 +30,24 @@
   const validIds=ids=>Array.isArray(ids)&&ids.every(id=>typeof id==='string'&&/^[a-f0-9-]{36}$/i.test(id))&&new Set(ids).size===ids.length;
   const imageUrl=product=>{
     if(product.image_source==='sample'&&['real-1.jpg','color-1.jpg'].includes(product.storage_path))return product.storage_path;
-    if(product.image_source==='upload'&&/^products\/[a-z0-9-]+\.(jpg|png|webp)$/.test(product.storage_path||''))return client.storage.from(bucket).getPublicUrl(product.storage_path).data.publicUrl;
+    if(product.image_source==='upload'&&/^products\/[a-z0-9-]+\.(jpg|png|webp)$/.test(product.storage_path||'')){
+      const base=String(window.PHOTO_CONFIG?.url||'').replace(/\/$/,'');
+      return base ? `${base}/storage/v1/object/public/${bucket}/${product.storage_path}` : null;
+    }
     return null;
+  };
+  const publicRows=async()=>{
+    const config=window.PHOTO_CONFIG||{},base=String(config.url||'').replace(/\/$/,'');
+    if(!base||!config.publishableKey)throw new Error('상품 데이터 연결 설정을 확인해 주세요.');
+    const fields='id,category,title,description,is_ai,image_source,storage_path,created_at,variants,price_unit,display_order';
+    const url=`${base}/rest/v1/products?select=${encodeURIComponent(fields)}&order=created_at.desc`;
+    const response=await fetch(url,{headers:{apikey:config.publishableKey,Authorization:`Bearer ${config.publishableKey}`,Accept:'application/json'},cache:'no-store'});
+    if(!response.ok){
+      let detail='';try{detail=(await response.json())?.message||'';}catch{}
+      throw new Error(`상품 목록을 불러오지 못했습니다. (${response.status})${detail?' '+detail:''}`);
+    }
+    const rows=await response.json();
+    return Array.isArray(rows)?rows:[];
   };
   const validate=(category,title,description,variants,unit)=>{
     if(!labels[category]||!title.trim()||title.trim().length>80||description.trim().length>1200)throw new Error('분야, 상품명과 설명을 확인해 주세요.');
