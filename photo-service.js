@@ -4,13 +4,14 @@
     (config.publishableKey || '').startsWith('sb_publishable_');
 
   const labels = {
-    color: '칼라강판',
-    'temba-zinc': '템바/징크',
-
-    'metal-siding': '메탈사이딩',
-    'composite-sheet': '복합판넬/쉬트판넬',
-    'sandwich-panel': '샌드위치 판넬',
-    'interior-exterior': '내·외부인테리어'
+    color: '지붕공사',
+    real: '외벽공사',
+    exterior: '외벽공사',
+    'temba-zinc': '외벽공사',
+    'metal-siding': '외벽공사',
+    'composite-sheet': '외벽공사',
+    'sandwich-panel': '외벽공사',
+    'interior-exterior': '내부인테리어'
   };
 
   // Keep the login only in this tab, including navigation and refreshes.
@@ -67,7 +68,7 @@
   };
 
   const publicUrl = path => {
-    if (!/^(color|temba-zinc|metal-siding|composite-sheet|sandwich-panel|interior-exterior)\/[a-z0-9-]+\.(jpg|png|webp)$/.test(path || '')) return null;
+    if (!/^(color|real|exterior|temba-zinc|metal-siding|composite-sheet|sandwich-panel|interior-exterior)\/[a-z0-9-]+\.(jpg|png|webp)$/.test(path || '')) return null;
     const base=String(config.url||'').replace(/\/$/,'');
     return base ? `${base}/storage/v1/object/public/${bucket}/${path}` : null;
   };
