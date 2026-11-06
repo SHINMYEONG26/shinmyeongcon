@@ -74,7 +74,7 @@
   };
 
   window.PhotoService = {
-    ready: Boolean(client),
+    ready: Boolean(configured),
     client,
     labels,
     requireAdmin,
