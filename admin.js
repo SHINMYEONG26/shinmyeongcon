@@ -52,7 +52,7 @@
   }
   function renderLibrary() {
  orderGroups=SiteAlbumOrder.apply(SiteAlbums.group(libraryPhotos));
- const groups=libraryCategory==='all'?orderGroups:orderGroups.filter(a=>libraryCategory==='composite-sheet'?['composite-sheet','temba-zinc','metal-siding','sandwich-panel'].includes(a.photos[0].category):a.photos[0].category===libraryCategory);
+ const groups=libraryCategory==='all'?orderGroups:orderGroups.filter(a=>libraryCategory==='composite-sheet'?['composite-sheet','temba-zinc','metal-siding','sandwich-panel','real','exterior'].includes(a.photos[0].category):a.photos[0].category===libraryCategory);
  el('library').classList.add('album-library');el('library').replaceChildren();
  el('library-count').textContent=groups.length+'개 앨범 · '+groups.reduce((n,a)=>n+a.photos.length,0)+'장';
  saveOrder.disabled=busy||!SiteAlbumOrder.dirty;
