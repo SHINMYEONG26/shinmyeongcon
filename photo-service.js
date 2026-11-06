@@ -67,10 +67,23 @@
   };
 
   const publicUrl = path => {
-    if (!/^(color|temba-zinc|metal-siding|composite-sheet|sandwich-panel|interior-exterior)\/[a-z0-9-]+\.(jpg|png|webp)$/.test(path || '')) {
-      return null;
+    if (!/^(color|temba-zinc|metal-siding|composite-sheet|sandwich-panel|interior-exterior)\/[a-z0-9-]+\.(jpg|png|webp)$/.test(path || '')) return null;
+    const base=String(config.url||'').replace(/\/$/,'');
+    return base ? `${base}/storage/v1/object/public/${bucket}/${path}` : null;
+  };
+
+  const publicList = async () => {
+    if (!configured) throw new Error('사진 데이터 연결 설정을 확인해 주세요.');
+    const base=String(config.url||'').replace(/\/$/,'');
+    const fields='id,category,title,is_ai,storage_path,created_at';
+    const url=`${base}/rest/v1/gallery_photos?select=${encodeURIComponent(fields)}&order=created_at.desc`;
+    const response=await fetch(url,{headers:{apikey:config.publishableKey,Authorization:`Bearer ${config.publishableKey}`,Accept:'application/json'},cache:'no-store'});
+    if(!response.ok){
+      let detail='';try{detail=(await response.json())?.message||'';}catch{}
+      throw new Error(`사진 목록을 불러오지 못했습니다. (${response.status})${detail?' '+detail:''}`);
     }
-    return client.storage.from(bucket).getPublicUrl(path).data.publicUrl;
+    const rows=await response.json();
+    return Array.isArray(rows)?rows:[];
   };
 
   window.PhotoService = {
