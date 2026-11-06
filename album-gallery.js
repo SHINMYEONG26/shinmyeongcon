@@ -31,7 +31,7 @@
   const slug=section.id.slice(8);
   const categoryMap={
     'color':['color'],
-    'composite-sheet':['composite-sheet','temba-zinc','metal-siding','sandwich-panel'],
+    'composite-sheet':['composite-sheet','temba-zinc','metal-siding','sandwich-panel','real','exterior'],
     'interior-exterior':['interior-exterior']
   };
   const categories=categoryMap[slug]||[slug];
