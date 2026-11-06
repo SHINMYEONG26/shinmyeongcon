@@ -64,12 +64,8 @@
       const saved=await client.from('products').update({variants}).eq('id',id).select('id').single();if(saved.error)throw new Error('상세 이미지 저장에 실패했습니다.');
     },
     async list(){
-      if(!client)throw new Error('상품 저장공간이 아직 연결되지 않았습니다.');
-      const fields='id,category,title,description,is_ai,image_source,storage_path,created_at,variants,price_unit,display_order';
-      let result=await client.from('products').select(fields).order('created_at',{ascending:false});
-      if(result.error&&['42703','PGRST204'].includes(result.error.code))result=await client.from('products').select('id,category,title,description,is_ai,image_source,storage_path,created_at').order('created_at',{ascending:false});
-      if(result.error)throw new Error('상품 목록을 불러오지 못했습니다. 연결 상태를 확인해 주세요.');
-      return (result.data||[]).map(product=>({...product,variants:cleanVariants(product.variants),title:String(product.title||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),description:String(product.description||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),url:imageUrl(product)})).filter(product=>product.url&&labels[product.category]).sort((a,b)=>{
+      const data=await publicRows();
+      return data.map(product=>({...product,variants:cleanVariants(product.variants),title:String(product.title||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),description:String(product.description||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),url:imageUrl(product)})).filter(product=>product.url&&labels[product.category]).sort((a,b)=>{
         const aSaved=Number.isInteger(a.display_order)&&a.display_order>0,bSaved=Number.isInteger(b.display_order)&&b.display_order>0;
         if(aSaved||bSaved)return aSaved&&bSaved?a.display_order-b.display_order:aSaved?-1:1;
         return categoryRank(a.category)-categoryRank(b.category);
