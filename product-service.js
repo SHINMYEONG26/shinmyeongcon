@@ -1,8 +1,19 @@
 (() => {
   const photos=window.PhotoService,client=photos?.client,bucket='product-photos';
-  const labels={real:'리얼징크',...(photos?.labels||{})};
+  const labels={
+    real:'리얼징크',
+    color:'칼라강판',
+    'temba-zinc':'템바/징크',
+    'zinc-accessories':'징크부자재',
+    'steel-accessories':'강판부자재',
+    'gutter-materials':'물받이자재',
+    'metal-siding':'메탈사이딩',
+    'composite-sheet':'복합판넬/쉬트판넬',
+    'sandwich-panel':'샌드위치 판넬',
+    'interior-exterior':'내·외부인테리어'
+  };
   // Public catalog groups keep existing storage categories and photo management intact.
-  const excludedCatalogCategories=new Set(['zinc-accessories','steel-accessories','gutter-materials']);
+  const excludedCatalogCategories=new Set();
   const catalogLabels={...labels,'louver-steel':'루버강판',zinc:'징크'};
   for(const key of ['temba-zinc','real',...excludedCatalogCategories])delete catalogLabels[key];
   const catalogImages={};
