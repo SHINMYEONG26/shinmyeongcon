@@ -22,7 +22,7 @@
     grid.replaceChildren(button);
   };
 
-  if(!service?.ready||!albums){
+  if(!albums){
     status.textContent='사진 연결을 불러오지 못했습니다.';
     retry();
     return;
@@ -45,7 +45,25 @@
   section.before(back);
 
   try{
-    const photos=await service.list();
+    const getBackup=async()=>{
+      const response=await fetch('./gallery-static.json',{signal:AbortSignal.timeout(8000)});
+      if(!response.ok)throw Error('사진 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
+      const rows=await response.json();
+      if(!Array.isArray(rows))throw Error('사진 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
+      return rows.map(row=>({...row,url:new URL(row.url,'https://shinmyeongcon.pages.dev/').href}));
+    };
+    let timer;
+    let photos;
+    try{
+      photos=await Promise.race([
+        Promise.resolve().then(()=>service.list()),
+        new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Photo service timed out')),3000);})
+      ]);
+    }catch{
+      photos=await getBackup();
+    }finally{
+      clearTimeout(timer);
+    }
     const filtered=photos.filter(p=>categories.includes(p.category));
     let groups=albums.group(filtered);
 
