@@ -1,6 +1,0 @@
-a.brand .company-logo-lockup{display:block;width:230px;height:auto;border-radius:0}
-a.brand.company-gallery-brand{flex:0 1 auto;min-width:0}
-a.brand.company-gallery-brand .company-logo-lockup{max-width:100%}
-@media(max-width:1100px){a.brand .company-logo-lockup{width:190px}}
-@media(max-width:760px){a.brand .company-logo-lockup{width:clamp(130px,49vw,175px)}}
-@media(max-width:420px){a.brand.company-gallery-brand .company-logo-lockup{width:clamp(108px,38vw,155px)}}
