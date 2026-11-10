@@ -76,6 +76,12 @@
       }
     }
 
+    // Prioritize sites with a recent upload; keep each site's photo order and cover.
+    const latestUpload=album=>album.photos.reduce((latest,photo)=>
+      Math.max(latest,Date.parse(photo.created_at)||0),0);
+    groups=groups.map(album=>({album,latest:latestUpload(album)}))
+      .sort((a,b)=>b.latest-a.latest).map(({album})=>album);
+
     const id=new URLSearchParams(location.search).get('site');
     const album=groups.find(a=>a.id===id);
     grid.replaceChildren();
