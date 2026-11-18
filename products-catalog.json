@@ -1,0 +1,3413 @@
+{
+  "sourceDate": "2026-10-19",
+  "products": [
+    {
+      "id": "b085e8a8-57e3-4e93-825e-64e980c05fbb",
+      "category": "gutter-materials",
+      "title": "(강판)물받이고리 1ea",
+      "description": "(강판)물받이고리 1ea · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/b085e8a8-57e3-4e93-825e-64e980c05fbb.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "06e2cb65-cc9a-4918-abcd-65396e94a9e3",
+      "category": "temba-zinc",
+      "title": "비트루버강판 0.5T",
+      "description": "비트 루버강판은 사각 골의 상부 폭이 70·30·30·50mm로 달라지는 비대칭 패턴의 외장재입니다. 전체폭 350mm·유효폭 285mm·골 사이 간격 25mm·골 높이 20mm로 안내되며, 균일한 루버와 다른 리듬감 있는 외벽 디자인을 검토할 때 선택할 수 있습니다.",
+      "variants": [
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "월넛",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "월넛",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "월넛",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "월넛",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/06e2cb65-cc9a-4918-abcd-65396e94a9e3.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "e40b5662-41c6-44d0-ab4f-2ecb4a9ec58e",
+      "category": "gutter-materials",
+      "title": "미시크로쟈 3M",
+      "description": "미시크로쟈 3M · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/e40b5662-41c6-44d0-ab4f-2ecb4a9ec58e.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "2ec1fccc-3d1b-4695-841a-9a39c0db7b97",
+      "category": "gutter-materials",
+      "title": "홈통고정밴드",
+      "description": "홈통고정밴드 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/2ec1fccc-3d1b-4695-841a-9a39c0db7b97.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "a60962ea-3bc7-47b8-a59d-f846dda293af",
+      "category": "temba-zinc",
+      "title": "하비스 사각평잇기",
+      "description": "평평한 정사각 판재를 반복해 벽면에 정돈된 패턴을 만드는 외장재입니다. 판재의 배열 방향과 색상에 따라 분위기를 달리할 수 있어 출입구와 포인트 외벽의 디자인을 계획할 때 검토하기 좋습니다.",
+      "variants": [
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "월넛",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/a60962ea-3bc7-47b8-a59d-f846dda293af.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "f0ce932e-9a33-4ad9-8ead-27a087b7d502",
+      "category": "temba-zinc",
+      "title": "신명건설 프리미엄 열반사 인터락징크",
+      "description": "인터락형 판재의 맞물림 구조에 뒷면 열반사층을 결합한 외장재입니다. 일정하게 이어지는 평판과 이음선의 디자인을 살리면서 기존 단열재·공기층·바탕 구조를 함께 고려해 외벽을 계획할 수 있습니다.",
+      "variants": [
+        {
+          "color": "신명건설_메탈그레이",
+          "thickness": "3T_열반사",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "신명건설_라이트그레이",
+          "thickness": "3T_열반사",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "신명건설_다크그레이",
+          "thickness": "3T_열반사",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "신명건설_칼그레이",
+          "thickness": "3T_열반사",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/f0ce932e-9a33-4ad9-8ead-27a087b7d502.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "e3593177-8603-4220-bcc7-119810a3da29",
+      "category": "temba-zinc",
+      "title": "신명건설 프리미엄 열반사 리얼징크",
+      "description": "리얼징크형 금속판 뒷면에 열반사층을 더한 외장재입니다. 넓은 판면과 세로 이음선의 디자인을 살리면서 기존 단열재·공기층 등 하부 구성을 함께 검토해 지붕과 외벽을 계획할 수 있습니다.",
+      "variants": [
+        {
+          "color": "신명건설_메탈그레이",
+          "thickness": "3T_열반사",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "신명건설_라이트그레이",
+          "thickness": "3T_열반사",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "신명건설_다크그레이",
+          "thickness": "3T_열반사",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "신명건설_칼그레이",
+          "thickness": "3T_열반사",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/e3593177-8603-4220-bcc7-119810a3da29.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "37bbeae5-cf72-4680-ae39-4574e6986dc0",
+      "category": "gutter-materials",
+      "title": "(강판)원형엘보",
+      "description": "(강판)원형엘보 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/37bbeae5-cf72-4680-ae39-4574e6986dc0.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "2c3bc69a-757a-4bfa-923f-17715993f540",
+      "category": "temba-zinc",
+      "title": "인터락징크 0.5T",
+      "description": "패널 양쪽 가장자리를 맞물려 연결하는 인터락형 금속 외장재입니다. 평평한 면과 일정한 이음선을 살려 외벽을 정리하고, 창호·모서리 위치에 맞춰 패널 배치와 마감을 계획할 수 있습니다.",
+      "variants": [
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/2c3bc69a-757a-4bfa-923f-17715993f540.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "8ce96d67-8f6d-4d38-9319-5ffa3a00dcdd",
+      "category": "temba-zinc",
+      "title": "리얼징크 0.5T",
+      "description": "넓은 판면과 곧은 세로 이음선으로 건물의 선을 단정하게 살리는 징크형 외장재입니다. 지붕과 외벽의 색상·패널 방향을 함께 맞춰 주택과 상가의 외관을 정리할 수 있습니다.",
+      "variants": [
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/8ce96d67-8f6d-4d38-9319-5ffa3a00dcdd.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "9483d7f7-28ae-44be-9a29-be4f417069ae",
+      "category": "temba-zinc",
+      "title": "40루버강판 0.5T",
+      "description": "40 루버강판은 상부 폭 40mm의 사각 골 네 개가 일정하게 반복되는 금속 외장재입니다. 전체폭 335mm·유효폭 296mm·골 사이 간격 34mm·골 높이 20mm의 제조사 표기 규격을 기준으로, 균일한 입체 선이 이어지는 외벽을 계획할 수 있습니다.",
+      "variants": [
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "메탈그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "라이트그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "메탈실버",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "월넛",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "월넛",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "월넛",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "월넛",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "브론즈",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "베이지우드",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "칼그레이",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "레드블랙",
+          "thickness": "",
+          "length": "2.5m",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/9483d7f7-28ae-44be-9a29-be4f417069ae.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "0f6340b3-6159-4d7b-8016-67c7e2860dc3",
+      "category": "color",
+      "title": "덧방용 칼라강판 0.45T",
+      "description": "덧방용 칼라강판은 기존 지붕을 보수할 때 적용 가능성을 검토하는 V골 형상의 자재입니다. V115·V250·V330은 골 간격과 높이, 전체폭·유효폭이 서로 다르므로 같은 제품으로 단순 대체하지 않고 기존 지붕의 형상과 고정 조건에 맞춰 선택해야 합니다.",
+      "variants": [
+        {
+          "color": "파랑",
+          "thickness": "",
+          "length": "종류: V115",
+          "price": null
+        },
+        {
+          "color": "주황",
+          "thickness": "",
+          "length": "종류: V115",
+          "price": null
+        },
+        {
+          "color": "은색",
+          "thickness": "",
+          "length": "종류: V115",
+          "price": null
+        },
+        {
+          "color": "파랑",
+          "thickness": "",
+          "length": "종류: V250(덧방용)",
+          "price": null
+        },
+        {
+          "color": "주황",
+          "thickness": "",
+          "length": "종류: V250(덧방용)",
+          "price": null
+        },
+        {
+          "color": "은색",
+          "thickness": "",
+          "length": "종류: V250(덧방용)",
+          "price": null
+        },
+        {
+          "color": "파랑",
+          "thickness": "",
+          "length": "종류: V330",
+          "price": null
+        },
+        {
+          "color": "주황",
+          "thickness": "",
+          "length": "종류: V330",
+          "price": null
+        },
+        {
+          "color": "은색",
+          "thickness": "",
+          "length": "종류: V330",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/0f6340b3-6159-4d7b-8016-67c7e2860dc3.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "a6a47cf5-d17d-4d44-ae34-ba1ab276ebbe",
+      "category": "color",
+      "title": "파라펫 0.45T",
+      "description": "이 상품의 파라펫 강판은 낮은 사다리꼴 골이 반복되는 외장용 강판입니다. 난간 상부를 덮는 캡 부자재와는 다른 판재로, 전체폭 880mm·유효폭 820mm·골 간격 140mm·골 높이 7mm의 제조사 표기 규격을 바탕으로 난간벽·박공 등 적용 부위를 검토합니다.",
+      "variants": [
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/a6a47cf5-d17d-4d44-ae34-ba1ab276ebbe.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "66445bd7-ffdc-483e-a6eb-b72e88f26c85",
+      "category": "color",
+      "title": "S골 칼라강판 0.45T",
+      "description": "S골 칼라강판은 작은 곡선 골이 촘촘하게 반복되는 금속 강판입니다. 전체폭은 800mm이며, 1골 겹침 시 유효폭 730mm, 2골 겹침 시 680mm로 제조사에서 안내합니다. 골 간격 52mm·골 높이 14mm의 반복 형상을 기준으로 적용 부위와 겹침 방식을 함께 검토합니다.",
+      "variants": [
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "백색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "백색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "백색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "백색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/66445bd7-ffdc-483e-a6eb-b72e88f26c85.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "addacf41-9197-42c2-8172-64e8312c4baa",
+      "category": "color",
+      "title": "평기와 칼라강판 0.45T",
+      "description": "평기와 칼라강판은 큰 기와형 골 사이에 작은 보강선이 이어지고, 판 길이 방향으로 기와의 가로 단차를 표현한 금속 지붕재입니다. 평평한 개별 타일을 붙이는 제품과 형상이 다르며, 전체폭 820mm·유효폭 700mm·골 간격 235mm·골 높이 33mm의 제조사 표기 규격으로 안내합니다.",
+      "variants": [
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/addacf41-9197-42c2-8172-64e8312c4baa.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "ca51a341-1150-4d8e-b7ce-1f323f753ef7",
+      "category": "color",
+      "title": "전통소골 칼라강판 0.45T",
+      "description": "전통소골 칼라강판은 둥글게 이어지는 기와형 골과 가로 단차를 금속판에 표현한 지붕재입니다. 전체폭 820mm, 유효폭 700mm, 골 간격 235mm, 골 높이 40mm로 안내되며, 전통적인 지붕 분위기와 금속 마감의 색상을 함께 검토할 때 선택할 수 있습니다.",
+      "variants": [
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/ca51a341-1150-4d8e-b7ce-1f323f753ef7.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "f8e0671a-b1a5-4a33-8c3f-ec7e57070175",
+      "category": "color",
+      "title": "징크형 칼라강판 0.45T",
+      "description": "징크형 칼라강판은 세로로 이어지는 큰 골과 낮은 보강선이 지붕·외벽의 표정을 만드는 금속 외장재입니다. 전체폭 820mm, 유효폭 750mm, 골 간격 250mm, 골 높이 22mm의 제조사 표기 규격을 바탕으로, 건물의 폭과 시공 방향에 맞춰 패널 배치와 마감 범위를 계획합니다.",
+      "variants": [
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "검정",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "차콜",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "밤색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "적색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "쑥색",
+          "thickness": "PE폼",
+          "length": "2.5m",
+          "price": null
+        },
+        {
+          "color": "백색",
+          "thickness": "0.45T",
+          "length": "1m",
+          "price": null
+        },
+        {
+          "color": "백색",
+          "thickness": "0.45T",
+          "length": "1.5m",
+          "price": null
+        },
+        {
+          "color": "백색",
+          "thickness": "0.45T",
+          "length": "2m",
+          "price": null
+        },
+        {
+          "color": "백색",
+          "thickness": "0.45T",
+          "length": "2.5m",
+          "price": null
+        }
+      ],
+      "price_unit": "원/장",
+      "url": "assets/product-catalog/f8e0671a-b1a5-4a33-8c3f-ec7e57070175.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "1c378ff0-702b-42bf-9c03-327589ced263",
+      "category": "metal-siding",
+      "title": "메탈사이딩 부자재(스타터, 결합조이너, J찬넬, 아웃코너)",
+      "description": "메탈사이딩 부자재는 판재의 시작·연결·끝단·외부 모서리를 마감하는 구성품입니다. 스타터·결합형 조이너·J찬넬·아웃코너는 쓰는 위치와 단면 형상이 서로 다르며, 제조사 자료는 각 제품의 길이를 3,000mm로 안내합니다.",
+      "variants": [
+        {
+          "color": "부자재종류: 스타터",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "부자재종류: 아웃코너",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "부자재종류: 결합형조이너",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "부자재종류: J찬넬",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/1c378ff0-702b-42bf-9c03-327589ced263.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "f111f9cb-8e49-4937-90bd-890afb2bfa27",
+      "category": "metal-siding",
+      "title": "아리에따 메탈사이딩(8장/1BOX)",
+      "description": "아리에따 메탈사이딩은 가늘게 이어지는 표면의 선과 질감으로 차분한 외벽을 구성하는 금속 패널 제품입니다. 길이 3,000mm·시공폭 380mm·전체폭 411mm·패널 두께 16mm의 제조사 표기 규격을 기준으로 화이트·그레이의 등록 색상을 비교할 수 있습니다.",
+      "variants": [
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "그레이",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/세트",
+      "url": "assets/product-catalog/f111f9cb-8e49-4937-90bd-890afb2bfa27.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "1ba6996e-10bb-4296-bcad-0860a149d320",
+      "category": "metal-siding",
+      "title": "내추럴스톤 메탈사이딩(8장/1BOX)",
+      "description": "내추럴스톤 메탈사이딩은 석재를 연상시키는 요철과 패턴을 금속 패널 표면에 표현한 외벽재입니다. 길이 3,000mm·시공폭 380mm·전체폭 411mm·패널 두께 16mm의 제조사 표기 규격으로 안내되며, 실제 천연석을 붙이는 방식과 다른 패널 제품입니다.",
+      "variants": [
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "연아이보리",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "레드믹스",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "연그레이",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "다크그레이",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "블랙",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/세트",
+      "url": "assets/product-catalog/1ba6996e-10bb-4296-bcad-0860a149d320.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "ca7c4dc4-8003-4d87-b974-50420a00a831",
+      "category": "metal-siding",
+      "title": "롱브릭 메탈사이딩(8장/1BOX)",
+      "description": "롱브릭 메탈사이딩은 긴 벽돌의 줄눈과 가로선을 금속 패널 표면에 표현하는 외벽재입니다. 제조사 표기 기준 길이 3,000mm·시공폭 380mm·전체폭 411mm·패널 두께 16mm이며, 1박스 8장 단위로 안내합니다.",
+      "variants": [
+        {
+          "color": "화이트",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "그레이",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "블랙",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/세트",
+      "url": "assets/product-catalog/ca7c4dc4-8003-4d87-b974-50420a00a831.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "bc8338c7-8951-4460-99d6-9e3797038ba8",
+      "category": "gutter-materials",
+      "title": "(징크)사각엘보",
+      "description": "(징크)사각엘보 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/bc8338c7-8951-4460-99d6-9e3797038ba8.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "7df236b3-1a31-4fd3-9efc-c5e826dfcc5d",
+      "category": "gutter-materials",
+      "title": "(징크)사각선홈통 3M",
+      "description": "(징크)사각선홈통 3M · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/7df236b3-1a31-4fd3-9efc-c5e826dfcc5d.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "d933d279-0480-4192-b4d9-9fc034109b72",
+      "category": "gutter-materials",
+      "title": "(징크)사각벽부용마스",
+      "description": "(징크)사각벽부용마스 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/d933d279-0480-4192-b4d9-9fc034109b72.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "23fca1df-8e50-4610-96d7-89d65c2c249e",
+      "category": "gutter-materials",
+      "title": "(징크)사각물모음마스",
+      "description": "(징크)사각물모음마스 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/23fca1df-8e50-4610-96d7-89d65c2c249e.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "b1109f28-8901-4137-b265-3063837b76ec",
+      "category": "gutter-materials",
+      "title": "(징크)물받이고리 1ea",
+      "description": "(징크)물받이고리 1ea · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/b1109f28-8901-4137-b265-3063837b76ec.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "4a14e507-9570-4767-b9e9-bd8a6e2e038c",
+      "category": "gutter-materials",
+      "title": "(징크)날개형물받이 3M",
+      "description": "(징크)날개형물받이 3M · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/4a14e507-9570-4767-b9e9-bd8a6e2e038c.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "e050f388-f842-457d-b901-29b7b5592c6e",
+      "category": "gutter-materials",
+      "title": "(강판)원형홈통 1M",
+      "description": "(강판)원형홈통 1M · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/e050f388-f842-457d-b901-29b7b5592c6e.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "8273375f-e2ed-4b30-8c11-6acbe1123207",
+      "category": "gutter-materials",
+      "title": "(강판)원형물모음마스",
+      "description": "(강판)원형물모음마스 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/8273375f-e2ed-4b30-8c11-6acbe1123207.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "6d0d52f7-cdf8-4c18-9e52-2cd35a6b2bf8",
+      "category": "gutter-materials",
+      "title": "물받이코너",
+      "description": "물받이코너 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "선택: 안코너",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "선택: 밖코너",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/6d0d52f7-cdf8-4c18-9e52-2cd35a6b2bf8.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "f8bcc73d-f04f-4b9f-b441-7d4f5479b475",
+      "category": "gutter-materials",
+      "title": "스텐물받이 3M",
+      "description": "스텐물받이 3M · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/f8bcc73d-f04f-4b9f-b441-7d4f5479b475.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "e87c150f-8f12-4b22-9c27-4e8df68e8c87",
+      "category": "gutter-materials",
+      "title": "(강판)사각엘보",
+      "description": "(강판)사각엘보 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/e87c150f-8f12-4b22-9c27-4e8df68e8c87.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "e5c70541-caef-482e-bbae-8396210d2cf8",
+      "category": "gutter-materials",
+      "title": "(강판)사각선홈통 2M",
+      "description": "(강판)사각선홈통 2M · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/e5c70541-caef-482e-bbae-8396210d2cf8.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "e9bef9bf-acb9-4099-952a-a11b3f177422",
+      "category": "gutter-materials",
+      "title": "(강판)사각벽부용마스",
+      "description": "(강판)사각벽부용마스 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/e9bef9bf-acb9-4099-952a-a11b3f177422.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "be9b5655-2c29-42f5-aedf-990b0b583f95",
+      "category": "gutter-materials",
+      "title": "(강판)사각물모음마스",
+      "description": "(강판)사각물모음마스 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/be9b5655-2c29-42f5-aedf-990b0b583f95.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "5a86ce8f-de5e-43be-a78c-f061cc4d582a",
+      "category": "gutter-materials",
+      "title": "물받이마감캡set",
+      "description": "물받이마감캡set · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "종류: 강판용 좌우set",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "종류: 징크용 좌우set",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/세트",
+      "url": "assets/product-catalog/5a86ce8f-de5e-43be-a78c-f061cc4d582a.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "bc52254c-3217-489d-b7e2-f78e4071429a",
+      "category": "gutter-materials",
+      "title": "(강판)물받이 2M",
+      "description": "(강판)물받이 2M · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/bc52254c-3217-489d-b7e2-f78e4071429a.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "7c04f1b1-6e16-4953-9c99-73ec50306030",
+      "category": "gutter-materials",
+      "title": "90×90 대형 사각 물받이 부자재",
+      "description": "90×90 대형 사각 물받이 부자재 · 물받이자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "종류: 90*90 사각물모음마스",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "종류: 90*90 사각홈통 3.7m",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "종류: 90*90 사각 밖엘보",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "종류: 90*90 사각 안엘보",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "종류: 90*90 사각 하단엘보",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "종류: 90*90  홈통고정밴드",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/7c04f1b1-6e16-4953-9c99-73ec50306030.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "3cebd32c-859d-4e7b-88fd-7679023dc6a1",
+      "category": "steel-accessories",
+      "title": "징크250크로쟈",
+      "description": "징크250크로쟈 · 강판부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/3cebd32c-859d-4e7b-88fd-7679023dc6a1.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "09c389f4-e3e2-44f0-a205-25d268866432",
+      "category": "steel-accessories",
+      "title": "(평기와) 엔드캡",
+      "description": "(평기와) 엔드캡 · 강판부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "선택: 프린트",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "선택: 무지",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/09c389f4-e3e2-44f0-a205-25d268866432.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "8f5def2d-14cb-46b2-a569-970959d537d5",
+      "category": "steel-accessories",
+      "title": "(전통소골) 엔드캡",
+      "description": "(전통소골) 엔드캡 · 강판부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "선택: 프린트",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "선택: 무지",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/8f5def2d-14cb-46b2-a569-970959d537d5.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "fda48cb8-1778-4cfa-9fda-b726f392e6b5",
+      "category": "steel-accessories",
+      "title": "소봉",
+      "description": "소봉 · 강판부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "선택: 프린트",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "선택: 무지",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/fda48cb8-1778-4cfa-9fda-b726f392e6b5.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "82650370-502a-4186-8d6e-96338098157c",
+      "category": "steel-accessories",
+      "title": "대봉set",
+      "description": "대봉set · 강판부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "선택: 프린트",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "선택: 무지",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/세트",
+      "url": "assets/product-catalog/82650370-502a-4186-8d6e-96338098157c.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "0b781af7-0129-4731-892f-7ea7f3a6378d",
+      "category": "steel-accessories",
+      "title": "착고크로쟈",
+      "description": "착고크로쟈 · 강판부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/0b781af7-0129-4731-892f-7ea7f3a6378d.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "18eac437-be21-470b-b8c8-b2b603b7cdca",
+      "category": "steel-accessories",
+      "title": "원형용마루 3M",
+      "description": "원형용마루 3M · 강판부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/18eac437-be21-470b-b8c8-b2b603b7cdca.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "e254d64c-c08a-4111-b631-e8c1c1d1d50a",
+      "category": "steel-accessories",
+      "title": "박공후레싱 3M",
+      "description": "박공후레싱 3M · 강판부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/e254d64c-c08a-4111-b631-e8c1c1d1d50a.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "f924d1c9-c867-44a8-ae80-be412cceefbe",
+      "category": "steel-accessories",
+      "title": "각산용마루 3M",
+      "description": "각산용마루 3M · 강판부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/f924d1c9-c867-44a8-ae80-be412cceefbe.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "cd8d6ad4-b6a6-4cc4-9939-01ef995a9c61",
+      "category": "zinc-accessories",
+      "title": "평클립 1ea",
+      "description": "평클립 1ea · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/cd8d6ad4-b6a6-4cc4-9939-01ef995a9c61.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "4cbaaf0d-140c-4197-b4a7-24fea239e98a",
+      "category": "zinc-accessories",
+      "title": "돌출고정클립 1ea",
+      "description": "돌출고정클립 1ea · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/4cbaaf0d-140c-4197-b4a7-24fea239e98a.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "2eea3a8e-34b6-456c-ba98-b8fa024c1f26",
+      "category": "zinc-accessories",
+      "title": "스노우가드",
+      "description": "스노우가드 · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/2eea3a8e-34b6-456c-ba98-b8fa024c1f26.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "6bcba143-16b2-42a7-829d-12a2dddecb65",
+      "category": "zinc-accessories",
+      "title": "40*50*40 U바 2M",
+      "description": "40*50*40 U바 2M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/6bcba143-16b2-42a7-829d-12a2dddecb65.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "c0531dfd-a9c2-445d-bc7e-012797f5bf32",
+      "category": "zinc-accessories",
+      "title": "40*40 L바 2M",
+      "description": "40*40 L바 2M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "컬러방향: 바깥쪽",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "컬러방향: 안쪽",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/c0531dfd-a9c2-445d-bc7e-012797f5bf32.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "d171cb47-cb2a-4899-9e80-febb9e7e4564",
+      "category": "zinc-accessories",
+      "title": "80*80 L바 2M",
+      "description": "80*80 L바 2M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/d171cb47-cb2a-4899-9e80-febb9e7e4564.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "4de806c3-b51e-4e3d-b670-0b46255c04a6",
+      "category": "zinc-accessories",
+      "title": "스타터 3M",
+      "description": "스타터 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/4de806c3-b51e-4e3d-b670-0b46255c04a6.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "19499ca0-9887-4f99-9366-ba83ce804c28",
+      "category": "zinc-accessories",
+      "title": "끝단끼움마감 3M",
+      "description": "끝단끼움마감 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/19499ca0-9887-4f99-9366-ba83ce804c28.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "358da829-0382-459f-b89b-0694ff7578d7",
+      "category": "zinc-accessories",
+      "title": "T바 3M",
+      "description": "T바 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/358da829-0382-459f-b89b-0694ff7578d7.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "28973df3-a71e-495c-9b23-44bb004e4478",
+      "category": "zinc-accessories",
+      "title": "상부마감 3M",
+      "description": "상부마감 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/28973df3-a71e-495c-9b23-44bb004e4478.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "e0151636-16d5-4fa9-af87-ac0079835af1",
+      "category": "zinc-accessories",
+      "title": "용마루 3M",
+      "description": "용마루 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/e0151636-16d5-4fa9-af87-ac0079835af1.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "daedc340-a84e-4baa-90c5-403256db9357",
+      "category": "zinc-accessories",
+      "title": "창틀 L바 3M",
+      "description": "창틀 L바 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/daedc340-a84e-4baa-90c5-403256db9357.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "efd26d9e-7d1b-4eee-a44b-d60579888666",
+      "category": "zinc-accessories",
+      "title": "창틀 후레싱 3M",
+      "description": "창틀 후레싱 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/efd26d9e-7d1b-4eee-a44b-d60579888666.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "f1c60c25-46ef-4a11-9306-35c5686bfdb7",
+      "category": "zinc-accessories",
+      "title": "창문 측하부 3M",
+      "description": "창문 측하부 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/f1c60c25-46ef-4a11-9306-35c5686bfdb7.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "0545cc6b-293c-42a2-832b-cdcc31e2aaed",
+      "category": "zinc-accessories",
+      "title": "창문 상부 3M",
+      "description": "창문 상부 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/0545cc6b-293c-42a2-832b-cdcc31e2aaed.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "6cecc697-e906-4e5b-b6ad-22af6aaeb2f4",
+      "category": "zinc-accessories",
+      "title": "크랭크 3M",
+      "description": "크랭크 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/6cecc697-e906-4e5b-b6ad-22af6aaeb2f4.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "92472512-4f4a-4174-a05a-d579c0c55d3e",
+      "category": "zinc-accessories",
+      "title": "의자베이스 3M",
+      "description": "의자베이스 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/92472512-4f4a-4174-a05a-d579c0c55d3e.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "cfbb1c8e-cc79-4bae-aa49-1f270edf5541",
+      "category": "zinc-accessories",
+      "title": "끼워치기용 안코너 3M",
+      "description": "끼워치기용 안코너 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/cfbb1c8e-cc79-4bae-aa49-1f270edf5541.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "8d716630-8a1b-46c0-a2e8-29eba32cc286",
+      "category": "zinc-accessories",
+      "title": "끼워치기용 밖코너 3M",
+      "description": "끼워치기용 밖코너 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/8d716630-8a1b-46c0-a2e8-29eba32cc286.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "2cb9ce6f-f9a9-4cf3-ac25-988e3e9e9279",
+      "category": "zinc-accessories",
+      "title": "사이드마감 3M",
+      "description": "사이드마감 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/2cb9ce6f-f9a9-4cf3-ac25-988e3e9e9279.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "f08f6607-11ce-48e8-af71-05c1a9b08eff",
+      "category": "zinc-accessories",
+      "title": "한방향 코너 3M",
+      "description": "한방향 코너 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/f08f6607-11ce-48e8-af71-05c1a9b08eff.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "25ca55ef-adab-46fd-810c-dc3d4c50cf58",
+      "category": "zinc-accessories",
+      "title": "안코너 3M",
+      "description": "안코너 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/25ca55ef-adab-46fd-810c-dc3d4c50cf58.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    },
+    {
+      "id": "50977178-ab8a-4733-bad4-6a29b4eeb461",
+      "category": "zinc-accessories",
+      "title": "양방향 코너 3M",
+      "description": "양방향 코너 3M · 징크부자재 자재입니다. 필요한 색상·규격과 수량을 알려주시면 공급 가능 여부와 견적을 안내해 드립니다.",
+      "variants": [
+        {
+          "color": "길이(배송방법): 2.5m(택배)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        },
+        {
+          "color": "길이(배송방법): 3m(화물)",
+          "thickness": "",
+          "length": "",
+          "price": null
+        }
+      ],
+      "price_unit": "원/개",
+      "url": "assets/product-catalog/50977178-ab8a-4733-bad4-6a29b4eeb461.jpg",
+      "is_ai": false,
+      "catalog_fallback": true
+    }
+  ]
+}

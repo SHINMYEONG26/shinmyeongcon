@@ -27,6 +27,19 @@
     return {...product,category,title:rename(product.title),description:rename(product.description),variants:cleanVariants(product.variants),...(catalogImages[product.id]?{url:catalogImages[product.id],is_ai:true}:{})};
   };
   const categoryRank=category=>['temba-zinc','real'].includes(category)?0:category==='color'?1:2;
+  async function readCatalogFallback(){
+    const response=await fetch('products-catalog.json?v=20261118',{signal:AbortSignal.timeout(8000)});
+    if(!response.ok)throw new Error('자재 안내를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
+    const catalog=await response.json();
+    if(!Array.isArray(catalog.products)||!catalog.products.length)throw new Error('자재 안내를 확인해 주세요.');
+    return catalog.products.filter(p=>labels[p.category]&&/^assets\/product-catalog\/[a-f0-9-]{36}\.jpg$/.test(p.url||''))
+      .map(p=>({...p,variants:cleanVariants(p.variants).map(v=>({...v,price:null})),catalog_fallback:true}))
+      .sort((a,b)=>categoryRank(a.category)-categoryRank(b.category));
+  }
+  async function readProducts(fields,allowFallback){
+    const query=client.from('products').select(fields).order('created_at',{ascending:false});
+    return allowFallback?await query.abortSignal(AbortSignal.timeout(6000)):await query;
+  }
   const validIds=ids=>Array.isArray(ids)&&ids.every(id=>typeof id==='string'&&/^[a-f0-9-]{36}$/i.test(id))&&new Set(ids).size===ids.length;
   const imageUrl=product=>{
     if(product.image_source==='sample'&&['real-1.jpg','color-1.jpg'].includes(product.storage_path))return product.storage_path;
@@ -63,13 +76,24 @@
       const variants=r.data.variants?.length?r.data.variants:[{}];variants[0]={...variants[0],__detailImages:items.map(x=>({image_path:x.image_path,alt_text:x.alt_text||''}))};
       const saved=await client.from('products').update({variants}).eq('id',id).select('id').single();if(saved.error)throw new Error('상세 이미지 저장에 실패했습니다.');
     },
-    async list(){
-      if(!client)throw new Error('상품 저장공간이 아직 연결되지 않았습니다.');
+    async list({allowFallback=false}={}){
+      // Recovery is opt-in for public viewing. Admin reads must still fail on outages.
+      if(!client){
+        if(allowFallback)return readCatalogFallback();
+        throw new Error('상품 저장공간이 아직 연결되지 않았습니다.');
+      }
       const fields='id,category,title,description,is_ai,image_source,storage_path,created_at,variants,price_unit,display_order';
-      let result=await client.from('products').select(fields).order('created_at',{ascending:false});
-      if(result.error&&['42703','PGRST204'].includes(result.error.code))result=await client.from('products').select('id,category,title,description,is_ai,image_source,storage_path,created_at').order('created_at',{ascending:false});
+      let result;
+      try{
+        result=await readProducts(fields,allowFallback);
+        if(result.error&&['42703','PGRST204'].includes(result.error.code))result=await readProducts('id,category,title,description,is_ai,image_source,storage_path,created_at',allowFallback);
+      }catch(error){
+        if(allowFallback)return readCatalogFallback();
+        throw error;
+      }
       if(result.error){
         console.error('products read error', result.error);
+        if(allowFallback)return readCatalogFallback();
         throw new Error('상품 목록을 불러오지 못했습니다. 연결 상태를 확인해 주세요.');
       }
       return (result.data||[]).map(product=>({...product,variants:cleanVariants(product.variants),title:String(product.title||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),description:String(product.description||'').replace(/메탈렉스|HN\s*메탈릭|에이치엔메탈릭|HN\s*METALLIC|Metalex/gi,'신명건설'),url:imageUrl(product)})).filter(product=>product.url&&labels[product.category]).sort((a,b)=>{

@@ -43,10 +43,11 @@
   filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category===selected)));
   clear.hidden=!input.value;empty.hidden=!products.length||matches.length>0;more.hidden=shown.length>=matches.length;more.textContent=`상품 더 보기 (${shown.length} / ${matches.length})`;
   notice.textContent=products.length?`${selected==='all'?'전체':catalogLabels[selected]}${query?' · 검색 결과':''} · ${matches.length}개 중 ${shown.length}개 표시. 상품을 누르면 규격별 가격과 옵션을 볼 수 있습니다.`:'자재·상품 안내를 준비하고 있습니다.';
+  if(products.some(p=>p.catalog_fallback))notice.textContent+=' 기존 등록 자료로 안내 중입니다. 최신 가격·공급 가능 여부는 상담해 주세요.';
  }
  try{
   const rank=category=>category==='zinc'?0:category==='louver-steel'?1:category==='color'?2:3;
-  products=(await ProductService.list()).map(ProductService.catalogProduct).filter(Boolean);
+  products=(await ProductService.list({allowFallback:true})).map(ProductService.catalogProduct).filter(Boolean);
   const categories=['all',...Object.keys(catalogLabels).filter(key=>products.some(p=>p.category===key)).sort((a,b)=>rank(a)-rank(b))];
   for(const category of categories){const button=document.createElement('button');button.type='button';button.dataset.category=category;button.textContent=category==='all'?'전체':catalogLabels[category];button.addEventListener('click',()=>{selected=category;limit=pageSize;render()});filters.append(button)}render();
  }catch(error){filters.hidden=true;search.hidden=true;more.hidden=true;notice.textContent='자재·상품 안내를 준비하고 있습니다. 필요한 자재는 전화로 문의해 주세요.';console.warn(error.message)}
