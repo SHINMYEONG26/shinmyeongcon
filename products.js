@@ -9,7 +9,7 @@
  const more=document.createElement('button');more.type='button';more.className='products-more';more.setAttribute('aria-controls','products-grid');more.hidden=true;grid.after(more);
  const empty=document.createElement('p');empty.className='products-empty';empty.hidden=true;empty.textContent='검색 결과가 없습니다. 다른 검색어를 입력하거나 분야를 전체로 바꿔보세요.';grid.before(empty);
  const catalogLabels=ProductService.catalogLabels;
- const pageSize=12;let products=[],selected='all',query='',limit=pageSize;
+ const pageSize=Number(grid.dataset.pageSize)||12;let products=[],selected='all',query='',limit=pageSize;
  const searchable=p=>[p.title,p.description,catalogLabels[p.category],...(p.variants||[]).flatMap(v=>[v.color,v.thickness,v.length])].join(' ').normalize('NFKC').toLocaleLowerCase('ko-KR');
  function updateSearch(){query=input.value.trim().normalize('NFKC').toLocaleLowerCase('ko-KR');limit=pageSize;render()}
  input.addEventListener('input',updateSearch);
@@ -37,7 +37,7 @@
    const axes=[['thickness','두께'],['length','길이']];const summary=axes.map(([key,label])=>{const values=[...new Set(variants.map(v=>v[key]).filter(Boolean))];return values.length?label+' '+values.slice(0,2).join(' · ')+(values.length>2?' 외':''):''}).filter(Boolean);
    specs.textContent=summary.join(' / ')||(variants.length?`규격·색상 ${variants.length}개 옵션`:'규격·공급 가능 여부 상담');
    if(minimum!==null&&prices.length<variants.length){const note=document.createElement('small');note.textContent='일부 옵션은 가격 문의';price.append(note)}
-   const link=document.createElement('a');link.className='product-contact';link.href=href;link.textContent='상품 상세·옵션 보기';const arrow=document.createElement('span');arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');link.append(arrow);
+   const link=document.createElement('a');link.className='product-contact';link.href=href;link.textContent='상품 상세·옵션 보기';const arrow=document.createElement('span');arrow.textContent='';arrow.setAttribute('aria-hidden','true');link.append(arrow);
    body.append(category,title,specs,description,price,link);card.append(imageWrap,body);grid.append(card);
   }
   filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category===selected)));
