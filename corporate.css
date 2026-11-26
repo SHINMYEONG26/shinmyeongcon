@@ -38,3 +38,13 @@
 .project-saved-grid a:focus-visible{outline:3px solid #bd9c59;outline-offset:3px}
 .project-saved-grid figcaption{padding:16px;font-size:14px;line-height:1.6;color:#1b3443}
 @media(max-width:600px){.project-saved-grid{gap:8px}.project-saved-grid figcaption{padding:8px;font-size:11px}}
+
+.project-saved-panel{scroll-margin-top:110px}
+.project-album-back{padding:12px 16px;border:1px solid #b6c4cf;background:#fff;color:#17384c;font:inherit;cursor:pointer;margin-top:18px}
+.project-album-back[hidden]{display:none}
+.project-saved-grid .project-album-open{display:block;width:100%;padding:0;border:0;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.project-album-caption{display:block;padding:16px;color:#1b3443;font-size:14px;line-height:1.6}
+.project-album-caption small{display:block;margin-top:8px;color:#607482;font-size:12px}
+.project-album-open:hover img{transform:scale(1.025)}
+.project-album-open:focus-visible,.project-album-back:focus-visible{outline:3px solid #bd9c59;outline-offset:3px}
+@media(max-width:600px){.project-album-caption{padding:8px;font-size:11px}.project-album-caption small{font-size:10px;margin-top:5px}.project-saved-panel{scroll-margin-top:90px}}
