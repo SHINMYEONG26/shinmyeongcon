@@ -24,3 +24,17 @@
 @media(max-width:900px){.corporate-site .hero-intro .hero-content{width:calc(100% - 64px)}}
 @media(max-width:760px){.corporate-site .hero-intro .hero-content{width:calc(100% - 40px)}.corporate-site .hero h1{font-size:clamp(30px,9vw,40px)!important;letter-spacing:-1.6px}.corporate-site .utility-card .utility-label{display:none}.corporate-site .utility-card h3{font-size:15px}.corporate-site .hero .hero-photo-credit{font-size:9px}.corporate-site .corporate-company-title{text-align:left}}
 @media(max-width:360px){.corporate-site .hero h1{font-size:30px!important;letter-spacing:-1.3px}.corporate-site .utility-card h3{font-size:13px}}
+
+/* Full company name in the existing responsive brand lockup. */
+.corporate-site .site-header .brand .brand-prefix{font-size:.52em;letter-spacing:-.035em;white-space:nowrap}
+
+.project-grid[hidden],.project-saved-panel[hidden]{display:none!important}
+.project-saved-status{color:#607482;margin:24px 0;line-height:1.8}
+.project-saved-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.project-saved-grid figure{margin:0;border:1px solid #dce3e8;background:#f4f7f9}
+.project-saved-grid a{display:block;overflow:hidden}
+.project-saved-grid img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .25s}
+.project-saved-grid a:hover img{transform:scale(1.025)}
+.project-saved-grid a:focus-visible{outline:3px solid #bd9c59;outline-offset:3px}
+.project-saved-grid figcaption{padding:16px;font-size:14px;line-height:1.6;color:#1b3443}
+@media(max-width:600px){.project-saved-grid{gap:8px}.project-saved-grid figcaption{padding:8px;font-size:11px}}
