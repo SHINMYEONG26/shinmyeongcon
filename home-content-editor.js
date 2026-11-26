@@ -11,7 +11,7 @@
   toolbar.innerHTML='<p></p><button type="button" data-manage aria-label="사진·글씨 관리" title="사진·글씨 관리">편집</button><button type="button" data-heading aria-label="영역 제목 수정" title="영역 제목 수정" hidden>제목 수정</button><button type="button" data-logout hidden>로그아웃</button>';
   const status=document.createElement('p');status.className='home-edit-message';status.hidden=true;status.setAttribute('role','status');status.setAttribute('aria-live','polite');heading.after(toolbar,status);
   const state={section,prefix,toolbar,status};sections.push(state);
-  entries.set(`${prefix}:heading`,{key:`${prefix}:heading`,state,heading:true,element:heading,title:heading.querySelector('h2').textContent,description:heading.querySelector('p').textContent,eyebrow:'',isAi:null,showText:true});
+  entries.set(`${prefix}:heading`,{key:`${prefix}:heading`,state,heading:true,element:heading,title:heading.querySelector('h2').textContent,description:(heading.querySelector('p:not(.corporate-eyebrow)')||heading.querySelector('p')).textContent,eyebrow:'',isAi:null,showText:true});
   const cards=section.querySelectorAll(prefix==='portfolio'?'article[data-category]':'[data-business]');
   for(const card of cards){
    const category=prefix==='portfolio'?categoryFor(card.dataset.category):Object.keys(labels)[Number(card.dataset.business)];if(!category)continue;
@@ -29,13 +29,14 @@
  }
  function message(state,text,error=false){state.status.textContent=text;state.status.classList.toggle('error',error);}
  function renderEntry(entry){
-  if(entry.heading){entry.element.querySelector('h2').textContent=entry.title;entry.element.querySelector('p').textContent=entry.description;return;}
-  entry.titleNode.textContent=entry.title;entry.descriptionNode.textContent=entry.description;entry.eyebrowNode.textContent=entry.eyebrow;
+  if(entry.heading){entry.element.querySelector('h2').textContent=entry.title;(entry.element.querySelector('p:not(.corporate-eyebrow)')||entry.element.querySelector('p')).textContent=entry.description;return;}
+  const recent=entry.recentPhoto;
+  entry.titleNode.textContent=entry.title;entry.descriptionNode.textContent=recent?(recent.site||recent.title):entry.description;entry.eyebrowNode.textContent=entry.eyebrow;
   const visibility=entry.showText?'visible':'hidden';
   for(const node of [entry.titleNode,entry.descriptionNode,entry.eyebrowNode,entry.badge,entry.more])if(node)node.style.visibility=visibility;
-  const type=entry.isAi===null?'분야 안내 이미지':entry.isAi?'AI 생성 예시 · 실제 시공사진 아님':'실제 시공사진';
-  if(entry.badge){entry.badge.textContent=type;entry.badge.classList.toggle('is-actual',entry.isAi===false);}
-  if(entry.state.prefix==='portfolio'){entry.image.style.backgroundImage=`url(${JSON.stringify(entry.url)})`;entry.image.setAttribute('aria-label',`${entry.title} · ${type}`);entry.element.querySelector('.project-card-hit').setAttribute('aria-label',`${entry.title} 사진 보기`);}
+  const type=recent?'최근 등록 시공사진':entry.isAi===null?'분야 안내 이미지':entry.isAi?'AI 생성 예시 · 실제 시공사진 아님':'실제 시공사진';
+  if(entry.badge){entry.badge.textContent=type;entry.badge.classList.toggle('is-actual',Boolean(recent)||entry.isAi===false);}
+  if(entry.state.prefix==='portfolio'){entry.image.style.backgroundImage=`url(${JSON.stringify(recent?.url||entry.url)})`;entry.image.setAttribute('aria-label',`${entry.title} · ${type}`);entry.element.querySelector('.project-card-hit').setAttribute('aria-label',`${entry.title} 사진 보기`);}
   else{entry.image.src=entry.url;entry.image.alt=`${entry.title} · ${type}`;}
  }
  function updateBusinessDetail(){const active=document.querySelector('.business-card.active');if(!active)return;document.getElementById('business-title').textContent=active.querySelector('h3').textContent+' 품목 안내';document.getElementById('business-copy').textContent=active.querySelector('p').textContent;}
@@ -73,6 +74,6 @@
  window.addEventListener('beforeunload',event=>{if(busy){event.preventDefault();event.returnValue='';}});
  if(!photos.ready){for(const s of sections)s.toolbar.querySelector('[data-manage]').disabled=true;return;}
  // Retain the existing automatic use of the latest verified actual photograph.
- try{const list=await photos.list();await Promise.allSettled([...entries.values()].filter(e=>e.state.prefix==='portfolio'&&!e.heading).map(async entry=>{const item=list.find(p=>p.category===entry.category&&p.is_ai===false);if(!item)return;const url=new URL(item.url,location.href);if(url.protocol!=='https:')return;const image=new Image();image.src=url.href;await image.decode();entry.url=url.href;entry.isAi=false;if(item.title)entry.description=item.title;renderEntry(entry);}));}catch{}
+ try{const list=await photos.list();await Promise.allSettled([...entries.values()].filter(e=>e.state.prefix==='portfolio'&&!e.heading).map(async entry=>{const group=entry.element.dataset.projectGroup;const item=window.ProjectCoverService&&group?ProjectCoverService.pick(list,group):list.find(p=>p.category===entry.category&&p.is_ai===false);if(!item)return;const url=new URL(item.url,location.href);if(url.protocol!=='https:')return;const image=new Image();image.src=url.href;await image.decode();entry.recentPhoto={...item,url:url.href};renderEntry(entry);}));}catch{}
  photos.client.auth.onAuthStateChange(()=>setTimeout(()=>refreshAuth(),0));await refreshAuth();await load();
 })();

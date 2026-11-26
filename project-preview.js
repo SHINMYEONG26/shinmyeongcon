@@ -1,31 +1,19 @@
-// Keep the local category image until a verified actual photograph loads.
-(async () => {
-  const service = window.PhotoService;
-  if (!service?.ready) return;
-  try {
-    const photos = await service.list();
-    const updates = [];
-    for (const card of document.querySelectorAll('#projects article[data-category]')) {
-      const category = Object.keys(service.labels).find(key => service.labels[key] === card.dataset.category);
-      const photo = photos.find(item => item.category === category && item.is_ai === false);
-      if (!photo) continue;
-      const url = new URL(photo.url, window.location.href);
-      if (url.protocol !== 'https:') continue;
-      updates.push((async () => {
-        const image = new Image();
-        image.src = url.href;
-        await image.decode();
-        const cover = card.querySelector('.project-image');
-        cover.style.backgroundImage = `url(${JSON.stringify(url.href)})`;
-        cover.setAttribute('aria-label', `${card.dataset.category} 실제 시공사진`);
-        const badge = card.querySelector('.photo-kind');
-        badge.textContent = '실제 시공사진';
-        badge.classList.add('is-actual');
-        if (photo.title) card.querySelector('p:not(.photo-kind)').textContent = photo.title;
-      })());
-    }
-    await Promise.allSettled(updates);
-  } catch {
-    // Local category images and gallery links remain available offline.
-  }
+// Select the newest uploaded actual project, then its designated album cover.
+(() => {
+ const groups={exterior:['real','exterior','temba-zinc','metal-siding','composite-sheet','sandwich-panel'],roofing:['color'],tent:['tent']};
+ function parse(photo){
+  if(window.SiteAlbums)return window.SiteAlbums.parse(photo);
+  const raw=String(photo.raw_title||photo.title||''),match=raw.match(/ ⟦([0-9a-z]+)\.([0-9a-z]+)\.([01])⟧$/);
+  const title=raw.replace(/ ⟦([0-9a-z]+)\.([0-9a-z]+)\.([01])⟧$/,'');
+  return {...photo,title,site:title.split('｜')[0].trim(),isCover:match?.[3]==='1'};
+ }
+ function pick(photos,group){
+  const categories=groups[group];if(!categories||!Array.isArray(photos))return null;
+  const sorted=photos.filter(p=>p.is_ai===false&&categories.includes(p.category)&&Number.isFinite(Date.parse(p.created_at))).map(parse)
+   .sort((a,b)=>Date.parse(b.created_at)-Date.parse(a.created_at)||String(b.id).localeCompare(String(a.id)));
+  const newest=sorted[0];if(!newest)return null;
+  const cover=sorted.find(p=>p.category===newest.category&&p.site===newest.site&&p.isCover);
+  return {...(cover||newest),latestUploadAt:newest.created_at};
+ }
+ window.ProjectCoverService={pick,groups};
 })();
